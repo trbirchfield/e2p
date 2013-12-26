@@ -5,11 +5,41 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Scott &#38; White - Community Resource Toolkit</title>
-	<link rel="stylesheet" href="/css/global.css">
-	<link rel="stylesheet" href="/css/headshrinker.css">
-	<link rel="stylesheet" href="css/animation.css"/>
+	<meta name="description" content=""/>
+	<meta name="author"      content=""/>
+	<meta name="keywords"    content=""/>
+	<meta name="robots"      content="index,follow"/>
+	<link rel="shortcut icon" href="/img/icons/favicon.ico"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png" />
+	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
+	<link rel="image_src" href="" />  
+	<meta name="msapplication-TileColor" content="#ffffff" />
+	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-70x70.png" />
+	<meta name="msapplication-square144x144logo" content="/images/icons/mstile-144x144.png" />
+	<meta name="msapplication-square150x150logo" content="/imgagesicons/mstile-150x150.png" />
+	<meta name="msapplication-square310x310logo" content="/images/icons/mstile-310x310.png" />
+	<meta name="msapplication-wide310x150logo" content="/images/icons/mstile-310x150.png" />
+	<meta property="og:title" content=""/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<link rel="stylesheet" href="css/global.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/transition.js"></script>
+	<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.tooltip').tooltipster();
+		});
+	</script>
 	<!--Typekit-->
 	<script type="text/javascript" src="//use.typekit.net/soy6vtc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -17,241 +47,236 @@
 <body>
 	<header>
 		<div class="container">
-			<img class="logo" src="images/logo.jpg" alt="Logo" />
+			<img class="logo no-print" src="images/logo.jpg" alt="Logo" />
+			<img class="logo no-screen" src="images/logo_small.jpg" alt="Logo" />
 			<nav>
-				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">Privacy Policy</a></li>
+				<ul class="menu home-menu">
+					<li><a href="about_us.html">About Us</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="privacy_policy.html">Privacy Policy</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<div class="pt-wrapper">
-		<div class="pt-page pt-page-1">
-			<section id="intro">
-				<div class="container">
-					<div class="headline">
-						<h1>Welcome to the Toolkit on<br />Evidence-Based Programming<br />for Seniors!</h1>
+		<section id="intro">
+			<img class="lt no-print" src="images/top_left.png">
+			<img class="lb no-print" src="images/bottom_left.png">
+			<img class="rt no-print" src="images/top_right.png">
+			<img class="rb no-print" src="images/bottom_right.png">
+			<div class="container">
+				<div class="headline">
+					<h1>Welcome to the Toolkit on<br />Evidence-Based Programming<br />for Seniors!</h1>
+				</div>
+				<div class="highlight">
+					<p>Whether your organization is just beginning to consider<br />evidence-based programming or you have been implementing EBPs for years, <span>we encourage you to explore</span> the materials in the Toolkit and take advantage of any that are beneficial to you.</p>
+				</div>
+				<div class="explore">
+					<a href="#questions" class="scroll btn">Explore</a>
+				</div>
+				<div class="initial-line">
+					<div class="initial-marker"></div>
+					<div class="final-marker"></div>
+				</div>
+			</div>
+		</section>
+		<section id="questions">
+			<div class="container">
+				<div class="questions clearfix">
+					<div class="push-left question">
+						<h2>Why consider evidence-based programming?</h2>
+						<p>Evidence-based programs (EBPs) are programs that have been:</p>
+						<ol>
+							<li>implemented previously,</li>
+							<li>evaluated by researchers, and </li>
+							<li>found to make positive differences in the lives of participants. </li>
+						</ol>
+						<p>Organizations utilize proven strategies when they implement EBPs.</p>
 					</div>
-					<div class="highlight">
-						<p>Whether your organization is just beginning to consider evidence-based programming or you have been implementing EBPs for years, we encourage you to explore the materials in the Toolkit and take advantage of any that are beneficial to you.</p>
-					</div>
-					<div class="explore">
-						<a href="#questions" class="scroll btn">Explore</a>
+					<div class="push-right question">
+						<h2>How can this Toolkit be helpful?</h2>
+						<p>The Toolkit contains materials that build the capacity of community organizations to promote senior health and well-being through evidence-based programming. The materials were shaped by our experiences working with community organizations that serve seniors with EBPs across the state of Texas. The materials, however, are relevant to organizations that implement EBPs for audiences of any age.</p>
 					</div>
 				</div>
-			</section>
-			<section id="questions">
-				<div class="container">
-					<div class="questions clearfix">
-						<div class="push-left question">
-							<h2>Why consider evidence-based programming?</h2>
-							<p>Evidence-based programs (EBPs) are programs that have been:</p>
-							<ol>
-								<li>implemented previously,</li>
-								<li>evaluated by researchers, and </li>
-								<li>found to make positive differences in the lives of participants. </li>
-							</ol>
-							<p>Organizations utilize proven strategies when they implement EBPs.</p>
-						</div>
-						<div class="push-right question">
-							<h2>How can this Toolkit be helpful?</h2>
-							<p>The Toolkit contains materials that build the capacity of community organizations to promote senior health and well-being through evidence-based programming. The materials were shaped by our experiences working with community organizations that serve seniors with EBPs across the state of Texas. The materials, however, are relevant to organizations that implement EBPs for audiences of any age.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="routing">
-				<div class="container">
-					<div class="door purple">
-						<h2>Select an Evidence Based Program</h2>
-						<h5>Learn more about EBPs and select one for your organization.</h5>
-					</div>
-					<div id="timeline" class="longer-timeline">
-						<div class="line"></div>
-						<div class="middle">
-							<div class="section s01 left">
-								<div class="marker"></div>
-								<div class="entry">
-									<div class="purple start ">
-										<h3>Section 1</h3>
-											<div class="purple_arrow left_side"></div>
-									</div>
-									<ul class="sub-section first-hover">
-									<button class="pt-trigger" data-animation="1" data-goto="2">Go to page 2</button>
-										<li><a href="#"><span>1.0</span>What does it mean for a program to be evidence-based?</a></li>
-										<li><a href="#"><span>1.1</span>Advantages of evidence-based programs</a></li>
-										<li><a href="#"><span>1.2</span>Disadvantages of evidence-based programs</a></li>
-										<li><a href="#"><span>1.3</span>Organizational readiness to implement evidence-based programs</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="section s02 right rev-anim anim">
-								<div class="marker"></div>
-								<div class="entry">
-									<div class="purple start">
-										<h3>Section 2</h3>
-										<div class="purple_arrow right_side"></div>
-									</div>
-									<ul class="sub-section first-hover">
-										<li><a href="#"><span>2.0</span>Choosing which program to implement</a></li>
-										<li><a href="#"><span>2.1</span>Identifying an important health issue</a></li>
-										<li><a href="#"><span>2.2</span>Prioritizing needs</a></li>
-										<li><a href="#"><span>2.3</span>Identifying evidence-based interventions</a></li>
-										<li><a href="#"><span>2.4</span>Support from organizational stakeholders and presence of program champions</a></li>
-										<li><a href="#"><span>2.5</span>Match with organizational purpose</a></li>
-										<li><a href="#"><span>2.6</span>Match with organizational resources</a></li>
-										<li><a href="#"><span>2.7</span>Match with clientele</a></li>
-										<li><a href="#"><span>2.8</span>Establishing partnerships</a></li>
-										<li><a href="#"><span>2.9</span>Obtaining funding</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="section s03 left rev-anim anim">
-								<div class="marker"></div>
-								<div class="entry">
-									<div class="purple start">
-										<h3>Section 3</h3>
-										<div class="purple_arrow left_side"></div>
-									</div>
-									<ul class="sub-section first-hover">
-										<li><a href="#"><span>3.0</span>Evaluation planning</a></li>
-										<li><a href="#"><span>3.1</span>Process evaluation</a></li>
-										<li><a href="#"><span>3.2</span>Impact and outcome evaluation</a></li>
-										<li><a href="#"><span>3.3</span>Forming expectations</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="door green">
-						<h2>Implement an Evidence Based Program</h2>
-						<h5>Get tips and recommendations for implementing an EBP.</h5>
-					</div>
-					<div id="timeline">
-						<div class="line2"></div>
-						<div class="middle">
-							<div class="section s01 left">
-								<div class="marker"></div>
-								<div class="entry">
-									<div class="green start">
-										<h3>Section 4</h3>
-											<div class="green_arrow left_side"></div>
-									</div>
-									<ul class="sub-section second-hover">
-										<li><a href="#"><span>4.0</span>Implementing evidence-based programs with fidelity</a></li>
-										<li><a href="#"><span>4.1</span>What is fidelity?</a></li>
-										<li><a href="#"><span>4.2</span>Fidelity monitoring</a></li>
-										<li><a href="#"><span>4.3</span>Adapting programs to local needs and preferences while maintaining fidelity</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="section s02 right rev-anim anim">
-								<div class="marker"></div>
-								<div class="entry">
-									<div class="green start">
-										<h3>Section 5</h3>
-										<div class="green_arrow right_side"></div>
-									</div>
-									<ul class="sub-section second-hover">
-										<li><a href="#"><span>5.0</span>Common program implementation challenges</a></li>
-										<li><a href="#"><span>5.1</span>Program marketing and participant recruitment</a></li>
-										<li><a href="#"><span>5.2</span>Participant retention</a></li>
-										<li><a href="#"><span>5.3</span>Working with lay leaders</a></li>
-										<li><a href="#"><span>5.4</span>Sustainability</a></li>
-										<li><a href="#"><span>5.5</span>Quality assurance</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<footer>
-				<div class="container">
-					<h5 class="footer-intro">This site brought to you by:</h5>
-					<ul class="footer-logos">
-						<li><img src="images/footer/logo-1.jpg"></li>
-						<li><img src="images/footer/logo-2.jpg"></li>
-						<li><img src="images/footer/logo-3.jpg"></li>
+				<section class="no-screen">
+					<h2>SELECTING A SUITABLE EVIDENCE-BASED PROGRAM</h2>
+					<ul class="routing">
+						<li>1.0 What does it mean for a program to be evidence-based?</li>
+						<li>1.1 Advantages of evidence-based programs</li>
+						<li>1.2 Disadvantages of evidence-based programs</li>
+						<li>1.3 Organizational readiness to implement evidence-based programs</li>
 					</ul>
-					<p class="disclaimer">By providing links to other sites, the Community Research Center for Senior Health does not guarantee, approve, or endorse the information or products available on these sites.
-					</p>
-				</div>
-			</footer>
-		</div>
-		<div class="pt-page pt-page-2">
-			<button class="pt-trigger" data-animation="2" data-goto="1">Go Back</button>
-        	<h1><strong>Page 2</strong></h1>
-        	<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-	<button class="pt-trigger" data-animation="3" data-goto="-1">Go next</button>
-    	</div>
-    	<div class="pt-page pt-page-3">
-			<button class="pt-trigger" data-animation="2" data-goto="1">Go to page 1</button>
-        	<h1><strong>Page 3</strong></h1>
-        	<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-     
-     
-<button class="pt-trigger" data-animation="4" data-goto="-2">Go to previous</button>
-<button class="pt-trigger" data-animation="3" data-goto="-1">Go to next</button>
-    	</div>
-    	<div class="pt-page pt-page-4">
-			<button class="pt-trigger" data-animation="2" data-goto="1">Go to page 1</button>
-        	<h1><strong>Page 4</strong></h1>
-        	<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.
-
-Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget m</p>
-<button class="pt-trigger" data-animation="4" data-goto="-2">Go to previous</button>
-<button class="pt-trigger" data-animation="3" data-goto="-1">Go to next</button>
-    	</div>
+					<ul class="routing">
+						<li>2.0 Choosing which program to implement</li>
+						<li>2.1 Identifying an important health issue</li>
+						<li>2.2 Prioritizing needs</li>
+						<li>2.3 Identifying evidence-based interventions</li>
+						<li>2.4 Support from organizational stakeholders and presence of program champions</li>
+						<li>2.5 Match with organizational purpose</li>
+						<li>2.6 Match with organizational resources</li>
+						<li>2.7 Match with clientele</li>
+						<li>2.8 Establishing partnerships</li>
+						<li>2.9 Obtaining funding</li>
+					</ul>
+					<ul class="routing">
+						<li>3.0 Evaluation planning</li>
+						<li>3.1 Process evaluation</li>
+						<li>3.2 Impact and outcome evaluation</li>
+						<li>3.3 Forming expectations</li>
+					</ul>
+						<h2>IMPLEMENTING A SUITABLE EVIDENCE-BASED PROGRAM</h2>
+					<ul class="routing">
+						<li>4.0 Implementing evidence-based programs with fidelity</li>
+						<li>4.1 Fidelity monitoring</li>
+						<li>4.2 Adapting programs to local needs and preferences while maintaining fidelity</li>
+					</ul>
+					<ul class="routing">
+						<li>5.0 Program marketing and participant recruitment</li>
+						<li>5.1 Participant retention</li>
+						<li>5.2 Working with lay leaders</li>
+						<li>5.3 Sustainability</li>
+						<li>5.4 Quality assurance</li>
+					</ul>
+				</section>
+			</div>
+		</section>
+		<section id="routing" class="no-print">
+			<div class="container">
+				<ul id="selection-door">
+					<li>
+						<a href="#" class="accordion door blue-header">
+							<h2>Select an Evidence Based Program</h2>
+							<h5>Learn more about EBPs and select one for your organization.</h5>
+						</a>
+						<div class="content">
+							<div id="timeline" class="longer-timeline">
+								<div class="line"></div>
+								<div class="middle">
+									<div class="section s01 left">
+										<div class="marker"></div>
+										<div class="entry">
+											<div class="blue_small_left start">
+												<h3>Section 1</h3>
+													<div class="blue_arrow left_side"></div>
+											</div>
+											<ul class="sub-section first-hover">
+												<li><a href="section1.0.html"><span class="s-number">1.0</span><span class="s-title">What does it mean for a program to be evidence-based?</span></a></li>
+												<li><a href="section1.1.html"><span class="s-number">1.1</span><span class="s-title">Advantages of evidence-based programs</span></a></li>
+												<li><a href="section1.2.html"><span class="s-number">1.2</span><span class="s-title">Disadvantages of evidence-based programs</span></a></li>
+												<li><a href="section1.3.html"><span class="s-number">1.3</span><span class="s-title">Organizational readiness to implement evidence-based programs</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="section s02 right rev-anim anim">
+										<div class="marker"></div>
+										<div class="entry">
+											<div class="blue_small_right start">
+												<h3>Section 2</h3>
+												<div class="blue_arrow right_side"></div>
+											</div>
+											<ul class="sub-section first-hover">
+												<li><a href="section2.0.html"><span class="s-number">2.0</span><span class="s-title">Choosing which program to implement</span></a></li>
+												<li><a href="section2.1.html"><span class="s-number">2.1</span><span class="s-title">Identifying an important health issue</span></a></li>
+												<li><a href="section2.2.html"><span class="s-number">2.2</span><span class="s-title">Prioritizing needs</span></a></li>
+												<li><a href="section2.3.html"><span class="s-number">2.3</span><span class="s-title">Identifying evidence-based interventions</span></a></li>
+												<li><a href="section2.4.html"><span class="s-number">2.4</span><span class="s-title">Support from organizational stakeholders and presence of program champions</span></a></li>
+												<li><a href="section2.5.html"><span class="s-number">2.5</span><span class="s-title">Match with organizational purpose</span></a></li>
+												<li><a href="section2.6.html"><span class="s-number">2.6</span><span class="s-title">Match with organizational resources</span></a></li>
+												<li><a href="section2.7.html"><span class="s-number">2.7</span><span class="s-title">Match with clientele</span></a></li>
+												<li><a href="section2.8.html"><span class="s-number">2.8</span><span class="s-title">Establishing partnerships</span></a></li>
+												<li><a href="section2.9.html"><span class="s-number">2.9</span><span class="s-title">Obtaining funding</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="section s03 left rev-anim anim">
+										<div class="marker"></div>
+										<div class="entry">
+											<div class="blue_small_left start">
+												<h3>Section 3</h3>
+												<div class="blue_arrow left_side"></div>
+											</div>
+											<ul class="sub-section first-hover">
+												<li><a href="section3.0.html"><span class="s-number">3.0</span><span class="s-title">Evaluation planning</span></a></li>
+												<li><a href="section3.1.html"><span class="s-number">3.1</span><span class="s-title">Process evaluation</span></a></li>
+												<li><a href="section3.2.html"><span class="s-number">3.2</span><span class="s-title">Impact and outcome evaluation</span></a></li>
+												<li><a href="section3.3.html"><span class="s-number">3.3</span><span class="s-title">Forming expectations</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="section s04 left rev-anim anim">
+										<div class="marker-end"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="accordion2 door green-header">
+							<h2>Implement an Evidence Based Program</h2>
+							<h5>Get tips and recommendations for implementing an EBP.</h5>
+						</a>
+						<div class="content">
+							<div id="timeline">
+								<div class="line2"></div>
+								<div class="middle">
+									<div class="section s01 left">
+										<div class="marker"></div>
+										<div class="entry">
+											<div class="green_small_left start">
+												<h3>Section 4</h3>
+													<div class="green_arrow left_side"></div>
+											</div>
+											<ul class="sub-section second-hover">
+												<li><a href="section4.0.html"><span class="s-number">4.0</span><span class="s-title">Implementing evidence-based programs with fidelity</span></a></li>
+												<li><a href="section4.1.html"><span class="s-number">4.1</span><span class="s-title">Fidelity monitoring</span></a></li>
+												<li><a href="section4.2.html"><span class="s-number">4.2</span><span class="s-title">Adapting programs to local needs and preferences while maintaining fidelity</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="section s02 right rev-anim anim">
+										<div class="marker"></div>
+										<div class="entry">
+											<div class="green_small_right start">
+												<h3>Section 5</h3>
+												<div class="green_arrow right_side"></div>
+											</div>
+											<ul class="sub-section second-hover">
+												<li><a href="section5.0.html"><span class="s-number">5.0</span><span class="s-title">Program marketing and participant recruitment</span></a></li>
+												<li><a href="section5.1.html"><span class="s-number">5.1</span><span class="s-title">Participant retention</span></a></li>
+												<li><a href="section5.2.html"><span class="s-number">5.2</span><span class="s-title">Working with lay leaders</span></a></li>
+												<li><a href="section5.3.html"><span class="s-number">5.3</span><span class="s-title">Sustainability</span></a></li>
+												<li><a href="section5.4.html"><span class="s-number">5.4</span><span class="s-title">Quality assurance</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="section s05 right rev-anim anim">
+										<div class="marker"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+			<div class="footer-img"></div>
+			<div class="container">
+				<h5 class="footer-intro">This site is brought to you by the Community Research Center for Senior Health in Partnership with:</h5>
+				<ul class="footer-logos">
+					<li><img src="images/footer/logo-1.jpg"></li>
+					<li><img src="images/footer/logo-2.jpg"></li>
+					<li><img src="images/footer/logo-3.jpg"></li>
+				</ul>
+				<p class="disclaimer">By providing links to other sites, the Community Research Center for Senior Health does not guarantee, approve, or endorse the information or products available on these sites.
+				</p>
+			</div>
+		</footer>
 	</div>
-	<script src="js/jquery.headshrinker.js"></script> 
-	<script>
-	jQuery(document).ready(function () {
-		jQuery('header').headshrinker({ fontSize: "17px", mobileMenu: false });
-	});
-	</script>
 	<script type="text/javascript" src="js/scrollTo.js"></script>
 	<script>
 		$('.scroll').scrollTo();
 	</script>
+	<script src="js/global.js"></script> 
 </body>
 </html>
