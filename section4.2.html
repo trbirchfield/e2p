@@ -20,7 +20,7 @@
 	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
-	<link rel="image_src" href="" />  
+	<link rel="image_src" href="" />
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
 	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-70x70.png" />
@@ -43,6 +43,10 @@
 	<!--Typekit-->
 	<script type="text/javascript" src="//use.typekit.net/soy6vtc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript" src="/js/components/underscore.min.js"></script>
+	<script type="text/javascript" src="/js/components/backbone.min.js"></script>
+	<script type="text/javascript" src="/js/app/models/QuestionModel.js"></script>
+	<script type="text/javascript" src="/js/app/views/QuestionView.js"></script>
 </head>
 <body class="document">
 	<header>
@@ -275,7 +279,7 @@
 							</td>
 						</tr>
 
-						
+
 					</tbody>
 				</table>
 			</div>
@@ -283,22 +287,10 @@
 		<div class="row">
 			<div class="small-9 small-offset-3 columns doc-right">
 				<p>What if your organization has committed to implementing a given program and you realize that fidelity may be threatened because you need to adapt several key elements to make the program suitable for your audience? You are not necessarily trapped; there are a few courses of action to consider. First, get in touch with the program developers. They will be able to provide insight into the impact the adaptations will have on outcomes. Additionally, the developers may be interested in working with you and collecting data to evaluate the impacts of the adaptations on program outcomes, as this would contribute to the program’s evidence base. Second, find additional resources. Adaptations are often necessary because of resource limitations (e.g., limited funding, insufficient staff, inadequate facilities). If this is the case for you, then reevaluate your funding options and your opportunities for partnerships with organizations that have the resources you lack <span class="reference">(see <a href="section2.9.html">Obtaining Funding</a> and <a href="section2.8.html">Establishing Partnerships</a> for more information)</span>. Finally, you can select an alternative program. While this is a difficult choice if you have already invested time and money into a program, it is important to consider the consequences of moving forward with a program that will be implemented without fidelity due to extensive adaptations.</p>
-				<h5 class="qa">
-					Readiness Question:
-					<img src="images/tt.png" class="tooltip tt" title="This is the tooltip explanation<br />Aenean eu leo quam. Pellentesque ornare sem lacinia <br />quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet." />
-				</h5>
-				<div class="flowchart">
-					<div class="row">
-						<div class="small-6 columns">
-							<p>Can we identify an important health issue of our audience? </p>
-						</div>
-						<div class="small-5 small-offset-1 columns">
-						<ul>
-							<li><a href="#" class="button">yes</a></li>
-							<li><a href="#" class="button">no</a></li>
-						</ul>
-					</div>
-				</div>
+				<div class="question-container"></div>
+				<script type="text/javascript">
+					var question = new QuestionView({ loadQuestionId : 8 });
+				</script>
 			</div>
 		</div>
 		<div class="row">
@@ -343,7 +335,7 @@
 							<p><em>Peer review</em> – When experts review a professional’s performance, research, or writings. Peer review is a way that qualified professionals self-regulate their professions. Performance, research, or writings that pass the peer review process have increased credibility or trustworthiness.</p>
 							<p><em>Program champion</em> – An individual who advocates for a program.</p>
 							<p><em>Quality assurance</em>- A collection of planned, systematic activities applied to ensure that the components of a program are being implemented well.</p>
-							<p><em>Secondary data</em> – Previously collected data that is being used for a purpose other than that for which it was originally collected.</p>	
+							<p><em>Secondary data</em> – Previously collected data that is being used for a purpose other than that for which it was originally collected.</p>
 							<p><em>Theory of behavior change</em> – An attempt to explain how and why people change their behaviors. Researchers typically generate theories of behavior change from research in the fields of psychology, education, health, and other social sciences. When developing evidence-based programs, researchers will select a theory or components from several theories to guide program development.</p>
 						</div>
 						<div class="glossary-right">
@@ -435,7 +427,7 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="#"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>									
+									<li><a href="#"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>
 									<li><a href="#"><span class="number">4.1</span><span class="title">Fidelity monitoring</span></a></li>
 									<li><a href="#"><span class="number">4.2</span><span class="title">Adapting programs to local needs and preferences while maintaining fidelity</span></a></li>
 								</ul>
