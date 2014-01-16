@@ -20,7 +20,7 @@
 	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
-	<link rel="image_src" href="" />  
+	<link rel="image_src" href="" />
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
 	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-70x70.png" />
@@ -49,6 +49,10 @@
 	<!--Typekit-->
 	<script type="text/javascript" src="//use.typekit.net/soy6vtc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript" src="/js/components/underscore.min.js"></script>
+	<script type="text/javascript" src="/js/components/backbone.min.js"></script>
+	<script type="text/javascript" src="/js/app/models/QuestionModel.js"></script>
+	<script type="text/javascript" src="/js/app/views/QuestionView.js"></script>
 </head>
 <body class="document">
 	<header>
@@ -96,24 +100,12 @@
 					<li><em>Senior housing</em> – Assisted living facilities, Naturally Occurring Retirement Communities, and HUD-funded facilities are sometimes willing to provide funding for the provision of EBPs for their residents. At minimum, these facilities can provide in-kind facilities for program sessions.</li>
 					<li><em>Participants</em> – Organizations can request donations from participants or charge fees for program participation. Some organizations balk at the thought of charging participants to participate in a health promotion program; however, charging participants may actually be beneficial in increasing the perceived value of the program and increasing participants’ commitment to complete the program. Fees can be determined on a sliding scale to encourage people of all income levels to participate. An alternative is charging participants for certain components of a program, such as workbooks, program t-shirts, or other supplies.</li>
 				</ul>
-				<h5 class="qa">
-					Readiness Question:
-					<img src="images/tt.png" class="tooltip tt" title="This is the tooltip explanation<br />Aenean eu leo quam. Pellentesque ornare sem lacinia <br />quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet." />
-				</h5>
-				<div class="flowchart">
-					<div class="row">
-						<div class="small-6 columns">
-							<p>Can we identify an important health issue of our audience? </p>
-						</div>
-						<div class="small-5 small-offset-1 columns">
-						<ul>
-							<li><a href="#" class="button">yes</a></li>
-							<li><a href="#" class="button">no</a></li>
-						</ul>
-					</div>
-				</div>
+				<div class="question-container"></div>
+				<script type="text/javascript">
+					var question = new QuestionView({ loadQuestionId : 7 });
+				</script>
 			</div>
-		</div>	
+		</div>
 		<div class="row">
 			<div class="small-12 columns">
 				<div class="document-nav">
@@ -156,7 +148,7 @@
 							<p><em>Peer review</em> – When experts review a professional’s performance, research, or writings. Peer review is a way that qualified professionals self-regulate their professions. Performance, research, or writings that pass the peer review process have increased credibility or trustworthiness.</p>
 							<p><em>Program champion</em> – An individual who advocates for a program.</p>
 							<p><em>Quality assurance</em>- A collection of planned, systematic activities applied to ensure that the components of a program are being implemented well.</p>
-							<p><em>Secondary data</em> – Previously collected data that is being used for a purpose other than that for which it was originally collected.</p>	
+							<p><em>Secondary data</em> – Previously collected data that is being used for a purpose other than that for which it was originally collected.</p>
 							<p><em>Theory of behavior change</em> – An attempt to explain how and why people change their behaviors. Researchers typically generate theories of behavior change from research in the fields of psychology, education, health, and other social sciences. When developing evidence-based programs, researchers will select a theory or components from several theories to guide program development.</p>
 						</div>
 						<div class="glossary-right">
@@ -248,7 +240,7 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="#"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>									
+									<li><a href="#"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>
 									<li><a href="#"><span class="number">4.1</span><span class="title">Fidelity monitoring</span></a></li>
 									<li><a href="#"><span class="number">4.2</span><span class="title">Adapting programs to local needs and preferences while maintaining fidelity</span></a></li>
 								</ul>
