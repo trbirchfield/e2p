@@ -1718,7 +1718,7 @@ p.info-number {
 .field-wrap select,
 .field-wrap input[type="text"],
 .field-wrap input[type="email"] {
-	width: 97%;
+	width: 100%;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
@@ -1743,12 +1743,16 @@ textarea {
 	-moz-transition: all .2s ease;
 	-ms-transition: all .2s ease;
 	-o-transition: all .2s ease;
-	transition: all .2s ease; 
+	transition: all .2s ease;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "ff-tisa-web-pro",serif;
 }
 textarea {
 	min-height: 300px;
 	padding: 1em;
-	width: 95% !important;
+	width: 100% !important;
 }
 input:focus,
 textarea:focus {
@@ -1785,9 +1789,9 @@ textarea.error {
 	padding: 1em;
 }
 .contact-radio p {
-	color: #555;
-	font-size: 1em;
-	font-family: 'Arial', sans-serfi;
+	color: #666;
+	font-size: 16px;
+	font-family: "ff-tisa-web-pro",serif;
 	font-weight: bold;
 	margin-bottom: .5em;
 }
@@ -1811,20 +1815,15 @@ textarea.error {
 	width: 100%;
 	vertical-align: top;
 }
-.text ::-webkit-input-placeholder,
-.email ::-webkit-input-placeholder,
-.textarea ::-webkit-input-placeholder,
-.text :-moz-placeholder,
-.email :-moz-placeholder,
-.textarea :-moz-placeholder,
-.text ::-moz-placeholder,
-.email ::-moz-placeholder,
-.textarea ::-moz-placeholder,
-.text :-ms-input-placeholder,
-.email :-ms-input-placeholder,
-.textarea :-ms-input-placeholder {
-	color: #999;
-	font-size: 1em;
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: #666;
+   font-family: "ff-tisa-web-pro",serif;
+   font-size: 16px;
+   vertical-align: middle;
 }
 .form-label label {
 	display: block;
@@ -1848,7 +1847,7 @@ textarea.error {
 	line-height: 1;
 	height: 18px;
 }
-.contact-radio-full label.error {
+.outside-error label.error {
 	position: absolute;
 	width: 309px;
 	padding: .5em 1em;
