@@ -1752,7 +1752,6 @@ textarea {
 textarea {
 	min-height: 300px;
 	padding: 1em;
-	width: 100% !important;
 }
 input:focus,
 textarea:focus {
@@ -1771,7 +1770,6 @@ textarea.error {
 .text label.label,
 .email label.label,
 .textarea label.label {
-	display: block;
 	display: block;
 	text-indent: 100%;
 	white-space: nowrap;
