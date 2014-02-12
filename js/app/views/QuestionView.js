@@ -16,7 +16,7 @@ var QuestionView = Backbone.View.extend({
 		this.container = options.container || '.question-container';
 
 		// Build the templates
-		this.questionTpl = _.template('<h5 class="qa">Readiness Question:<img src="images/tt.png" class="tooltip tt" title="Tooltip explanation here<br />More explanation"></h5><div class="flowchart"><div class="row"><div class="small-6 columns"><p><%= question %></p></div><div class="small-5 small-offset-1 columns"><ul><li><a href="#" class="button yes-button">yes</a></li><li><a href="#" class="button no-button">no</a></li></ul></div></div><div class="text-container" style="display:none;"></div></div>');
+		this.questionTpl = _.template('<h5 class="qa">Readiness Question:<img src="images/tt.png" class="tooltip tt" title="Readiness questions help you estimate how ready your organization is to implement an EBP. <br />As you answer each question, you will be provided with suggested actions to advance your readiness."></h5><div class="flowchart"><div class="row"><div class="small-6 columns"><p><%= question %></p></div><div class="small-5 small-offset-1 columns"><ul><li><a href="#" class="button yes-button">yes</a></li><li><a href="#" class="button no-button">no</a></li></ul></div></div><div class="text-container" style="display:none;"></div></div>');
 		this.responseTpl = _.template('<ul class="options"><% _.each(texts, function(text) { %><li><% if (text.link) { %>Review <a href="<%= text.link %>" title="<%= text.text %>"><% } %><%= text.text %><% if (text.link) { %></a><% } %></li><% }); %></ul>');
 
 		// Grab a model
