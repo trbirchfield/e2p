@@ -263,26 +263,6 @@
 	<script src="/js/global.js"></script>
 	<script src="/js/classie.js"></script>
 	<script>
-		var menuBottom = document.getElementById( 'info-menu-tc' ),
-			showBottom = document.getElementById( 'info-menu-btn' ),
-			menuBottom2 = document.getElementById( 'info-menu-gt' ),
-			showBottom2 = document.getElementById( 'info-menu-btn2' ),
-			body = document.body;
-
-		showBottom.onclick = function() {
-			$('#info-menu-gt').removeClass('info-menu-open');
-			classie.toggle( this, 'active');
-			classie.toggle( menuBottom, 'info-menu-open' );
-			disableOther( 'showBottom' );
-		};
-		showBottom2.onclick = function() {
-			$('#info-menu-tc').removeClass('info-menu-open');
-			classie.toggle( this, 'active' );
-			classie.toggle( menuBottom2, 'info-menu-open' );
-			disableOther( 'showBottom2' );
-		};
-	</script>
-	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
 		{ (i[r].q=i[r].q||[]).push(arguments)}
 		,i[r].l=1*new Date();a=s.createElement(o),
