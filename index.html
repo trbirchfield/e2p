@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, height=device-height">
 	<title>Scott &#38; White - Community Resource Toolkit</title>
 	<meta name="description" content=""/>
 	<meta name="author"      content=""/>
@@ -20,7 +20,6 @@
 	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16" />
-	<link rel="image_src" href="" />  
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png" />
 	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-70x70.png" />
@@ -33,6 +32,10 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:image" content=""/>
 	<link rel="stylesheet" href="/css/global.css">
+	<!--[if lt IE 9 ]>
+        <link rel="stylesheet" type="text/css" href="/css/ie8fix.css">
+    <![endif]-->
+	<script type="text/javascript" src="/js/modernizr.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.tooltipster.js"></script>
 	<script type="text/javascript">
@@ -151,7 +154,7 @@
 							<h5>Learn more about EBPs and select one for your organization.</h5>
 						</a>
 						<div class="content">
-							<div id="timeline" class="longer-timeline">
+							<div class="timeline longer-timeline">
 								<div class="line"></div>
 								<div class="middle">
 									<div class="section s01 left">
@@ -218,7 +221,7 @@
 							<h5>Get tips and recommendations for implementing an EBP.</h5>
 						</a>
 						<div class="content">
-							<div id="timeline">
+							<div class="timeline">
 								<div class="line2"></div>
 								<div class="middle">
 									<div class="section s01 left">
@@ -266,9 +269,9 @@
 			<div class="container">
 				<h5 class="footer-intro">This site is brought to you by the Community Research Center for Senior Health in Partnership with:</h5>
 				<ul class="footer-logos">
-					<li><img src="images/footer/logo-1.jpg"></li>
-					<li><img src="images/footer/logo-2.jpg"></li>
-					<li><img src="images/footer/logo-3.jpg"></li>
+					<li><img src="images/footer/logo-1.jpg" alt="Central Texas Aging and Disability Resource Center"></li>
+					<li><img src="images/footer/logo-2.jpg" alt="Texas A&#38;M Health Science Center"></li>
+					<li><img src="images/footer/logo-3.jpg" alt="Scott &#38; White Healthcare"></li>
 				</ul>
 				<p class="disclaimer">By providing links to other sites, the Community Research Center for Senior Health does not guarantee, approve, or endorse the information or products available on these sites.
 				</p>

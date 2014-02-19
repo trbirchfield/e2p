@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, height=device-height">
 	<title>Scott &#38; White - Community Resource Toolkit - Disadvantages of evidence-based programs</title>
 	<meta name="description" content=""/>
 	<meta name="author"      content=""/>
@@ -33,6 +33,10 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:image" content=""/>
 	<link rel="stylesheet" href="/css/global.css">
+	<!--[if lt IE 9 ]>
+        <link rel="stylesheet" type="text/css" href="/css/ie8fix.css">
+    <![endif]-->
+	<script type="text/javascript" src="/js/modernizr.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.tooltipster.js"></script>
 	<script type="text/javascript">
@@ -315,7 +319,7 @@
 		<div class="info-menu info-menu-horizontal info-menu-bottom" id="info-menu-tc">
 			<div class="row">
 				<div class="small-12 columns">
-					<div id="info-menu-btn"><h4>Glossary of Terms<h4></div>
+					<div id="info-menu-btn"><h4>Glossary of Terms</h4></div>
 				</div>
 			</div>
 			<div class="info">
@@ -369,7 +373,7 @@
 		<div class="info-menu info-menu-horizontal info-menu-bottom" id="info-menu-gt">
 			<div class="row">
 				<div class="small-12 columns">
-					<div id="info-menu-btn2"><h4>Table of Contents<h4></div>
+					<div id="info-menu-btn2"><h4>Table of Contents</h4></div>
 				</div>
 			</div>
 			<div class="info">
@@ -457,26 +461,6 @@
 	</section>
 	<script src="/js/global.js"></script>
 	<script src="/js/classie.js"></script>
-	<script>
-		var menuBottom = document.getElementById( 'info-menu-tc' ),
-			showBottom = document.getElementById( 'info-menu-btn' ),
-			menuBottom2 = document.getElementById( 'info-menu-gt' ),
-			showBottom2 = document.getElementById( 'info-menu-btn2' ),
-			body = document.body;
-
-		showBottom.onclick = function() {
-			$('#info-menu-gt').removeClass('info-menu-open');
-			classie.toggle( this, 'active');
-			classie.toggle( menuBottom, 'info-menu-open' );
-			disableOther( 'showBottom' );
-		};
-		showBottom2.onclick = function() {
-			$('#info-menu-tc').removeClass('info-menu-open');
-			classie.toggle( this, 'active' );
-			classie.toggle( menuBottom2, 'info-menu-open' );
-			disableOther( 'showBottom2' );
-		};
-	</script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
 		{ (i[r].q=i[r].q||[]).push(arguments)}
