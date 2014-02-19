@@ -1231,12 +1231,12 @@ p.info-number {
 .number{
 	float: left;
 	display: block;
-	width: 5%;
+	width: 25px;
 }
 .title {
 	float: right;
 	display: block;
-	width: 83%;
+	width: 420px;
 }
 .s-number {
 	display: inline-block;

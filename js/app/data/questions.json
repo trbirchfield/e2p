@@ -14,15 +14,15 @@
 				"params": [
 					{
 						"text": "Match With Clientele",
-						"link": "/section2.7.html"
+						"link": "/section2.7.php"
 					},
 					{
 						"text": "Identifying an Important Health Issue",
-						"link": "/section2.1.html"
+						"link": "/section2.1.php"
 					},
 					{
 						"text": "Prioritizing Needs",
-						"link": "/section2.2.html"
+						"link": "/section2.2.php"
 					},
 					{
 						"text": "Consider broadening the range of individuals you serve or the geographic area you serve in order to build your audience.",
@@ -45,11 +45,11 @@
 				"params": [
 					{
 						"text": "What Does it Mean for a Program to be Evidence-Based?",
-						"link": "/section1.0.html"
+						"link": "/section1.0.php"
 					},
 					{
 						"text": "Identifying Evidence-Based Programs",
-						"link": "/section2.3.html"
+						"link": "/section2.3.php"
 					},
 					{
 						"text": "Visit the websites of the registries and databases provided as examples. Study the criteria these registries and databases use to certify EBPs.",
@@ -72,7 +72,7 @@
 				"params": [
 					{
 						"text": "Support from Organizational Stakeholders and Presence of Program Champions",
-						"link": "/section2.4.html"
+						"link": "/section2.4.php"
 					},
 					{
 						"text": "Present to your organization's leaders and/or staff the positive outcomes identified in the evaluation studies conducted on the EBP you would like to implement.",
@@ -95,7 +95,7 @@
 				"params": [
 					{
 						"text": "Support from Organizational Stakeholders and Presence of Program Champions",
-						"link": "/section2.4.html"
+						"link": "/section2.4.php"
 					},
 					{
 						"text": "Identify an individual (staff member or volunteer) who strongly believes in the program you would like to implement. Invite him or her to join you in advocating for the program.",
@@ -118,11 +118,11 @@
 				"params": [
 					{
 						"text": "Match With Organizational Resources",
-						"link": "/section2.6.html"
+						"link": "/section2.6.php"
 					},
 					{
 						"text": "Establishing Partnerships",
-						"link": "/section2.8.html"
+						"link": "/section2.8.php"
 					},
 					{
 						"text": "Identify organizations that have the personnel needed for the program and approach these organizations about partnership formation.",
@@ -149,11 +149,11 @@
 				"params": [
 					{
 						"text": "Match With Organizational Resources",
-						"link": "/section2.6.html"
+						"link": "/section2.6.php"
 					},
 					{
 						"text": "Establishing Partnerships",
-						"link": "/section2.8.html"
+						"link": "/section2.8.php"
 					},
 					{
 						"text": "Identify organizations that have the resources needed for the program and approach these organizations about partnership formation.",
@@ -161,7 +161,7 @@
 					},
 					{
 						"text": "Obtaining Funding",
-						"link": "/section2.9.html"
+						"link": "/section2.9.php"
 					},
 					{
 						"text": "Seek additional funding from the sources listed as examples.",
@@ -184,7 +184,7 @@
 				"params": [
 					{
 						"text": "Obtaining Funding",
-						"link": "/section2.9.html"
+						"link": "/section2.9.php"
 					},
 					{
 						"text": "Seek additional funding from the sources listed as examples.",
@@ -192,7 +192,7 @@
 					},
 					{
 						"text": "Establishing Partnerships",
-						"link": "/section2.8.html"
+						"link": "/section2.8.php"
 					},
 					{
 						"text": "Identify organizations that you could partner with in order to decrease your funding needs. Approach these organizations about partnership formation.",
@@ -218,15 +218,15 @@
 				"params": [
 					{
 						"text": "What Does it Mean for a Program to be Evidence-Based?",
-						"link": "/section1.0.html"
+						"link": "/section1.0.php"
 					},
 					{
 						"text": "Implementing Evidence-Based Programs with Fidelity",
-						"link": "/section4.0.html"
+						"link": "/section4.0.php"
 					},
 					{
 						"text": "Adapting Programs to Local Needs and Preferences while Maintaining Fidelity",
-						"link": "/section4.2.html"
+						"link": "/section4.2.php"
 					},
 					{
 						"text": "If you believe you will need to adapt a program, contact the developers to see if they will help you modify it.",
