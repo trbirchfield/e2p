@@ -33,7 +33,6 @@
 				<div class="print-border">
 					<h5>Additional Resource</h5>
 					<p><a href="http://www.ncoa.org/improve-health/center-for-healthy-aging/content-library/HA_CommunityPartnerships.pdf" target="_blank">Partnering to Promote Healthy Aging: Creative Best Practice Community Partnerships</a>, produced by the National Council on Aging, provides recommendations regarding partnerships and features vignettes of seven best practice programs.</p>
-					<p><a href="http://www.partnershipsforolderadults.org/resources/levelone.aspx?sectionGUID=e51f8945-eb69-4567-af0e-057fdb6df753" target="_blank">Community Partnerships for Older Adults</a>, a program funded by the Robert Wood Johnson Foundation, provides detailed information about partnership evolution.</p>
 					<p><a href="http://www.cdc.gov/healthycommunitiesprogram/pdf/sustainability_guide.pdf" target="_blank">A Sustainability Planning Guide for Healthy Communities</a>, provided by the Centers for Disease Control and Prevention, features a module on coalition and partnership development.</p>
 					<p><a href="http://www.abundantcommunity.com/home/resources_tools.html" target="_blank">The Abundant Community website</a>, developed from books written by Peter Block and John McKnight, provides resources and tools for engaging families and neighborhoods.</p>
 				</div>

@@ -70,10 +70,10 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="/section1.0.php"><span class="number">1.0</span><span class="title">What does it mean for a program to be evidence-based?</span></a></li>
-									<li><a href="/section1.1.php"><span class="number">1.1</span><span class="title">Advantages of evidence-based programs</span></a></li>
-									<li><a href="/section1.2.php"><span class="number">1.2</span><span class="title">Disadvantages of evidence-based programs</span></a></li>
-									<li><a href="/section1.3.php"><span class="number">1.3</span><span class="title">Organizational readiness to implement evidence-based programs</span></a></li>
+									<li class="clearfix"><a href="/section1.0.php"><span class="number">1.0</span><span class="title">What does it mean for a program to be evidence-based?</span></a></li>
+									<li class="clearfix"><a href="/section1.1.php"><span class="number">1.1</span><span class="title">Advantages of evidence-based programs</span></a></li>
+									<li class="clearfix"><a href="/section1.2.php"><span class="number">1.2</span><span class="title">Disadvantages of evidence-based programs</span></a></li>
+									<li class="clearfix"><a href="/section1.3.php"><span class="number">1.3</span><span class="title">Organizational readiness to implement evidence-based programs</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -83,16 +83,16 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="/section2.0.php"><span class="number">2.0</span><span class="title">Choosing which program to implement</span></a></li>
-									<li><a href="/section2.1.php"><span class="number">2.1</span><span class="title">Identifying an important health issue</span></a></li>
-									<li><a href="/section2.2.php"><span class="number">2.2</span><span class="title">Prioritizing needs</span></a></li>
-									<li><a href="/section2.3.php"><span class="number">2.3</span><span class="title">Identifying evidence-based interventions</span></a></li>
-									<li><a href="/section2.4.php"><span class="number">2.4</span><span class="title">Support from organizational stakeholders and presence of program champions</span></a></li>
-									<li><a href="/section2.5.php"><span class="number">2.5</span><span class="title">Match with organizational purpose</span></a></li>
-									<li><a href="/section2.6.php"><span class="number">2.6</span><span class="title">Match with organizational resources</span></a></li>
-									<li><a href="/section2.7.php"><span class="number">2.7</span><span class="title">Match with clientele</span></a></li>
-									<li><a href="/section2.8.php"><span class="number">2.8</span><span class="title">Establishing partnerships</span></a></li>
-									<li><a href="/section2.9.php"><span class="number">2.9</span><span class="title">Obtaining funding</span></a></li>
+									<li class="clearfix"><a href="/section2.0.php"><span class="number">2.0</span><span class="title">Choosing which program to implement</span></a></li>
+									<li class="clearfix"><a href="/section2.1.php"><span class="number">2.1</span><span class="title">Identifying an important health issue</span></a></li>
+									<li class="clearfix"><a href="/section2.2.php"><span class="number">2.2</span><span class="title">Prioritizing needs</span></a></li>
+									<li class="clearfix"><a href="/section2.3.php"><span class="number">2.3</span><span class="title">Identifying evidence-based interventions</span></a></li>
+									<li class="clearfix"><a href="/section2.4.php"><span class="number">2.4</span><span class="title">Support from organizational stakeholders and presence of program champions</span></a></li>
+									<li class="clearfix"><a href="/section2.5.php"><span class="number">2.5</span><span class="title">Match with organizational purpose</span></a></li>
+									<li class="clearfix"><a href="/section2.6.php"><span class="number">2.6</span><span class="title">Match with organizational resources</span></a></li>
+									<li class="clearfix"><a href="/section2.7.php"><span class="number">2.7</span><span class="title">Match with clientele</span></a></li>
+									<li class="clearfix"><a href="/section2.8.php"><span class="number">2.8</span><span class="title">Establishing partnerships</span></a></li>
+									<li class="clearfix"><a href="/section2.9.php"><span class="number">2.9</span><span class="title">Obtaining funding</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -104,10 +104,10 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="/section3.0.php"><span class="number">3.0</span><span class="title">Evaluation planning</span></a></li>
-									<li><a href="/section3.1.php"><span class="number">3.1</span><span class="title">Process evaluation</span></a></li>
-									<li><a href="/section3.2.php"><span class="number">3.2</span><span class="title">Impact and outcome evaluation</span></a></li>
-									<li><a href="/section3.3.php"><span class="number">3.3</span><span class="title">Forming expectations</span></a></li>
+									<li class="clearfix"><a href="/section3.0.php"><span class="number">3.0</span><span class="title">Evaluation planning</span></a></li>
+									<li class="clearfix"><a href="/section3.1.php"><span class="number">3.1</span><span class="title">Process evaluation</span></a></li>
+									<li class="clearfix"><a href="/section3.2.php"><span class="number">3.2</span><span class="title">Impact and outcome evaluation</span></a></li>
+									<li class="clearfix"><a href="/section3.3.php"><span class="number">3.3</span><span class="title">Forming expectations</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -118,9 +118,9 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="/section4.0.php"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>
-									<li><a href="/section4.1.php"><span class="number">4.1</span><span class="title">Fidelity monitoring</span></a></li>
-									<li><a href="/section4.2.php"><span class="number">4.2</span><span class="title">Adapting programs to local needs and preferences while maintaining fidelity</span></a></li>
+									<li class="clearfix"><a href="/section4.0.php"><span class="number">4.0</span><span class="title">Implementing evidence-based programs with fidelity</span></a></li>
+									<li class="clearfix"><a href="/section4.1.php"><span class="number">4.1</span><span class="title">Fidelity monitoring</span></a></li>
+									<li class="clearfix"><a href="/section4.2.php"><span class="number">4.2</span><span class="title">Adapting programs to local needs and preferences while maintaining fidelity</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -130,11 +130,11 @@
 							</div>
 							<div class="small-11 columns">
 								<ul class="clearfix">
-									<li><a href="/section5.0.php"><span class="number">5.0</span><span class="title">Program marketing and participant recruitment</span></a></li>
-									<li><a href="/section5.1.php"><span class="number">5.1</span><span class="title">Participant retention</span></a></li>
-									<li><a href="/section5.2.php"><span class="number">5.2</span><span class="title">Working with lay leaders</span></a></li>
-									<li><a href="/section5.3.php"><span class="number">5.3</span><span class="title">Sustainability</span></a></li>
-									<li><a href="/section5.4.php"><span class="number">5.4</span><span class="title">Quality assurance</span></a></li>
+									<li class="clearfix"><a href="/section5.0.php"><span class="number">5.0</span><span class="title">Program marketing and participant recruitment</span></a></li>
+									<li class="clearfix"><a href="/section5.1.php"><span class="number">5.1</span><span class="title">Participant retention</span></a></li>
+									<li class="clearfix"><a href="/section5.2.php"><span class="number">5.2</span><span class="title">Working with lay leaders</span></a></li>
+									<li class="clearfix"><a href="/section5.3.php"><span class="number">5.3</span><span class="title">Sustainability</span></a></li>
+									<li class="clearfix"><a href="/section5.4.php"><span class="number">5.4</span><span class="title">Quality assurance</span></a></li>
 								</ul>
 							</div>
 						</div>

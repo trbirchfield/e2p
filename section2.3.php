@@ -32,7 +32,7 @@
 			<div class="small-3 columns doc-left" id="mid-page3">
 				<div class="print-border">
 					<h5>Additional Resource</h5>
-					<p>The Community Tool Box, produced by the University of Kansas, provides descriptions and links to dozens of websites that explore promising health promotion and disease prevention approaches and programs. Formore information, visit thier <a href="http://ctb.ku.edu/en/promisingapproach/Databases_Best_Practices.aspx" target="_blank">Website</a></p>
+					<p>The Community Tool Box, produced by the University of Kansas, provides descriptions and links to dozens of websites that explore promising health promotion and disease prevention approaches and programs. Formore information, visit their <a href="http://ctb.ku.edu/en/promisingapproach/Databases_Best_Practices.aspx" target="_blank">Website</a></p>
 				</div>
 			</div>
 			<div class="small-9 columns doc-right">
