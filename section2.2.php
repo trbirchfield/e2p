@@ -76,7 +76,7 @@
 						</td>
 						<td>
 							<b>Quadrant 4:</b><br/>
-							Having access to vaccines for potential biote-<br />rrorism agents (e.g., antharax)
+							Having access to vaccines for potential biote-<br />rrorism agents (e.g., anthrax)
 						</td>
 					</tr>
 				</table>
