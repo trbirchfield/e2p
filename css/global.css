@@ -534,7 +534,9 @@ li.content {
 	     -o-transition: all .2s ;
 	        transition: all .2s ;
 }
-.green-header.entry-open {
+.green-header.entry-open,
+.green-header.entry-open:focus,
+.green-header.entry-open:active {
 	background: #70b745 url(../images/close.png) no-repeat 1000px center;
 }
 .door h2{
@@ -1262,9 +1264,6 @@ p.info-number {
 	position:relative;
 	overflow:hidden;
 	list-style-type: none;
-}
-#selection-door li a:focus {
-	background: #234567 !important;
 }
 .figure1 {
 	background: #ddd;

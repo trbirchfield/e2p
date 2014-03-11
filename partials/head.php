@@ -21,10 +21,10 @@
 <meta name="msapplication-square150x150logo" content="/imgagesicons/mstile-150x150.png" />
 <meta name="msapplication-square310x310logo" content="/images/icons/mstile-310x310.png" />
 <meta name="msapplication-wide310x150logo" content="/images/icons/mstile-310x150.png" />
-<meta property="og:title" content=""/>
+<meta property="og:title" content="Is your organization interested in providing evidence-based programs for seniors? Find resources in this Toolkit to help you implement these programs well."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content=""/>
-<meta property="og:image" content=""/>
+<meta property="og:url" content="http://www.evidencetoprograms.com"/>
+<meta property="og:image" content="http://www.evidencetoprograms.com/images/icons/evidence_to_programs.jpg"/>
 <link rel="stylesheet" href="/css/global.css">
 <!--[if lt IE 9 ]>
     <link rel="stylesheet" type="text/css" href="/css/ie8fix.css">
