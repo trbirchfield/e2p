@@ -1,45 +1,46 @@
+<?php
+// Check Form Submission
+if (!empty($_POST)) {
+	// Validate Required Fields
+	if (!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['help']) and !empty($_POST['question'])) {
+		$validate = TRUE;
+
+		// Send success email to user
+		$headers  = 'From: evidencetoprograms@sw.org' . "\r\n";
+		$headers .= 'MIME-Version: 1.0' . "\n";
+		$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
+
+		$message  = '<html><body>';
+		$message .= '<img src="http://www.evidencetoprograms.com/images/logo.png" alt="logo" />';
+		$message .= '<p>Thank you, ' . $_POST['name'] . ', for sharing your feedback with us. We will review your message and provide a response promptly. </p>';
+		$message .= "</body></html>";
+
+		mail($_POST['email'], 'Contact form submitted', $message, $headers);
+
+		// Send form answers to client in email
+		$to       = 'evidencetoprograms@sw.org';
+		$subject  =  $_POST['name'] . ' has contacted us.';
+		$headers  = 'From: ' . strip_tags($_POST['email']) . "\r\n";
+		$headers .= 'MIME-Version: 1.0' . "\n";
+		$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
+
+		$message  = '<html><body>';
+		$message .= '<img src="http://www.evidencetoprograms.com/images/logo.png" alt="logo" />';
+		$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+		$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+		$message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
+		$message .= "<tr><td><strong>Work Setting:</strong> </td><td>" . strip_tags($_POST['setting']) . "</td></tr>";
+		$message .= "<tr><td><strong>Familiarity with evidence-based programming:</strong> </td><td>" . strip_tags($_POST['familiarity']) . "</td></tr>";
+		$message .= "<tr><td><strong>How can we help?:</strong> </td><td>" . $_POST['help'] . "</td></tr>";
+		$message .= "<tr><td><strong>Message:</strong> </td><td>" . $_POST['question'] . "</td></tr>";
+		$message .= "</table>";
+		$message .= "</body></html>";
+
+		mail($to, $subject, $message, $headers);
+	}
+}
+?>
 <!DOCTYPE html>
-<?php if (!empty($_POST)): ?>
-	<?php
-		// Validate Required Fields
-		if (!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['help']) and !empty($_POST['question'])) {
-			$validate = TRUE;
-
-			// Send success email to user
-			$headers  = 'From: evidencetoprograms@sw.org' . "\r\n";
-			$headers .= 'MIME-Version: 1.0' . "\n";
-			$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
-
-			$message  = '<html><body>';
-			$message .= '<img src="http://www.evidencetoprograms.com/images/logo.png" alt="logo" />';
-			$message .= '<p>Thank you, ' . $_POST['name'] . ', for sharing your feedback with us. We will review your message and provide a response promptly. </p>';
-			$message .= "</body></html>";
-
-			mail($_POST['email'], 'Contact form submitted', $message, $headers);
-
-			// Send form answers to client in email
-			$to       = 'evidencetoprograms@sw.org';
-			$subject  =  $_POST['name'] . ' has contacted us.';
-			$headers  = 'From: ' . strip_tags($_POST['email']) . "\r\n";
-			$headers .= 'MIME-Version: 1.0' . "\n";
-			$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
-
-			$message  = '<html><body>';
-			$message .= '<img src="http://www.evidencetoprograms.com/images/logo.png" alt="logo" />';
-			$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-			$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-			$message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
-			$message .= "<tr><td><strong>Work Setting:</strong> </td><td>" . strip_tags($_POST['setting']) . "</td></tr>";
-			$message .= "<tr><td><strong>Familiarity with evidence-based programming:</strong> </td><td>" . strip_tags($_POST['familiarity']) . "</td></tr>";
-			$message .= "<tr><td><strong>How can we help?:</strong> </td><td>" . $_POST['help'] . "</td></tr>";
-			$message .= "<tr><td><strong>Message:</strong> </td><td>" . $_POST['question'] . "</td></tr>";
-			$message .= "</table>";
-			$message .= "</body></html>";
-
-			mail($to, $subject, $message, $headers);
-		}
-	?>
-<?php endif; ?>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
