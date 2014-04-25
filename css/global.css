@@ -1193,6 +1193,13 @@ em {
 	     -o-transition: all .2s ;
 	        transition: all .2s ;
 }
+
+p.form-success {
+	background: #70b745;
+	color: #fff;
+	padding: 1em;
+	margin-bottom: 1em;
+}
 p.info-number {
 	background: url(../images/hexagon_blue_small.png) no-repeat !important;
 	font-size: 3.5em;
