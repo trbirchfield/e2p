@@ -31,7 +31,7 @@
 			<div class="small-3 columns doc-left" id="mid-page1">
 				<div class="print-border">
 					<h5>Additional Resource</h5>
-					<p>The website of the National Council on Aging features interactive training modules on several topics related to evidence-based programming. Series 1: Intro to Health Promotion Programs contains two modules that provide in-depth information on EBPs: <a href="http://www.ncoa.org/improve-health/center-for-healthy-aging/online-training-modules/series-1-intro-to-health.html" target="_blank">Website</a>.</p>
+					<p>The website of the National Council on Aging features interactive training modules on several topics related to evidence-based programming. Series 1: Intro to Health Promotion Programs contains two modules that provide in-depth information on EBPs: <a href="http://ncoa_archive.ncoa.org/improve-health/center-for-healthy-aging/online-training-modules/series-1-intro-to-health.html" target="_blank">Website</a>.</p>
 					<p>The first module (Introduction: What Do We Mean By Evidence-Based?) of the Using What Works: Adapting Evidence-Based Programs to Fit Your Needs series of the National Cancer Institute provides details on the significance of EBPs: <a href="http://cancercontrol.cancer.gov/use_what_works/mod1/start.htm" target="_blank">Website.</a></p>
 				</div>
 			</div>
