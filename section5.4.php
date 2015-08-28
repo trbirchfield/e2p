@@ -137,4 +137,4 @@
 	<?php include('partials/tabs.php') ?>
 	<?php include('partials/footer_sec.php') ?>
 </body>
-</html
+</html>

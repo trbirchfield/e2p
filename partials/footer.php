@@ -11,7 +11,6 @@
 		</p>
 	</div>
 </footer>
-</div>
 <script src="js/global.js"></script>
 <script src="/js/classie.js"></script>
 <script>

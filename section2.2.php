@@ -33,53 +33,57 @@
 				<h6 class="caption no-print">
 					Figure 4. <br />Generic health needs prioritization matrix
 				</h6>
-				<table class="sidebar-table no-print">
-					<tr>
-						<td>
-							<b>Quadrant 1:</b><br/>
-							High priority
-						</td>
-						<td>
-							<b>Quadrant 3:</b><br/>
-							Moderate priority (low-cost,minimal effort interventions)
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<b>Quadrant 2:</b><br/>
-							Moderate priority (innovative program development &#38; evaluation)
-						</td>
-						<td>
-							<b>Quadrant 4:</b><br/>
-							Low priority
-						</td>
-					</tr>
-				</table>
+				<div class="sidebar-table-container">
+					<table class="sidebar-table no-print">
+						<tr>
+							<td>
+								<b>Quadrant 1:</b><br/>
+								High priority
+							</td>
+							<td>
+								<b>Quadrant 3:</b><br/>
+								Moderate priority (low-cost,minimal effort interventions)
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>Quadrant 2:</b><br/>
+								Moderate priority (innovative program development &#38; evaluation)
+							</td>
+							<td>
+								<b>Quadrant 4:</b><br/>
+								Low priority
+							</td>
+						</tr>
+					</table>
+				</div>
 				<h6 class="caption no-print">
 					Figure 5. <br />Example health needs prioritization matrix
 				</h6>
-				<table class="sidebar-table no-print">
-					<tr>
-						<td>
-							<b>Quadrant 1:</b><br/>
-							Having access to regular screenings for high blood pre-<br />ssure and diabetes
-						</td>
-						<td>
-							<b>Quadrant 3:</b><br/>
-							Having a health fair to attend
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<b>Quadrant 2:</b><br/>
-							Having access to low-cost prescription medications
-						</td>
-						<td>
-							<b>Quadrant 4:</b><br/>
-							Having access to vaccines for potential biote-<br />rrorism agents (e.g., anthrax)
-						</td>
-					</tr>
-				</table>
+				<div class="sidebar-table-container">
+					<table class="sidebar-table no-print">
+						<tr>
+							<td>
+								<b>Quadrant 1:</b><br/>
+								Having access to regular screenings for high blood pre-<br />ssure and diabetes
+							</td>
+							<td>
+								<b>Quadrant 3:</b><br/>
+								Having a health fair to attend
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>Quadrant 2:</b><br/>
+								Having access to low-cost prescription medications
+							</td>
+							<td>
+								<b>Quadrant 4:</b><br/>
+								Having access to vaccines for potential biote-<br />rrorism agents (e.g., anthrax)
+							</td>
+						</tr>
+					</table>
+				</div>
 				<div class="print-border">
 					<h5>Additional Resource</h5>
 					<p>The Centers for Disease Control and Prevention provides the <a href="http://www.cdc.gov/healthycommunitiesprogram/tools/change.htm" target="_blank">CHANGE Tool</a>, a system that helps communities identify and prioritize health needs. </p>

@@ -7,6 +7,9 @@
 	<?php include('partials/head.php') ?>
 </head>
 <body>
+	<!--[if lt IE 8]>
+		<div class="old-browser">It looks like your browser is outdated. This site is best viewed in the latest version of<br />Internet Explorer, Google Chrome, Firefox or Safari. Please <a href="http://browsehappy.com/" target="_blank">update your browser</a> for the optimal experience.</div>
+	<![endif]-->
 	<header>
 		<div class="container">
 			<svg width="380" height="102" class="logo no-print">

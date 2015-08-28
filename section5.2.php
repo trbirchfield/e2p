@@ -82,4 +82,4 @@
 	<?php include('partials/footer_sec.php') ?>
 </body>
 </body>
-</html
+</html>
