@@ -42,7 +42,7 @@
 							<li>The Disease Prevention and Health Promotion Services Program (Title IIID) of the Older Americans Act provides grants to States and Territories based on their share of the population aged 60 and over for education and implementation activities that support healthy lifestyles and promote healthy behaviors.</li>
 							<li>Over the past few years, the Aging Network has moved towards using evidence-based health promotion and disease prevention programs.</li>
 							<li>The Fiscal Year 2012 Congressional appropriations now require that OAA Title IIID funding be used only for programs and activities that have been demonstrated to be evidence-based.</li>
-							<li>The Administration on Aging's definition of evidence-based and example programs can be found <a href="http://www.aoa.gov/AoARoot/AoA_Programs/HPW/Title_IIID/index.aspx" target="_blank">HERE</a></li>
+							<li>The Administration on Aging's definition of evidence-based and example programs can be found <a href="http://www.aoa.acl.gov/AoA_Programs/HPW/Title_IIID/index.aspx" target="_blank">HERE</a></li>
 						</ul>
 					</div>
 				</div>

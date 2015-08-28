@@ -32,7 +32,7 @@
 			<div class="small-3 columns doc-left" id="mid-page6">
 				<div class="print-border">
 					<h5>Additional Resource</h5>
-					<p><a href="http://www.ncoa.org/improve-health/center-for-healthy-aging/content-library/Tips-for-Recruiting-Peer-Leaders.pdf" target="_blank">The National Council on Aging</a> offers a list of tips on recruiting lay leaders.</p>
+					<p><a href="/pdfs/NCOA-Tips-for-Recruiting-Peer-Leaders.pdf" target="_blank">The National Council on Aging</a> offers a list of tips on recruiting lay leaders.</p>
 				</div>
 			</div>
 			<div class="small-9 columns doc-right">
@@ -49,7 +49,7 @@
 					<li><em>Literacy and critical thinking skills</em>. Lay leaders need to be able to read at a reading level that allows them to understand and follow the leaders’ manuals and other program materials. They also need critical thinking skills to be able to make spur-of-the-moment decisions if unexpected events happen during program sessions.</li>
 					<li><em>Respect from fellow community members</em>. A lay leader is likely to be ineffective if he or she is not respected or trusted by peers in the community.</li>
 				</ul>
-				<p>You can create a simple questionnaire to screen potential lay leaders to see if they possess the characteristics listed above. <a href="http://www.ncoa.org/improve-health/center-for-healthy-aging/content-library/MD_Lay_Leader_Interview_Questions.pdf" target="_blank">The National Council on Aging provides an example questionnaire</a> used to screen potential lay leaders for the Chronic Disease Self-Management Program.</p>
+				<p>You can create a simple questionnaire to screen potential lay leaders to see if they possess the characteristics listed above. <a href="/pdfs/NCOA_Lay_Leader_Interview_Questions.pdf" target="_blank">The National Council on Aging provides an example questionnaire</a> used to screen potential lay leaders for the Chronic Disease Self-Management Program.</p>
 				<p>Where do you find these potential lay leaders? Several ideas for notifying community members of a lay leader opportunity are listed below.</p>
 				<ul class="document-list">
 					<li>Post the lay leader opportunity on a bulletin board at the local volunteer bureau and at senior centers, libraries, and recreation centers.</li>

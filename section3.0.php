@@ -33,8 +33,8 @@
 				<div class="print-border">
 					<h5>Additional Resource</h5>
 					<p><a href="http://www.cdc.gov/obesity/downloads/CDC-Evaluation-Workbook-508.pdf" target="_blank">The Centers for Disease Control and Prevention’s Developing an Effective Evaluation Plan</a> is a comprehensive workbook to guide organizations through evaluation planning.</p>
-					<p>An introduction to program evaluation of programs for older adults is available on the <a href="http://www.ncoa.org/improve-health/center-for-healthy-aging/content-library/evaluation-of-health.html" target="_blank">National Council on Aging’s website</a>.</p>
-					<p>Online tutorials on program evaluation are available from the <a href="https://www.pmrts.samhsa.gov/PrevCourses/DefaultSearch.aspx?sc=Courses" target="_blank">Substance Abuse and Mental Health Services Administration.</a></p>
+					<p>An introduction to program evaluation of programs for older adults is available on the <a href="/pdfs/EvaluatingEBPrograms_Intro.pdf" target="_blank">National Council on Aging’s website</a>.</p>
+					<p>Online tutorials on program evaluation are available from the <a href="http://www.nrepp.samhsa.gov/Courses/ProgramEvaluation/NREPP_0401_0010.html" target="_blank">Substance Abuse and Mental Health Services Administration.</a></p>
 				</div>
 			</div>
 			<div class="small-9 columns doc-right">
