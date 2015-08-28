@@ -315,9 +315,24 @@ floatt: right;
 	float: left;
 }
 
+.old-browser {
+	display: block;
+	padding: 30px;
+	background: #70b745;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.old-browser a {
+	color: #003f72;
+}
+
 /* ----- Navigation ----- */
 
 header {
+	clear: both;
 	width: 100%;
 	padding: 10px;
 	background: #fff;
@@ -1417,27 +1432,27 @@ p.info-number {
 .no-space li {
 	margin-bottom: .5em; !important;
 }
-.sidebar-table {
+.sidebar-table-container {
 	background: url(../images/figure-heading.png) no-repeat top left;
+	margin-top: 15px;
+	padding: 35px 0 0 39px;
+	min-height: 270px;
+}
+.sidebar-table {
 	width: 100%;
 	border: none;
-	min-height: 270px;
-	margin-top: 15px;
 	color: #555;
 }
 .sidebar-table tbody {
 	position: relative;
-	top: 35px;
 	display: block;
-	left: 39px;
 }
 .sidebar-table td {
 	font-size: 1.1em;
 	padding: .3em;
-	width: 110px;
 	line-height: 1.4;
 }
-.sidebar-table b{
+.sidebar-table b {
 	font-weight: 700;
 }
 .about-intro {
@@ -1803,6 +1818,15 @@ textarea.error {
 	height: 0;
 	background: none;
 }
+input[type=radio] {
+	border: none;
+	padding: 0;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+.lt-ie9 input[type=radio] {
+	margin-top: 0;
+}
 .contact-radio {
 	border-bottom: 2px solid #919191;
 	border-top: 2px solid #fff;
@@ -1828,14 +1852,14 @@ textarea.error {
 	font-size: 1em;
 	margin-bottom: .3em;
 }
-.contact-radio-half li{
+.contact-radio-half li {
 	width: 48%;
 	vertical-align: top;
 }
 .contac-radio-full {
 	position: relative;
 }
-.contact-radio-full li{
+.contact-radio-full li {
 	width: 100%;
 	vertical-align: top;
 }
@@ -1858,6 +1882,17 @@ textarea.error {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+	color: #666;
+	font-size: 16px;
+	font-family: "ff-tisa-web-pro",serif;
+	font-weight: bold;
+}
+.lt-ie9 .form-label label.show-for-ie {
+	height: auto !important;
+	text-indent: 0 !important;
+	margin-bottom: .5em !important;
+	overflow: visible;
+	white-space: auto;
 }
 .form-label label.error {
 	width: 200px;

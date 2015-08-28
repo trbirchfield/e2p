@@ -69,7 +69,7 @@ if (!empty($_POST)) {
 						<div class="small-6 columns">
 							<div class="inner-form">
 								<div class="field-wrap text form-label required">
-									<label for="name">Name</label>
+									<label for="name" class="show-for-ie">Name</label>
 									<span class="needed">*</span>
 									<input type="text" name="name" value="" placeholder="Name" required>
 								</div>
@@ -78,7 +78,7 @@ if (!empty($_POST)) {
 						<div class="small-6 columns">
 							<div class="inner-form">
 								<div class="field-wrap text form-label required">
-									<label for="email">Email</label>
+									<label for="email" class="show-for-ie">Email</label>
 									<span class="needed">*</span>
 									<input type="text" name="email" value="" placeholder="Email Address" required>
 								</div>
@@ -137,7 +137,7 @@ if (!empty($_POST)) {
 						<div class="small-12 columns">
 							<div class="inner-form">
 								<div class="field-wrap textarea form-label required">
-									<label for="question">Message</label>
+									<label for="question" class="show-for-ie">Message</label>
 									<span class="needed">*</span>
 									<textarea name="question" rows="0" cols="0" placeholder="Message" required></textarea>
 								</div>

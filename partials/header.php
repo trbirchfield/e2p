@@ -1,3 +1,6 @@
+<!--[if lt IE 8]>
+		<div class="old-browser">It looks like your browser is outdated. This site is best viewed in the latest versions of<br />Internet Explorer, Google Chrome, Firefox or Safari. Please <a href="http://browsehappy.com/" target="_blank">update your browser</a> for the optimal experience.</div>
+<![endif]-->
 <header>
 	<div class="container">
 		<a class="home" href="/index.php"></a>
