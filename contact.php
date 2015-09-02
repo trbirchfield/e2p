@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 		$validate = TRUE;
 
 		// Send success email to user
-		$headers  = 'From: evidencetoprograms@sw.org' . "\r\n";
+		$headers  = 'From: noreply@evidencetoprograms.com' . "\r\n";
 		$headers .= 'MIME-Version: 1.0' . "\n";
 		$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
 
@@ -19,8 +19,8 @@ if (!empty($_POST)) {
 
 		// Send form answers to client in email
 		$to       = 'evidencetoprograms@sw.org';
-		$subject  =  $_POST['name'] . ' has contacted us.';
-		$headers  = 'From: ' . strip_tags($_POST['email']) . "\r\n";
+		$subject  = $_POST['name'] . ' has contacted us.';
+		$headers  = 'From: noreply@evidencetoprograms.com' . "\r\n";
 		$headers .= 'MIME-Version: 1.0' . "\n";
 		$headers .= 'Content-Type: text/html; charset=ISO-8859-1' . "\n";
 
