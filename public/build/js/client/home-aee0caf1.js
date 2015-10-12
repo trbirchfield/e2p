@@ -1,0 +1,1 @@
+!function(){$(".membership-option-info").slick({dots:!0,arrows:!1,autoplay:!0,autoplaySpeed:5e3,pauseOnHover:!0,pauseOnDotsHover:!0})}();

@@ -1,0 +1,251 @@
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=month],
+input[type=week],
+input[type=email],
+input[type=tel],
+input[type=time],
+input[type=url],
+input[type=color],
+input[type=number],
+input[type=search],
+select,
+textarea {
+	transition: none;
+	border: $global-border;
+	box-shadow: none;
+	padding: rem-calc(4 8);
+	height: rem-calc(30);
+
+	&::after {
+		position: absolute;
+		display: block;
+		content: $fa-var-check;
+		color: #fff;
+		height: 20px;
+		width: 20px;
+		top: 50%;
+		right: 10px;
+		margin-top: -10px;
+		line-height: 20px;
+		text-align: center;
+		border-radius: $global-rounded;
+		background-color: $success-color;
+	}
+
+	&:focus {
+		background-color: $color-gray-lightest;
+	}
+
+	&.ng-valid {
+
+	}
+}
+
+input[type=radio],
+input[type=checkbox] {
+	display: none;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+input[type=checkbox].show,
+input[type=checkbox].show {
+	display: inline-block;
+}
+
+label {
+	color: $color-gray-dark;
+	font-weight: $font-weight-semi-bold;
+	margin-bottom: 5px;
+	font-size: rem-calc(16);
+
+	&.label-radio,
+	&.label-checkbox {
+		position: relative;
+		display: block !important;
+		margin: rem-calc(0 0 16) !important;
+		font-weight: $font-weight-normal;
+		padding: 10px 10px 10px 33px !important;
+		background-color: $color-gray-lightest;
+		transition: $global-link-transition;
+		font-size: rem-calc(14);
+		color: $color-gray-dark;
+
+		&::before {
+			position: absolute;
+			display: inline-block;
+			content: '';
+			top: 12px;
+			left: 10px;
+			height: 16px;
+			width: 16px;
+			padding-left: 1px;
+			line-height: 14px;
+			background-color: #fff;
+			border: $global-border;
+			color: $color-blue;
+			font-family: $font-family-icon;
+			text-align: center;
+
+			input[type=checkbox]:checked + & {
+				content: $fa-var-check;
+			}
+		}
+
+		&:hover {
+			background-color: scale-color($color-gray-lightest, $lightness: -5%);
+		}
+
+		input[type=checkbox]:checked + &,
+		input[type=radio]:checked + & {
+			font-weight: $font-weight-semi-bold;
+		}
+	}
+
+	&.label-radio {
+		&::before {
+			border-radius: $global-rounded;
+
+			input[type=radio]:checked + & {
+				background-color: $color-blue;
+				border-color: $color-blue-dark;
+			}
+
+			input[type=checkbox]:checked + & {
+				background-color: $color-blue;
+				border-color: $color-blue-dark;
+			}
+		}
+	}
+}
+
+.error {
+	label {
+		color: $color-gray-dark;
+	}
+
+	input[type=text],
+	input[type=password],
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=month],
+	input[type=week],
+	input[type=email],
+	input[type=tel],
+	input[type=time],
+	input[type=url],
+	input[type=color],
+	input[type=number],
+	input[type=search],
+	textarea {
+		border-color: $alert-color;
+	}
+}
+
+textarea {
+	&.medium {
+		height: 100px;
+	}
+	&.large {
+		height: 300px;
+	}
+}
+
+.select-box-container {
+	&.inline {
+		display: inline-block;
+	}
+}
+
+select {
+	&.inline {
+		display: inline-block;
+		width: auto;
+	}
+
+	&.exp-month,
+	&.date-month {
+		display: inline-block;
+		width: 80px;
+		margin-right: 10px;
+	}
+
+	&.date-day {
+		display: inline-block;
+		width: 80px;
+		margin-right: 10px;
+	}
+
+	&.exp-year,
+	&.date-year {
+		display: inline-block;
+		width: 80px;
+		margin-right: 10px;
+	}
+
+	&.date-time {
+		display: inline-block;
+		width: 80px;
+		margin-right: 10px;
+	}
+
+	&.gender {
+		display: inline-block;
+		width: 100px;
+	}
+}
+
+.form-group {
+	&.form-group-datepicker {
+		&::after {
+			position: absolute;
+			display: block;
+			font-family: $font-family-icon;
+			content: '\f073';
+			top: 2px;
+			right: 25px;
+			pointer-events: none;
+		}
+	}
+
+	.input-helper {
+		display: block;
+		margin-top: -10px;
+	}
+
+	&.error {
+		.input-helper {
+			display: none;
+		}
+	}
+}
+
+.file-upload {
+	display: block;
+	padding: 15px;
+	background-color: $color-gray-lightest;
+
+	&:hover {
+		background-color: scale-color($color-gray-lightest, $lightness: -5%);
+	}
+
+	&.upload-profile-photo {
+		height: 90px;
+		line-height: 60px;
+
+		img {
+			display: inline-block;
+			margin-right: 15px;
+		}
+
+		input[type=file] {
+			display: inline;
+			width: auto;
+		}
+	}
+}

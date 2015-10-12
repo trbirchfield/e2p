@@ -1,0 +1,21 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.clearfix,
+.cf {
+    @extend %clearfix;
+}
+
+.truncate {
+    @extend %truncate;
+}
+
+[data-sr] {
+	visibility: hidden;
+}
