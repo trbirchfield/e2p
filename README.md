@@ -1,10 +1,10 @@
-# TX Dental Plan
+# Scott & White Evidence To Programs
 
 ## Getting started
 
 Clone the repo down to your local machine:
 
-```git clone git@github.com:wlion/txdentalplan.git .```
+```git clone git@github.com:wlion/scottwhite.git .```
 
 ### Running make
 
