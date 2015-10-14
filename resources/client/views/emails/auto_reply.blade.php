@@ -1,6 +1,5 @@
 @extends('client::layouts.email')
 
 @section('content')
-	<p>Thank you, {{ $name }}, for contacting {{ config('site.client.company_name') }}.</p>
-	<p>We received your inquiry and will be in touch.</p>
+	<p>Thank you, {{ $name }}, for sharing your feedback with us. We will review your message and provide a response promptly.</p>
 @stop

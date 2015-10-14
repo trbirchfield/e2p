@@ -7,9 +7,8 @@ class HomeController extends BaseController {
 	 * @return Response
 	 */
 	public function getIndex() {
-		$page_title       = 'Home';
-		$meta_description = '--- meta description ---';
+		$page_title = 'Project Template';
 
-		return view('client::home.index', compact('page_title', 'meta_description'));
+		return view('client::home.index', compact('page_title'));
 	}
 }

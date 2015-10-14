@@ -30,11 +30,6 @@
 	100% { transform: scale(0,0); }
 }
 
-@include keyframes(loadingSpinner) {
-	0%   { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
-}
-
 .loading {
 	position: relative;
 	text-align: center;
@@ -51,15 +46,6 @@
 		height: auto;
 		width: auto;
 		background: none;
-
-		&.spinner {
-			top: 10px;
-			margin-left: 10px;
-			height: 30px;
-			width: 30px;
-			background: url('/public/img/spinner-blue.png') no-repeat center center;
-			animation: loadingSpinner 1s infinite ease;
-		}
 
 		&.revolve {
 			height: $loading-revolve-area-size;
