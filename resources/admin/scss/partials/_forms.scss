@@ -1,10 +1,14 @@
 // Error handling on invalid form controls
 form.ng-submitted .form-control.ng-invalid,
 .form-control.ng-invalid.ng-touched {
-    border-color: $brand-danger;
+    &,
+    + .cke {
+        border-color: $brand-danger !important;
+    }
     &:focus {
         border-color: darken($brand-danger, 10%);
     }
+    + .cke + .help-block,
     + .help-block {
         color: $brand-danger;
     }
