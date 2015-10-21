@@ -19,8 +19,8 @@ class FAQCategoriesController extends BaseController {
 		$bootstrap = json_encode([
 			'route'  => '/api/faqcategories/filtered-list',
 			'fields' => [
-				['column' => 'title',     'display_name' => 'Title'],
-				['column' => 'status',    'display_name' => 'Status']
+				['column' => 'title',  'display_name' => 'Title'],
+				['column' => 'status', 'display_name' => 'Status']
 			],
 			'orderBy'  => 'title',
 			'orderDir' => 'asc'

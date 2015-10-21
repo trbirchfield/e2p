@@ -16,7 +16,7 @@ class CreateFAQs extends Migration {
 
 			$table->increments('id');
 			$table->integer('faq_category_id')->unsigned()->index();
-			$table->string('question', 512);
+			$table->text('question');
 			$table->text('answer');
 			$table->smallInteger('status')->unsigned()->index();
 			$table->smallInteger('display_order')->default(0);

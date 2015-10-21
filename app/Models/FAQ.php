@@ -27,7 +27,7 @@ class FAQ extends BaseModel {
 	 *
 	 * @var bool
 	 */
-	public $timestamps = true;
+	public $timestamps = TRUE;
 
 	/**
 	 * Attributes that should be cast to native types.

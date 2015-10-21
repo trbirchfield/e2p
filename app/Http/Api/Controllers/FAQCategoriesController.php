@@ -26,15 +26,4 @@ class FAQCategoriesController extends BaseController {
 
 		return response()->json($list, (is_null($list)) ? 422 : 200);
 	}
-
-	/**
-	 * Return a list of FAQ Categories.
-	 *
-	 * @return Response
-	 */
-	public function getList() {
-		$list = $this->model->getList();
-
-		return response()->json($list, (is_null($list)) ? 422 : 200);
-	}
 }
