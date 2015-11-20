@@ -1,14 +1,11 @@
 {
   "js/admin/global.js": "js/admin/global-26fd0b9a.js",
-  "js/client/candidate-profile.js": "js/client/candidate-profile-d41d8cd9.js",
-  "js/client/candidates.js": "js/client/candidates-a9884258.js",
   "js/client/global.js": "js/client/global-941d01cb.js",
-  "js/client/home.js": "js/client/home-aee0caf1.js",
   "js/client/ie.js": "js/client/ie-f8d5b31a.js",
   "js/client/styleguide.js": "js/client/styleguide-bd67e0ed.js",
-  "js/admin/app.js": "js/admin/app-a41bf0fc.js",
+  "js/admin/app.js": "js/admin/app-1b60d44d.js",
   "js/client/app.js": "js/client/app-d402a9de.js",
-  "css/admin/global.css": "css/admin/global-8b92e1ea.css",
+  "css/admin/global.css": "css/admin/global-5ee8c639.css",
   "css/client/global.css": "css/client/global-f6cbd323.css",
   "css/client/styleguide.css": "css/client/styleguide-39353a7d.css",
   "vendor/Chart.min.js": "vendor/Chart.min-6153f6f7.js",
@@ -29,6 +26,5 @@
   "vendor/prettify.min.js": "vendor/prettify.min-a91e117c.js",
   "vendor/scrollReveal.min.js": "vendor/scrollReveal.min-18fff7b2.js",
   "vendor/slick.js": "vendor/slick-61483dbd.js",
-  "vendor/ui-utils.min.js": "vendor/ui-utils.min-47979f3b.js",
-  "css/client/vendor.css": "css/client/vendor-d41d8cd9.css"
+  "vendor/ui-utils.min.js": "vendor/ui-utils.min-47979f3b.js"
 }
