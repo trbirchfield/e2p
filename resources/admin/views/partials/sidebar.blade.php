@@ -1,6 +1,7 @@
 <nav class="sidebar">
 	<ul class="nav-sidebar" role="navigation">
 		<li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+		<li class="{{ Request::is('admin/announcements') ? 'active' : '' }}"><a href="{{ route('admin.announcements') }}">Homepage Announcements</a></li>
 		<li class="treeview{{ ((Request::segment(2) == 'faqcategories') or (Request::segment(2) == 'faqs')) ? ' active' : '' }}">
 			<a href="#">FAQs</a>
 			<ul>

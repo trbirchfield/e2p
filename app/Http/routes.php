@@ -38,6 +38,10 @@ Route::group(['middleware' => 'non_production'], function() {
 			Route::controller('dashboard', 'DashboardController', [
 				'getIndex' => 'admin.dashboard'
 			]);
+			Route::controller('announcements', 'AnnouncementsController', [
+				'getIndex' => 'admin.announcements',
+				'getEdit'  => 'admin.announcements.edit'
+			]);
 			Route::controller('faqcategories', 'FAQCategoriesController', [
 				'getIndex' => 'admin.faqcategories',
 				'getEdit'  => 'admin.faqcategories.edit'
@@ -56,6 +60,7 @@ Route::group(['middleware' => 'non_production'], function() {
 
 	// API
 	Route::group(['prefix' => 'api', 'namespace' => 'App\Http\Api\Controllers', 'middleware' => ['csrf', 'cors']], function() {
+		Route::controller('announcements', 'AnnouncementsController');
 		Route::controller('faqcategories', 'FAQCategoriesController');
 		Route::controller('faqs',          'FAQsController');
 		Route::controller('widgets',       'WidgetsController');
