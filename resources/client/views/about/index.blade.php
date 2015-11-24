@@ -3,7 +3,7 @@
 @section('content')
     <section class="document-view">
         <div class="row">
-            <div class="small-12 columns doc-right full width full-width">
+            <div class="small-12 columns">
                 <div class="row">
                     <div class="small-6 columns">
                         <div class="about-intro">

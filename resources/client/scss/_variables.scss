@@ -7,13 +7,48 @@ $color-blue: #003f72;
 $color-green: #70b745;
 $color-green-darker: #539997;
 $color-red: #c82837;
+$color-gray-light: #eee;
+$color-gray: #ddd;
+$color-gray-dark: #999;
+$color-black: #111;
+$color-white: #fff;
 
+// Fonts
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$font-family-serif: 'ff-tisa-web-pro', serif;
+$font-family-sans-serif-condensed: 'alternate-gothic-no-1-d', sans-serif;
+$font-family-icon: 'FontAwesome';
+$header-font-family: $font-family-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Base
+$body-bg: $color-white;
+$body-font-color: $color-black;
+$body-font-family: $font-family-serif;
+$body-font-weight: $font-weight-normal;
+$body-font-style: normal;
+
+// Grid
+$row-width: rem-calc(1170);
+$column-gutter: rem-calc(30);
+$block-grid-default-spacing: rem-calc(30);
+
+// Utilities
+$global-border: solid 1px $color-gray;
+$global-link-transition: all 0.15s ease-in-out;
+$global-animation-transition: all 0.3s ease-in-out;
+
+// Colors
 $primary-color: $color-blue;
 $secondary-color: #e7e7e7;
 $alert-color: $color-red;
 $success-color: $color-green;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
+
+// Buttons
+$button-font-weight: $font-weight-bold;
 
 // Code
 $code-color: #333;

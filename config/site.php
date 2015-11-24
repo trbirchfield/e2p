@@ -2,7 +2,7 @@
 return [
 	// Company information
 	'client' => [
-		'company_name'   => 'Company Name',
+		'company_name'   => 'Scott & White',
 		'tag_line'       => 'This Is Our Tagline.',
 		'copyright_year' => date('Y'),
 		'address'        => [

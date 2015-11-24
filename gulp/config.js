@@ -24,9 +24,7 @@ module.exports = {
 			'bower_components/angular-messages/angular-messages.min.js',
 			'bower_components/angular-loading-bar/build/loading-bar.min.js',
 			'bower_components/angular-bootstrap/ui-bootstrap.min.js',
-			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-			'bower_components/ng-ckeditor/ng-ckeditor.js',
-			'bower_components/danialfarid-angular-file-upload/dist/ng-file-upload-all.js'
+			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
 		]
 	}, {
 		module: 'app',
@@ -34,18 +32,7 @@ module.exports = {
 		src: 'resources/client/js/app',
 		dependencies: [
 			'bower_components/angular-messages/angular-messages.min.js',
-			'bower_components/angular-loading-bar/build/loading-bar.min.js',
-			'bower_components/angular-ui-sortable/sortable.js',
-			'bower_components/angular-local-storage/dist/angular-local-storage.js',
-			'bower_components/angular-payments/lib/angular-payments.js',
-			'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js',
-			'bower_components/ng-ckeditor/ng-ckeditor.js',
-			'bower_components/angular-mask/dist/ngMask.min.js',
-			'bower_components/danialfarid-angular-file-upload/dist/ng-file-upload-all.js',
-			'bower_components/angular-slugify/angular-slugify.js',
-			'bower_components/angularjs-datepicker/dist/angular-datepicker.min.js',
-			'bower_components/angular-jquery-timepicker/src/timepickerdirective.min.js',
-			'bower_components/angular-chosen-localytics/chosen.js'
+			'bower_components/angular-sanitize/angular-sanitize.min.js'
 		]
 	}],
 
@@ -60,10 +47,8 @@ module.exports = {
 
 	// move fonts
 	fonts: [
-		'bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*',
 		'bower_components/fontawesome/fonts/**/*',
-		'bower_components/slick-carousel/slick/fonts/**/*',
-		'resources/client/fonts/**/*'
+		'bower_components/slick-carousel/slick/fonts/**/*'
 	],
 
 	// move vendor files
@@ -76,16 +61,10 @@ module.exports = {
 		'bower_components/lodash/lodash.js',
 		'bower_components/google-code-prettify/bin/prettify.min.js',
 		'bower_components/slick-carousel/slick/slick.js',
-		'bower_components/jquery.localScroll/jquery.localScroll.min.js',
-		'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
 		'bower_components/moment/moment.js',
-		'bower_components/scrollReveal.js/dist/scrollReveal.min.js',
-		'bower_components/angular-ui-utils/ui-utils.min.js',
-		'bower_components/Chart.js/Chart.min.js',
-		'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js',
-		'bower_components/fancybox/source/jquery.fancybox.pack.js',
-		'bower_components/fancybox/source/helpers/jquery.fancybox-media.js',
-		'bower_components/jquery-timepicker-jt/jquery.timepicker.min.js',
-		'bower_components/chosen/chosen.jquery.min.js'
+		'bower_components/classie/classie.js',
+		'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
+		'bower_components/jquery.localScroll/jquery.localScroll.min.js',
+		'bower_components/tooltipster/js/jquery.tooltipster.min.js'
 	]
 };

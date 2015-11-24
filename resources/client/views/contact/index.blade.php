@@ -73,17 +73,19 @@
                         </div>
                         <div class="small-12 columns">
                             <div class="inner-form">
-                                <div class="form-group field-wrap text form-label contact-radio outside-error" ng-init="formData.help = '{{ old('help') }}'" ng-class="{ error: form.help.$invalid && (form.$submitted) }">
-                                    <label for="Familiarity">How can we help?</label>
-                                    <span class="needed">*</span>
-                                    <p>How can we help?</p>
-                                    <ul>
-                                        <li><input type="radio" name="help" ng-model="formData.help" value="I want to ask a question" validation="required">I want to ask a question </li>
-                                        <li><input type="radio" name="help" ng-model="formData.help" value="I want to provide feedback on the site" validation="required">I want to provide feedback on the site</li>
-                                        <li><input type="radio" name="help" ng-model="formData.help" value="Recommend an additional resource" validation="required">Recommend an additional resource</li>
-                                        <li><input type="radio" name="help" ng-model="formData.help" value="Report a technical issue with the site" validation="required">Report a technical issue with the site </li>
-                                        <li><input type="radio" name="help" ng-model="formData.help" value="Other" validation="required">Other</li>
-                                    </ul>
+                                <div class="form-group field-wrap text form-label" ng-init="formData.help = '{{ old('help') }}'" ng-class="{ error: form.help.$invalid && (form.$submitted) }">
+                                    <div class="contact-radio">
+                                        <label for="Familiarity">How can we help?</label>
+                                        <span class="needed">*</span>
+                                        <p>How can we help?</p>
+                                        <ul>
+                                            <li><input type="radio" name="help" ng-model="formData.help" value="I want to ask a question" validation="required">I want to ask a question </li>
+                                            <li><input type="radio" name="help" ng-model="formData.help" value="I want to provide feedback on the site" validation="required">I want to provide feedback on the site</li>
+                                            <li><input type="radio" name="help" ng-model="formData.help" value="Recommend an additional resource" validation="required">Recommend an additional resource</li>
+                                            <li><input type="radio" name="help" ng-model="formData.help" value="Report a technical issue with the site" validation="required">Report a technical issue with the site </li>
+                                            <li><input type="radio" name="help" ng-model="formData.help" value="Other" validation="required">Other</li>
+                                        </ul>
+                                    </div>
                                     <small class="form-messages error" ng-messages="form.help.$error" ng-if="form.help.$invalid && (form.$submitted)" ng-cloak>
                                         <span ng-message="required">Please tell us how we can help you.</span>
                                     </small>
@@ -100,8 +102,10 @@
                                         <span ng-message="required">Please enter a message.</span>
                                     </small>
                                 </div>
-                                <button type="submit" class="submit">Submit</button>
                             </div>
+                        </div>
+                        <div class="small-12 columns text-right">
+                            <button type="submit" class="button success rm-m-bot">Submit</button>
                         </div>
                     </div>
                 </form>
