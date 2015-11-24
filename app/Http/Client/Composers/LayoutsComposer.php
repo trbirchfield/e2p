@@ -33,16 +33,16 @@ class LayoutsComposer {
 			},
 			'growls' => function() {
 				if (Session::has('error')) {
-					growl()->add('Error', session('error'), 'error');
+					growl()->add(session('error'), '', 'error');
 				} elseif (Session::has('errors')) {
 					$errors = session('errors');
 					growl()->add('Form errors', '<ul><li>' . implode('</li><li>', $errors->all()) . '</li></ul>', 'error');
 				} elseif (Session::has('message')) {
-					growl()->add('Notice', session('message'), 'success');
+					growl()->add(session('message'), '', 'success');
 				} elseif (Session::has('status')) {
-					growl()->add('Notice', session('status'), 'success');
+					growl()->add(session('status'), '', 'success');
 				}
-				return growl()->all();
+				return json_encode(growl()->all());
 			}
 		]);
 	}

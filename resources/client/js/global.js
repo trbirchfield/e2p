@@ -21,74 +21,6 @@
 	}
 })();
 
-window.sr = new scrollReveal({
-	vFactor:  0.15,
-});
-
-(function() {
-	// Init Fancybox
-	$('.fancybox').fancybox({
-		openEffect: 'elastic',
-		closeEffect: 'elastic',
-		helpers: {
-			overlay: {
-				locked: false
-			}
-		}
-	});
-	$('.fancybox-media').fancybox({
-		openEffect: 'elastic',
-		closeEffect: 'elastic',
-		helpers : {
-			overlay: {
-				locked: false
-			},
-			media : {}
-
-		}
-	});
-
-	// Init localScroll
-	$('[data-scroll]').localScroll();
-
-	// Hide search field and mobile menu when "sign up" button is clicked
-	$('[href*="#signup"]').on('click', function() {
-		$('body').removeClass('search-open');
-		$('body').removeClass('menu-open');
-	});
-
-	// Toggle events
-	$('[data-toggle]').on('click', function(e) {
-		e.preventDefault();
-		var self = $(this);
-		if (self.data('toggle') === 'mobile-search') {
-			$('body').removeClass('menu-open');
-			$('body').toggleClass('mobile-search-open');
-		} else if (self.data('toggle') === 'primary-nav') {
-			$('body').removeClass('search-open');
-			$('body').toggleClass('menu-open');
-		}
-	});
-
-	// Manual modal closing
-	$('[data-modal-close]').on('click', function(e) {
-		e.preventDefault();
-		var modal = $(this).data('modal-close');
-		$('#' + modal).foundation('reveal', 'close');
-	});
-
-	// Toggle submenus
-	$('.has-dropdown > a').on('click', function(e) {
-		e.stopPropagation();
-		e.preventDefault();
-		$(this).parent('li').toggleClass('active');
-	});
-
-	$('html').click(function() {
-		$('.has-dropdown').removeClass('active');
-	});
-}());
-
 /**
  * Growl notifications
  */
@@ -119,17 +51,6 @@ window.sr = new scrollReveal({
 		});
 	};
 })(jQuery);
-
-/**
- * Global loading animation
- */
-var showLoader = function() {
-	$('.loading-global-container').addClass('visible');
-};
-var hideLoader = function() {
-	$('.loading-global-container').removeClass('visible');
-};
-
 
 /**
  * Bootstrap Foundation.
@@ -185,6 +106,35 @@ $('.growls').growl();
 
 	$(window).on('scroll', function() {
 		fadeWelcome();
+	});
+
+	$('.news-carousel').slick({
+		prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+		nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>'
+	});
+
+	$('.accordion').on('click', 'dd > a', function(e) {
+		e.preventDefault();
+		$(this).siblings('.content').slideToggle(300);
+		if ($(this).parent().hasClass('active')) {
+			$(this).parent().removeClass('active');
+		} else {
+			$(this).parent().addClass('active');
+		}
+	});
+	$('.toggle-all > a').on('click', function(e) {
+		e.preventDefault();
+		if ($(this).hasClass('active')) {
+			$('.accordion-navigation').removeClass('active');
+			$('.accordion-navigation .content').slideUp(300);
+			$(this).text('[ Open All ]');
+			$(this).removeClass('active');
+		} else {
+			$('.accordion-navigation').addClass('active');
+			$('.accordion-navigation .content').slideDown(300);
+			$(this).text('[ Close All ]');
+			$(this).addClass('active');
+		}
 	});
 
 	$(document).on('ready', function() {
