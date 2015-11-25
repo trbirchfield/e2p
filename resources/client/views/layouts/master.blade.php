@@ -67,40 +67,35 @@
         {{-- Template --}}
         @yield('template')
 
+        {{-- Growl messages --}}
+        <ul class="growls">
+            <growls></growls>
+        </ul>
+
         {{-- Footer JS --}}
 		@section('footer-js')
-			<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-			<script>window.jQuery || document.write('<script src="{{ asset_version('vendor/jquery.js') }}">\x3C/script>')</script>
-			<script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-			<script>window.jQuery.ui || document.write('<script src="{{ asset_version('vendor/jquery-ui.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
-			<script>window.Foundation || document.write('<script src="{{ asset_version('vendor/foundation.js') }}">\x3C/script>')</script>
-			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-			<script>window.angular || document.write('<script src="{{ asset_version('vendor/angular.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
-			<script>window._ || document.write('<script src="{{ asset_version('vendor/lodash.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-			<script>window.moment || document.write('<script src="{{ asset_version('vendor/moment.js') }}">\x3C/script>')</script>
-			<script src="{{ asset_version('vendor/scrollReveal.min.js') }}"></script>
-			<script src="{{ asset_version('vendor/ui-utils.min.js') }}"></script>
-			<script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
-			<script>window.Slick || document.write('<script src="{{ asset_version('vendor/slick.js') }}">\x3C/script>')</script>
-			<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
-			<script>window.scrollTo || document.write('<script src="{{ asset_version('vendor/jquery.scrollTo.min.js') }}">\x3C/script>')</script>
-			<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
-			<script>window.localScroll || document.write('<script src="{{ asset_version('vendor/jquery.localScroll.min.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-			<script>window.Chart || document.write('<script src="{{ asset_version('vendor/Chart.min.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-			<script>window.fancyBox || document.write('<script src="{{ asset_version('vendor/jquery.fancybox.pack.js') }}">\x3C/script>')</script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
-			<script>window.fancyBoxMedia || document.write('<script src="{{ asset_version('vendor/jquery.fancybox-media.js') }}">\x3C/script>')</script>
-			<script src="{{ asset_version('vendor/jquery.timepicker.min.js') }}"></script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
-			<script>window.chosen || document.write('<script src="{{ asset_version('vendor/chosen.jquery.min.js') }}">\x3C/script>')</script>
-			<script>
-				window.csrf = '{{ csrf_token() }}';
-				@yield('globals')
+            <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+            <script>window.jQuery || document.write('<script src="{{ asset_version('vendor/jquery.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
+            <script>window.Foundation || document.write('<script src="{{ asset_version('vendor/foundation.js') }}">\x3C/script>')</script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+            <script>window.angular || document.write('<script src="{{ asset_version('vendor/angular.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+            <script>window._ || document.write('<script src="{{ asset_version('vendor/lodash.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
+            <script>window.classie || document.write('<script src="{{ asset_version('vendor/classie.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+            <script>window.scrollTo || document.write('<script src="{{ asset_version('vendor/jquery.scrollTo.min.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
+            <script>window.localScroll || document.write('<script src="{{ asset_version('vendor/jquery.localScroll.min.js') }}">\x3C/script>')</script>
+            <script src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+            <script>window.slick || document.write('<script src="{{ asset_version('vendor/slick.js') }}">\x3C/script>')</script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+            <script>window.tooltipster || document.write('<script src="{{ asset_version('vendor/jquery.tooltipster.min.js') }}">\x3C/script>')</script>
+            <script>
+                window.csrf = '{{ csrf_token() }}';
+                window.growls = {!! $growls() !!};
+                @yield('globals')
 			</script>
 			<script src="{{ asset_version('js/client/global.js') }}"></script>
 			<script src="{{ asset_version('js/client/app.js') }}"></script>

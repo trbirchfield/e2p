@@ -26,4 +26,16 @@ class FAQsController extends BaseController {
 
 		return response()->json($list, (is_null($list)) ? 422 : 200);
 	}
+
+	/**
+	 * Return a list of user statuses.
+	 *
+	 * @return Response
+	 */
+	public function postAskQuestion() {
+		// TODO: Complete method so that it sends an email to client
+		$res = 'success';
+
+		return response()->json($res, (is_null($res)) ? 422 : 200);
+	}
 }

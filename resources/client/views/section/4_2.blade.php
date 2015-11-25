@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-12 columns doc-right full-width">
+            <div class="large-12 columns">
                 <h6 class="caption">Table 4 - Program adaptations</h6>
                 <table class="table-4">
                     <thead>

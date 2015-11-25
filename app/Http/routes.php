@@ -84,14 +84,17 @@ Route::group(['middleware' => 'non_production'], function() {
 		Route::group(['middleware' => 'auth'], function() {
 
 		});
-		Route::get('sitemap.xml', 'SitemapController@getXml');
-		Route::get('sitemap',     'SitemapController@getIndex');
-		Route::get('section/{section?}/{subsection?}', ['as' => 'section', 'uses' => 'SectionController@getIndex']);
-		Route::get('about',                            ['as' => 'about',   'uses' => 'AboutController@getIndex']);
-		Route::get('contact',                          ['as' => 'contact', 'uses' => 'ContactController@getIndex']);
-		Route::post('contact',                         ['as' => 'contact', 'uses' => 'ContactController@postIndex']);
-		Route::get('privacy',                          ['as' => 'privacy', 'uses' => 'PrivacyController@getIndex']);
-		Route::get('home',        ['as' => 'home',    'uses' => 'HomeController@getIndex']);
-		Route::get('/',           ['as' => 'default', 'uses' => 'HomeController@getIndex']);
+		Route::get('sitemap.xml',                      ['as' => 'sitemap-xml', 'uses' => 'SitemapController@getXml']);
+		Route::get('sitemap',                          ['as' => 'sitemap',     'uses' => 'SitemapController@getIndex']);
+		Route::get('section/{section?}/{subsection?}', ['as' => 'section',     'uses' => 'SectionController@getIndex']);
+		Route::get('programs',                         ['as' => 'programs',    'uses' => 'ProgramsController@getIndex']);
+		Route::get('faq',                              ['as' => 'faq',         'uses' => 'FaqController@getIndex']);
+		Route::get('search',                           ['as' => 'search',      'uses' => 'SearchController@getIndex']);
+		Route::get('about',                            ['as' => 'about',       'uses' => 'AboutController@getIndex']);
+		Route::get('contact',                          ['as' => 'contact',     'uses' => 'ContactController@getIndex']);
+		Route::post('contact',                         ['as' => 'contact',     'uses' => 'ContactController@postIndex']);
+		Route::get('privacy',                          ['as' => 'privacy',     'uses' => 'PrivacyController@getIndex']);
+		Route::get('home',                             ['as' => 'home',        'uses' => 'HomeController@getIndex']);
+		Route::get('/',                                ['as' => 'default',     'uses' => 'HomeController@getIndex']);
 	});
 });

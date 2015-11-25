@@ -19,8 +19,7 @@ class NonProductionAccess {
 			$trusted_ips   = ['10.1.80', '10.2.80', '192.168.1', '97.77.8.162'];
 			$logins        = [
 				['u' => 'wlion', 'p' => 'm3Y3_dev.21'],
-				['u' => 'vote',  'p' => 'XhZc$&B.4n'],
-				['u' => 'vote',  'p' => 'review']
+				['u' => 'swep',  'p' => 'review']
 			];
 			if (in_array(substr($_SERVER['REMOTE_ADDR'], 0, strrpos($_SERVER['REMOTE_ADDR'], '.')), $trusted_ips)) {
 				$authenticated = TRUE;

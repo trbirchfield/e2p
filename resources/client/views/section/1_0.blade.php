@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-12 columns doc-right full-width">
+            <div class="large-12 columns">
                 <h6 class="caption">Table 1 - Evaluation study designs</h6>
                 <table>
                     <thead>

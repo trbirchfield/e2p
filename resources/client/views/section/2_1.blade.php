@@ -92,7 +92,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-12 columns doc-right full-width">
+            <div class="large-12 columns">
             <h6 class="caption">Table 2 - Primary data collection methods</h6>
                 <table>
                     <thead>
@@ -404,7 +404,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="large-12 columns doc-right full-width">
+            <div class="large-12 columns">
             <h6 class="caption">Table 3 - Secondary data sources from the CDC</h6>
                 <table>
                     <thead>
