@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '2.1')
+@section('prev_section', '2/0')
+@section('next_section', '2/2')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.1</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Identifying an Important Health Issue</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/0">Previous Section</a>
-                    <a id="next" href="/section/2/2">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-3 columns doc-left" id="mid-page3">
                 <div class="print-border">

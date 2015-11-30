@@ -1,18 +1,11 @@
 @extends('client::layouts.default')
 
+@section('section', '1.0')
+@section('next_section', '1/1')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>1.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>What Does it Mean for a Program to be Evidence-based?</h1>
-                <p class="clearfix navigation">
-                    <a id="next" href="/section/1/1">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-3 columns doc-left" id="mid-page1">
                 <div class="print-border">

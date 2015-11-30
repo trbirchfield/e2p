@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '2.4')
+@section('prev_section', '2/3')
+@section('next_section', '2/5')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.4</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Support from Organizational Stakeholders and Presence of Program Champions</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/3">Previous Section</a>
-                    <a id="next" href="/section/2/5">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>Support from organizational stakeholders—from the staff members and volunteers responsible for program implementation on up to members of organizational leadership who are in decision making roles—is crucial to your organization’s readiness to implement EBPs. Generally, senior leadership will only assign personnel to the project if they are supportive of it. Additionally, the support of organizational leadership may influence the amount of funding provided for a program. If the staff members or volunteers responsible for implementing a program are opposed to it, they may campaign against its implementation. If they are asked to implement it despite their objections, they may implement it poorly. Support from organizational stakeholders can often be obtained by discussing with them the benefits of EBPs <span class="reference">(see <a href="/section/1/1">Advantages of Evidence-Based Programs</a> for more information).</p>

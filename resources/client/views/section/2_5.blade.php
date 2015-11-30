@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '2.5')
+@section('prev_section', '2/4')
+@section('next_section', '2/6')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.5</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Match with Organizational Purpose</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/4">Previous Section</a>
-                    <a id="next" href="/section/2/6">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>The vision, mission, goals, and objectives of your organization are its lifeblood. Thus, they are important considerations when selecting an EBP. The selection of a program that conflicts with the purpose of your organization can set the program up for failure, as well as cause confusion among organizational personnel and clientele regarding the identity of the organization. Several factors to consider are described below.</p>

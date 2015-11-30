@@ -1,19 +1,13 @@
 @extends('client::layouts.default')
 
+@section('section', '5.0')
+@section('nav_id', 'navigation-bottom')
+@section('prev_section', '4/2')
+@section('next_section', '5/1')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>5.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Program Marketing and Participant Recruitment</h1>
-                <p class="clearfix navigation" id="navigation-bottom">
-                    <a id="previous" href="/section/4/2">Previous Section</a>
-                    <a id="next" href="/section/5/1">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-3 columns doc-left no-print" id="mid-page13">
                 <h6 class="caption">

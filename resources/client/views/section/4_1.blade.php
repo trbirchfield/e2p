@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '4.1')
+@section('prev_section', '4/0')
+@section('next_section', '4/2')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>4.1</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Fidelity Monitoring</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/4/0">Previous Section</a>
-                    <a id="next" href="/section/4/2">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>The steps to fidelity monitoring include activities that take place before, during, and after program implementation. Each staff member who participates in program implementation can also participate in fidelity monitoring. If program personnel are numerous, it may be useful to select a few of these individuals to form a team that carries out the bulk of the monitoring. Depending on the nature of the program, individuals other than program staff, such as the program’s developers, may also take part.</p>

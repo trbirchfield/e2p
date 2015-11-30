@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '2.7')
+@section('prev_section', '2/6')
+@section('next_section', '2/8')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.7</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Match with Clientele</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/6">Previous Section</a>
-                    <a id="next" href="/section/2/8">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-3 columns doc-left" id="mid-page6">
                 <div class="print-border">

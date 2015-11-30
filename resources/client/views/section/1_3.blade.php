@@ -1,19 +1,13 @@
 @extends('client::layouts.default')
 
+@section('section', '1.3')
+@section('nav_id', 'navigation-bottom')
+@section('prev_section', '1/2')
+@section('next_section', '2/0')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>1.3</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Organizational Readiness to Implement Evidence-based Programs</h1>
-                <p class="clearfix navigation" id="navigation-bottom">
-                    <a id="previous" href="/section/1/2">Previous Section</a>
-                    <a id="next" href="/section/2/0">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>Certain factors increase the likelihood that an organization will be successful in EBP implementation. Assessing your organization’s knowledge of evidence-based programming, the degree to which organizational stakeholders support a potential program, and the availability of resources can help you determine if your organization is ready to implement an EBP.</p>

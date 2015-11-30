@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '3.1')
+@section('prev_section', '3/0')
+@section('next_section', '3/2')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>3.1</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Process Evaluation</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/3/0">Previous Section</a>
-                    <a id="next" href="/section/3/2">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>Process evaluation assesses the delivery of a program. It examines factors such as the extent to which the program is being implemented as designed, whether the target population is being reached, and the quality of program delivery. Sometimes process evaluation can also constitute formative evaluation, which is evaluation used to improve or fine tune a program.</p>

@@ -1,19 +1,13 @@
 @extends('client::layouts.default')
 
+@section('section', '4.0')
+@section('nav_id', 'navigation-bottom')
+@section('prev_section', '3/3')
+@section('next_section', '4/1')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>4.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Implementing an Evidence Based Programs with Fidelity</h1>
-                <p class="clearfix navigation" id="navigation-bottom">
-                    <a id="previous" href="/section/3/3">Previous Section</a>
-                    <a id="next" href="/section/4/1">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
             <h2>What is Fidelity?</h2>

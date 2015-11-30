@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
 
+@section('section', '2.9')
+@section('prev_section', '2/8')
+@section('next_section', '3/0')
+
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.9</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Obtaining funding</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/8">Previous Section</a>
-                    <a id="next" href="/section/3/0">Next Section</a>
-                </p>
-            </div>
-        </div>
+        @include('client::layouts.section_header')
         <div class="row">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>EBPs require a financial commitment from implementing organizations. Some programs can be implemented for a few hundred dollars, while some programs require several thousand dollars for successful implementation. The costs of developing and evaluating an EBP can be significant, so program developers will often collect licensing fees or similar charges in order to recover research and development costs or cover the costs associated with ongoing administration of a program. Several potential funding sources for EBPs are discussed below.</p>
