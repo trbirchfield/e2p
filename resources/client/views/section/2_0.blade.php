@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Choosing Which Program to Implement')
 @section('section', '2.0')
 @section('prev_section', '1/3')
 @section('next_section', '2/1')

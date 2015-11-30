@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'What Does it Mean for a Program to be Evidence-based?')
 @section('section', '1.0')
 @section('next_section', '1/1')
 

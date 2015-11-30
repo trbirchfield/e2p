@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Support from Organizational Stakeholders and Presence of Program Champions')
 @section('section', '2.4')
 @section('prev_section', '2/3')
 @section('next_section', '2/5')

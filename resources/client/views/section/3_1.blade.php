@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Process Evaluation')
 @section('section', '3.1')
 @section('prev_section', '3/0')
 @section('next_section', '3/2')

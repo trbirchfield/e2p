@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Identifying an Important Health Issue')
 @section('section', '2.1')
 @section('prev_section', '2/0')
 @section('next_section', '2/2')

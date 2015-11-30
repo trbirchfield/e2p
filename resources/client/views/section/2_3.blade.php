@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Identifying Evidence-based Interventions')
 @section('section', '2.3')
 @section('prev_section', '2/2')
 @section('next_section', '2/4')

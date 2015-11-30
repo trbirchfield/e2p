@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Prioritizing Needs')
 @section('section', '2.2')
 @section('prev_section', '2/1')
 @section('next_section', '2/3')

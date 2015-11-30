@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Fidelity Monitoring')
 @section('section', '4.1')
 @section('prev_section', '4/0')
 @section('next_section', '4/2')

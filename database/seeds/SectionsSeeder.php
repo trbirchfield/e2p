@@ -2,21 +2,9 @@
 
 use App\Models\Section;
 use Illuminate\Database\Seeder;
+use Symfony\Component\DomCrawler\Crawler;
 
 class SectionsSeeder extends Seeder {
-	/**
-	 * Section Views to seed
-	 * 
-	 * @var array section - last section to stop
-	 */
-	public $sections = [
-		'1' => 4,
-		'2' => 10,
-		'3' => 4,
-		'4' => 3,
-		'5' => 5
-	];
-
 	/**
 	 * Path to Section views
 	 *
@@ -31,32 +19,26 @@ class SectionsSeeder extends Seeder {
 	 */
 	public function run() {
 		DB::table('sections')->truncate();
+		// Init values
+		$section_titles = require dirname(__FILE__) . '/SeederData/section_titles.php';
 
-		// Init loop to save all section content in DB.
-		foreach ($this->sections as $section => $sub) {
-			// Init values
-			$section_titles = require dirname(__FILE__) . '/SeederData/section_titles.php';
+		foreach ($section_titles as $section => $title) {
+			$data = [
+				'section' => substr($section, 0, 1),
+				'subsection' => substr($section, 0, -1)
+			];
+			// Grab each section's view file path
+			$view = view('client::section.' . str_replace('.', '_', $section), $data)->renderSections();
 
-			// Initi loop to save all sub sections
-			for ($i = 0; $i < $sub ; $i++) {
-				// Section id
-				// Ex: 1.0, 1.1, 1.2...etc
-				$section_id = $section . '.' . $i;
-
-				// Grab each section's view file path
-				$view = view('client::section.' . $section . '_' . $i)->renderSections();
-
-				// Strip tags to retieve only the content
-				$title   = $section_titles[$section_id];
-				$content = strip_tags(str_replace(["\r", "\n"], '', $view['content']));
-				
-				// save content var to DB
-				Section::create([
-					'section'       => $section_id,
-					'title'         => $title,
-					'body'          => $content
-				]);
-			}
+			// Strip tags to retieve only the content
+			$content = strip_tags(str_replace(["\r", "\n"], '', $view['content']));
+			
+			// save content var to DB
+			Section::create([
+				'section'       => $section,
+				'title'         => $title,
+				'body'          => $content
+			]);
 			$this->command->info('Seeded Section: ' . $section);
 		}
 	}

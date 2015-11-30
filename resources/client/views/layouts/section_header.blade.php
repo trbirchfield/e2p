@@ -3,7 +3,7 @@
         <h3>Section <span>@yield('section')</span></h3>
     </div>
     <div class="small-9 columns doc-right">
-        <h1>{{ $headline }}</h1>
+        <h1 class="headline">@yield('headline')</h1>
         <p class="clearfix navigation" id="@yield('nav_id')">
             @if($section == 1 and $subsection == 0)
                 <a id="next" href="/section/@yield('next_section')">Next Section</a>

@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Implementing an Evidence Based Programs with Fidelity')
 @section('section', '4.0')
 @section('nav_id', 'navigation-bottom')
 @section('prev_section', '3/3')

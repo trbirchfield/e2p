@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Adapting Programs to Local Needs and Preferences While Maintaining Fidelity')
 @section('section', '4.2')
 @section('prev_section', '4/1')
 @section('next_section', '5/0')

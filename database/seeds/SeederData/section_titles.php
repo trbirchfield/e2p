@@ -10,6 +10,7 @@ return [
 	'1.1' => 'Advantages of Evidence-based Programs',
 	'1.2' => 'Disadvantages of Evidence-based Programs',
 	'1.3' => 'Organizational Readiness to Implement Evidence-based Programs',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Section titles for section 2
@@ -25,6 +26,7 @@ return [
 	'2.7' => 'Match with Clientele',
 	'2.8' => 'Establishing Partnerships',
 	'2.9' => 'Obtaining funding',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Section titles for section 3
@@ -34,6 +36,7 @@ return [
 	'3.1' => 'Process Evaluation',
 	'3.2' => 'Impact and Outcome Evaluation',
 	'3.3' => 'Forming Expectations',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Section titles for section 4
@@ -42,6 +45,7 @@ return [
 	'4.0' => 'Implementing an Evidence Based Programs with Fidelity',
 	'4.1' => 'Fidelity Monitoring',
 	'4.2' => 'Adapting Programs to Local Needs and Preferences While Maintaining Fidelity',
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Section titles for section 5

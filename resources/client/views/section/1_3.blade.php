@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Organizational Readiness to Implement Evidence-based Programs')
 @section('section', '1.3')
 @section('nav_id', 'navigation-bottom')
 @section('prev_section', '1/2')

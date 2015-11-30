@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Match with Clientele')
 @section('section', '2.7')
 @section('prev_section', '2/6')
 @section('next_section', '2/8')

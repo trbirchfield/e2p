@@ -1,5 +1,5 @@
 @extends('client::layouts.default')
-
+@section('headline', 'Program Marketing and Participant Recruitment')
 @section('section', '5.0')
 @section('nav_id', 'navigation-bottom')
 @section('prev_section', '4/2')
