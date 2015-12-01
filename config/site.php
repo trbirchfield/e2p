@@ -32,6 +32,10 @@ return [
 		'content' => 'public/content'
 	],
 
+	'mailchimp' => [
+		'list_id' => '4ab1075a64'
+	],
+
 	// 301 redirects (original address should be all lowercase)
 	'page_maps' => [
 

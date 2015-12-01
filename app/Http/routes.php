@@ -65,6 +65,7 @@ Route::group(['middleware' => 'non_production'], function() {
 		Route::controller('faqs',          'FAQsController');
 		Route::controller('widgets',       'WidgetsController');
 		Route::controller('upload',        'UploadController');
+		Route::controller('subscribe',     'SubscribeController');
 	});
 
 	// Client

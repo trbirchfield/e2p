@@ -24,6 +24,9 @@ module.exports = {
 			'bower_components/angular-messages/angular-messages.min.js',
 			'bower_components/angular-loading-bar/build/loading-bar.min.js',
 			'bower_components/angular-bootstrap/ui-bootstrap.min.js',
+			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+			'bower_components/ng-ckeditor/ng-ckeditor.js',
+			'bower_components/danialfarid-angular-file-upload/dist/ng-file-upload-all.js',
 			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
 		]
 	}, {
