@@ -15,7 +15,7 @@ return [
 		'phone'   => '(555) 481-8819',
 		'website' => 'wlion.com',
 		'emails'  => [
-			'info'    => 'user1@wlion.com',
+			'info'    => 'evidencetoprograms@sw.org',
 			'support' => 'user2@wlion.com'
 		]
 	],
