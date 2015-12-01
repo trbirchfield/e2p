@@ -1,10 +1,12 @@
 @extends('client::layouts.default')
 
 @section('content')
-    <div data-alert class="news-alert alert-box success rm-m-bot text-center scroll">
-        <h4>We just added new content!<a href="#news" class="button success rm-m-bot"><span>&darr;</span>  Read More  <span>&darr;</span></a></h4>
-        <a href="#" class="close">&times;</a>
-    </div>
+    @if($new_announcements)
+        <div data-alert class="news-alert alert-box success rm-m-bot text-center scroll">
+            <h4>We just added new content!<a href="#news" class="button success rm-m-bot"><span>&darr;</span>  Read More  <span>&darr;</span></a></h4>
+            <a href="#" class="close">&times;</a>
+        </div>
+    @endif
     <section id="intro">
         <img class="lt no-print" src="{{ asset_path('img/top_left.png') }}" alt="img background">
         <img class="lb no-print" src="{{ asset_path('img/bottom_left.png') }}" alt="img background">
@@ -217,30 +219,20 @@
                 <div class="news-panel">
                     <h2 class="text-center"><span>News &amp; Announcements</span></h2>
                     <div class="news-carousel">
-                        <div class="news-item">
-                            <div class="row">
-                                <div class="column medium-4">
-                                    <img src="http://placehold.it/300x300" class="news-image" />
-                                </div>
-                                <div class="column medium-8">
-                                    <div class="news-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit justo, gravida sed aliquet ut, hendrerit a dui. Maecenas et ullamcorper lacus. Nunc maximus ullamcorper eros eget fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam ut porta enim. Sed ligula sem, pharetra non facilisis non, dignissim a arcu. Quisque faucibus finibus enim, ut mollis massa mattis at. Proin pellentesque tincidunt nibh, at ultrices ipsum.
+                        @foreach ($announcements as $announcement)
+                            <div class="news-item">
+                                <div class="row">
+                                    <div class="column medium-4">
+                                        <img src="/{{ config('site.uploads.content')}}/{{ $announcement['image'] }}" class="news-image" />
+                                    </div>
+                                    <div class="column medium-8">
+                                        <div class="news-content">
+                                            {!! $announcement['announcement'] !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="news-item">
-                            <div class="row">
-                                <div class="column medium-4">
-                                    <img src="http://placehold.it/300x300" class="news-image" />
-                                </div>
-                                <div class="column medium-8">
-                                    <div class="news-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit justo, gravida sed aliquet ut, hendrerit a dui. Maecenas et ullamcorper lacus. Nunc maximus ullamcorper eros eget fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam ut porta enim. Sed ligula sem, pharetra non facilisis non, dignissim a arcu. Quisque faucibus finibus enim, ut mollis massa mattis at. Proin pellentesque tincidunt nibh, at ultrices ipsum.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
