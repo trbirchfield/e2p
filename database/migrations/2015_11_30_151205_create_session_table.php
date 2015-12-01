@@ -9,10 +9,8 @@ class CreateSessionTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('sessions', function($t)
-		{
+	public function up() {
+		Schema::create('sessions', function($t) {
 			$t->string('id')->unique();
 			$t->text('payload');
 			$t->integer('last_activity');
@@ -24,8 +22,7 @@ class CreateSessionTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
+	public function down() {
 		Schema::drop('sessions');
 	}
 

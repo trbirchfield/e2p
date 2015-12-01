@@ -6,7 +6,7 @@
             <div class="column small-8 small-centered">
                 @if (!empty($list))
                     <p class="search-results-lead">Showing {{ count($list) }} results for <span>"{{ $_GET['search'] }}"</span></p>
-                    @foreach($list as $item)
+                    @foreach ($list as $item)
                         <article class="content-box small search-result">
                             <span class="search-result-section-num">Section {{ $item['section'] }}</span>
                             <h3 class="search-result-title"><a href="#">{{ $item['title'] }}</a></h3>
