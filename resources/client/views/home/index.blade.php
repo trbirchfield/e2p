@@ -1,7 +1,7 @@
 @extends('client::layouts.default')
 
 @section('content')
-    @if($new_announcements)
+    @if ($new_announcements)
         <div data-alert class="news-alert alert-box success rm-m-bot text-center scroll">
             <h4>We just added new content!<a href="#news" class="button success rm-m-bot"><span>&darr;</span>  Read More  <span>&darr;</span></a></h4>
             <a href="#" class="close">&times;</a>

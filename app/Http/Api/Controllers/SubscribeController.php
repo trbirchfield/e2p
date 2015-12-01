@@ -37,14 +37,14 @@ class SubscribeController extends BaseController {
 			$output['status']   = 200;
 			$output['response'] = ['message' => 'Newsletter sign up was successfull'];
 		} catch (\Mailchimp_List_AlreadySubscribed $e) {
-            // Some other error
+			// Some other error
 			$output['status']   = 400;
 			$output['response'] = ['message' => $e->getMessage()];
-        } catch (\Mailchimp_Error $e) {
-            // Some other error
+		} catch (\Mailchimp_Error $e) {
+			// Some other error
 			$output['status']   = 400;
 			$output['response'] = ['message' => $e->getMessage()];
-        }
+		}
 
 		return response()->json($output['response'], $output['status']);
 	}

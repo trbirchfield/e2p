@@ -80,7 +80,7 @@ class Announcement extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -106,7 +106,7 @@ class Announcement extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -124,9 +124,9 @@ class Announcement extends BaseModel {
 				$res  = $this->where('status', Status::ACTIVE)->orderBy('created_at', 'desc')->get();
 				foreach ($res as $row) {
 					$list[] = [
-						'id'    => $row->id,
-						'title' => $row->title,
-						'image' => $row->image,
+						'id'           => $row->id,
+						'title'        => $row->title,
+						'image'        => $row->image,
 						'announcement' => $row->announcement,
 					];
 				}
@@ -134,7 +134,7 @@ class Announcement extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -156,7 +156,7 @@ class Announcement extends BaseModel {
 				$result = TRUE;
 			}
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 		}
 
 		return $result;
@@ -217,7 +217,7 @@ class Announcement extends BaseModel {
 				$list = array_slice($list, $input['offset'], $input['limit']);
 			}
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 		}
 
 		// Return
