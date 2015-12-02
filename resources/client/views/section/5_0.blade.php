@@ -9,7 +9,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left no-print wlion-index" id="mid-page13">
+            <div class="small-3 columns doc-left no-print search-index" id="mid-page13">
                 <h6 class="caption">
                     Figure 6. <br />Marketing mix components
                 </h6>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>Before members of your target audience can be reached with your program, they must first know about the program and be interested in it. Awareness and interest are generated through marketing and participant recruitment. Marketing is a process for generating, communicating, and distributing value to consumers. In commercial marketing, the value is generally a product or service that is provided in exchange for a financial payment. In social marketing, the value is generally a behavior, service, or event. Social marketing is concerned with behavior change for improved health, not financial gain. Social marketing combined with specific actions to decrease barriers to participation are the means by which you can recruit members of your target audience.</p>
                 <p>There are several questions to ask as you begin developing your campaign.</p>
                 <ul class="document-list">

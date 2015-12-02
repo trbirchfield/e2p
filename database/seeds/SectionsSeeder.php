@@ -18,25 +18,26 @@ class SectionsSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run() {
+		// Clear Data
 		DB::table('sections')->truncate();
-		// Init values
-		$section_titles = require dirname(__FILE__) . '/SeederData/section_titles.php';
 
+		// Rebuild Data
+		$section_titles = require (dirname(__FILE__) . '/SeederData/section_titles.php');
 		foreach ($section_titles as $section => $title) {
+			// Render view for each section to get indexable content
 			$data = [
 				'section' => substr($section, 0, 1),
 				'subsection' => substr($section, 0, -1)
 			];
-			// Grab each section's view file path
 			$view = view('client::section.' . str_replace('.', '_', $section), $data)->renderSections();
 
 			// Grab Indexed Content
 			$crawler     = new Crawler($view['content']);
-			$node_values = $crawler->filter('.wlion-index')->each(function (Crawler $node, $i) {
+			$node_values = $crawler->filter('.search-index')->each(function (Crawler $node, $i) {
 				return $node->text();
 			});
 
-			// save content var to DB
+			// Save content var to DB
 			Section::create([
 				'section'       => $section,
 				'title'         => $title,

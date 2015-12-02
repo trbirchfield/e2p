@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page2">
+            <div class="small-3 columns doc-left search-index" id="mid-page2">
                 <h6 class="caption no-print">
                     Figure 2. Title IIID requirement for <br />evidence-based programming
                 </h6>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>There are a number of advantages to selecting and implementing EBPs. Several of these are discussed below.</p>
                 <ul class="document-list">
                     <li><em>Increased likelihood of the program working</em> &mdash; You will be implementing a program known to work, as opposed to implementing a program you hope will work.</li>

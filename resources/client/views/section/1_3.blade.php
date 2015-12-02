@@ -8,7 +8,7 @@
 @section('content')
     <section class="document-view">
         @include('client::layouts.section_header')
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>Certain factors increase the likelihood that an organization will be successful in EBP implementation. Assessing your organization’s knowledge of evidence-based programming, the degree to which organizational stakeholders support a potential program, and the availability of resources can help you determine if your organization is ready to implement an EBP.</p>
                 <p>As you read through the Toolkit, you will come across Readiness Questions that will help you assess these factors. As you answer &ldquo;yes&rdquo; or &ldquo;no&rdquo; to each question, you will be provided with feedback and suggested actions to help further your readiness.</p>

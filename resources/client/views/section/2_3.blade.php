@@ -8,13 +8,13 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page3">
+            <div class="small-3 columns doc-left search-index" id="mid-page3">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p>The Community Tool Box, produced by the University of Kansas, provides descriptions and links to dozens of websites that explore promising health promotion and disease prevention approaches and programs. Formore information, visit their <a href="http://ctb.ku.edu/en/promisingapproach/Databases_Best_Practices.aspx" target="_blank">Website</a></p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>Researchers will often submit evidence about programs to research organizations or federal agencies that will examine the evidence and approve or endorse the programs they find to have solid bases of evidence. These research organizations and agencies generate databases (sometimes termed registries or clearinghouses) that catalogue and provide various details about the approved or endorsed EBPs. In general, each database contains programs that address a specific age group (e.g., children and adolescents, seniors, families with children) or health topic (e.g., cancer prevention and treatment, parenting, environmental quality). Each organization and agency has its own specific criteria for what constitutes evidence-based. This information is provided on the websites of the organizations and agencies.</p>
                 <p>When looking at databases, you may encounter two related, yet distinct types. First, there are databases that catalogue and detail actual programs. With these databases, you can identify a prepackaged, ready-to-implement program to implement with your organization’s audience. For example, if you are looking to implement a smoking cessation program, you would be able to identify a self-contained program (containing implementation instructions, curriculum components, and resources) that will meet the needs of your audience. Second, there are databases that catalogue and detail broad policies or approaches that have positive impacts on health. For example, you can learn from one database that increasing the price of cigarettes and offering free smoking cessation programs are strategies that have been shown to decrease smoking rates. The program databases are useful for organizations that are ready to implement programs with their audiences. The policy and approach databases are generally more useful to program developers, researchers, and policymakers. Examples of both types of databases are provided below.</p>
                 <h2>Databases of evidence based-programs</h2>

@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <p>The steps to fidelity monitoring include activities that take place before, during, and after program implementation. Each staff member who participates in program implementation can also participate in fidelity monitoring. If program personnel are numerous, it may be useful to select a few of these individuals to form a team that carries out the bulk of the monitoring. Depending on the nature of the program, individuals other than program staff, such as the program’s developers, may also take part.</p>
                 <h2>Before program implementation</h2>
                 <ul class="document-list">
@@ -21,11 +21,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page6">
+            <div class="small-3 columns doc-left search-index" id="mid-page6">
                 <h5>Additional Resource</h5>
                 <p>The National Council on Aging provides <a href="http://ncoa_archive.ncoa.org/chamodules/documents/MaintainFidelityTool.pdf " target="_blank">The Fidelity Tool</a>, a step-by-step guide to fidelity monitoring.</p>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <h2>During program implementation</h2>
                 <ul class="document-list">
                     <li>Complete the fidelity monitoring tool as activities are implemented &mdash; It is important to update the fidelity monitoring tool soon after activities are implemented. Delays between implementation and documentation can make it difficult to remember details. For example, a staff member may forget if a particular handout was provided to participants. Likewise, a staff member may forget that a particular video couldn’t be shown to participants because the DVD player was not working.</li>

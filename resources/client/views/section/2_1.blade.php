@@ -7,7 +7,7 @@
 @section('content')
     <section class="document-view">
         @include('client::layouts.section_header')
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-3 columns doc-left" id="mid-page3">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page4">
+            <div class="small-3 columns doc-left search-index" id="mid-page4">
                 <h6 class="caption">
                     Figure 3. Existing instruments available for use
                 </h6>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <h2>Sources of Primary Data</h2>
                 <p>Primary data are data you collect yourself. Generally, primary data answer questions that are tailored to your audience and situation, which is a major advantage of this data type. A major disadvantage of primary data is the need to assure the validity and reliability of the tools and techniques used to collect the data. Validity is the degree to which a tool (e.g., survey) or technique (e.g., observation) measures what it is designed to measure. Reliability is the degree to which a tool or technique yields results that are consistent. While the abovementioned definitions are succinct, there are several types of validity and reliability. Experts with backgrounds in research methods and statistics are best able to determine which tools and techniques are sound. If you do not feel anyone at your organization is well suited to determine if tools and techniques are valid and reliable, you might benefit from existing instruments that can be adapted and used by your organization <span class="reference">(see Figure 3)</span>. The advantages and disadvantages of various primary data collection methods are summarized in Table 2.</p>
                 <h2>Single-step or cross-sectional surveys</h2>
@@ -84,7 +84,7 @@
                 <p>Members of the audience and the environment surrounding them can be observed as part of a needs assessment. For example, needs assessors may stand on a street corner and observe drivers to determine how many are wearing seatbelts. Additional behaviors and environmental conditions that can be observed include the use of hard hats by workers in a construction site, cigarette smoking by employees during work breaks, or vegetable consumption by individuals in a cafeteria. A popular form of observation is a windshield survey or walking tour, during which assessors drive and/or walk through a designated area, viewing as much of it as possible. While moving through the area, they watch for various predetermined elements (e.g., public transportation availability, housing type and quality, existence and quality of parks). The assessors document notes about what they see, hear, and smell regarding the elements. The notes are later analyzed for themes. <a href="http://ctb.ku.edu/en/tablecontents/chapter3-section21-main.aspx" target="_blank">A brief guide to windshield surveys is available from The Community Tool Box of the University of Kansas</a>.</p>
             </div>
         </div>
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="large-12 columns">
             <h6 class="caption">Table 2 - Primary data collection methods</h6>
                 <table>
@@ -358,7 +358,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <h2>Sources of secondary data</h2>
                 <p>Secondary data are data that have already been collected by someone else. Secondary data are advantageous because they are often available for immediate use and are inexpensive, if not free, to use. However, because secondary data were collected previously, it is difficult to determine if the data are still applicable to the audience or if appropriate methodologies were used during data collection. These are significant disadvantages. Obtaining secondary data from reputable sources, several of which are identified below, can help you capitalize on the advantages of secondary data and guard against the disadvantages.</p>
                 <ul class="document-list">
@@ -396,7 +396,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="large-12 columns">
             <h6 class="caption">Table 3 - Secondary data sources from the CDC</h6>
                 <table>

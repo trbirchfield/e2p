@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <p>Process evaluation assesses the delivery of a program. It examines factors such as the extent to which the program is being implemented as designed, whether the target population is being reached, and the quality of program delivery. Sometimes process evaluation can also constitute formative evaluation, which is evaluation used to improve or fine tune a program.</p>
                 <p>Numerous aspects of program delivery can be assessed with process evaluation. Important aspects to evaluate are described below.</p>
                 <ul class="document-list">

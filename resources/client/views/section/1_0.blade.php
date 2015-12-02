@@ -6,7 +6,7 @@
 @section('content')
     <section class="document-view">
         @include('client::layouts.section_header')
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-3 columns doc-left" id="mid-page1">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
@@ -24,7 +24,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="large-12 columns">
                 <h6 class="caption">Table 1 - Evaluation study designs</h6>
                 <table>
@@ -69,7 +69,7 @@
                 </table>
             </div>
         </div>
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-3 columns doc-left">
                 <h6 class="caption  no-print">
                     Figure 1. <br />Basic criteria for evidence-based programs

@@ -7,7 +7,7 @@
 @section('content')
     <section class="document-view">
         @include('client::layouts.section_header')
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>Though there are numerous advantages to implementing EBPs, there are also a number of challenges. Several of these are discussed below.</p>
                 <ul class="document-list">

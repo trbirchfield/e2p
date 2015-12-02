@@ -4,7 +4,6 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateSectionsTable extends Migration {
-
 	/**
 	 * Run the migrations.
 	 *
@@ -30,5 +29,4 @@ class CreateSectionsTable extends Migration {
 	public function down() {
 		Schema::drop('sections');
 	}
-
 }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 
 class CreateSessionTable extends Migration {
-
 	/**
 	 * Run the migrations.
 	 *
@@ -25,5 +24,4 @@ class CreateSessionTable extends Migration {
 	public function down() {
 		Schema::drop('sessions');
 	}
-
 }

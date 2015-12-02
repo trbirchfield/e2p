@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <p>The vision, mission, goals, and objectives of your organization are its lifeblood. Thus, they are important considerations when selecting an EBP. The selection of a program that conflicts with the purpose of your organization can set the program up for failure, as well as cause confusion among organizational personnel and clientele regarding the identity of the organization. Several factors to consider are described below.</p>
                 <ul class="document-list">
                     <li><em>Health topic</em> &mdash; The EBP should address a health topic that is relevant to the organization. For example, a recreation center that offers gym memberships and sports programs would likely find a physical fitness EBP to be congruent with its purpose. However, an HIV prevention program may or may not be congruent with its purpose.</li>

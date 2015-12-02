@@ -8,14 +8,14 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page6">
+            <div class="small-3 columns doc-left search-index" id="mid-page6">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://whatworks.uwex.edu/attachment/whatworks_03.pdf" target="_blank">Guidelines for Selecting an Evidence‐Based Program</a>, developed by the Cooperative Extension of the University of Wisconsin-Madison, provides guidance for selecting an appropriate EBP.</p>
                     <p><a href="http://implementation.fpg.unc.edu/resources/hexagon-tool-exploring-context" target="_blank">The Hexagon Tool</a>, featured on the Active Implementation Hub of the State Implementation &#38; Scaling-up of Evidence-based Practices Center and the National Implementation Research Network, helps organizations select suitable EBPs.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>A suitable EBP will be a good match for your clientele. Several factors to consider are described below.</p>
                 <ul class="document-list">
                     <li><em>Intended audience</em> &mdash; It is useful to identify the audience for which the intervention was initially developed. The likelihood of achieving positive outcomes increases when you implement an EBP that was developed for and tested on an audience similar to yours. For example, if a smoking cessation program was developed and tested on adolescents, it may not produce similar results among older adults.</li>

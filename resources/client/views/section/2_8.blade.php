@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page7">
+            <div class="small-3 columns doc-left search-index" id="mid-page7">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="/pdfs/HA_CommunityPartnerships.pdf" target="_blank">Partnering to Promote Healthy Aging: Creative Best Practice Community Partnerships</a>, produced by the National Council on Aging, provides recommendations regarding partnerships and features vignettes of seven best practice programs.</p>
@@ -16,7 +16,7 @@
                     <p><a href="http://www.abundantcommunity.com/home/resources_tools.html" target="_blank">The Abundant Community website</a>, developed from books written by Peter Block and John McKnight, provides resources and tools for engaging families and neighborhoods.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>Partnerships consist of two or more organizations that collaborate to achieve a common goal through effective use of expertise, personnel, and other resources. Partnerships among the healthcare, government, community, and academic sectors are often formed to facilitate the implementation of EBPs.</p>
                 <p>There are numerous benefits associated with the creation and utilization of partnerships. Several of these are listed below.</p>
                 <ul class="document-list">
@@ -43,14 +43,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page6">
+            <div class="small-3 columns doc-left search-index" id="mid-page6">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://archive.ahrq.gov/research/cbprrole.htm" target="_blank">The Agency for Healthcare Research and Quality</a> provides an explanation of the role of community-based participatory research</p>
                     <p><a href="http://www.aapcho.org/" target="_blank">The website of the Association of Asian Pacific Community Health Organizations</a> features a toolkit on community-based participatory research.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <h2>Community-based participatory approaches</h2>
                 <p>Community-based participatory approaches involve many partners. In these approaches, each stakeholder (e.g., audience member, organization staff member, community official, volunteer) plays a role in needs assessment and program selection. Each stakeholder’s participation is welcomed and valued. There are a lot of benefits to participatory approaches, including those listed below.</p>
                 <ul class="document-list">

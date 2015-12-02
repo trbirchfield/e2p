@@ -45,7 +45,7 @@ return [
 	'4.0' => 'Implementing an Evidence Based Programs with Fidelity',
 	'4.1' => 'Fidelity Monitoring',
 	'4.2' => 'Adapting Programs to Local Needs and Preferences While Maintaining Fidelity',
-	
+
 	/*
 	|--------------------------------------------------------------------------
 	| Section titles for section 5

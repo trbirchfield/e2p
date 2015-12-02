@@ -8,14 +8,14 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page11">
+            <div class="small-3 columns doc-left search-index" id="mid-page11">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="/pdfs/NCOA-Health-Promo-Issue-Brief.pdf" target="_blank">Evidence-Based Health Promotion Programs for Older Adults: Key Factors and Strategies Contributing to Program Sustainability</a>, offered by the National Council on Aging, provides comprehensive details on program sustainability.</p>
                     <p><a href="http://whatworks.uwex.edu/attachment/whatworks_02.pdf" target="_blank">The Cooperative Extension of the University of Wisconsin-Madison</a> offers Strategies for Recruiting and Retaining Participants in Prevention Programs, a document that provides suggestions for program sustainability.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>In the context of program implementation, sustainability can be defined on the individual, organizational, or community levels.</p>
                 <ul class="document-list">
                     <li><em>Individual level</em> &mdash; Maintenance of program benefits for individual participants after the program ends.</li>

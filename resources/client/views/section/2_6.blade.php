@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <p>EBPs span the continuum in terms of the resources that are required for their implementation. Therefore, it is important to compare the availability of the following resources to those required to implement a program of interest.<p>
                 <ul class="document-list">
                     <li><em>Costs</em> &mdash; The costs of implementing EBPs vary widely. Some are nearly free to implement; others require that implementing organizations attend training sessions, buy curricula, and purchase licenses.

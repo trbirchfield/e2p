@@ -8,13 +8,13 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left wlion-index" id="mid-page6">
+            <div class="small-3 columns doc-left search-index" id="mid-page6">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="/pdfs/NCOA-Tips-for-Recruiting-Peer-Leaders.pdf" target="_blank">The National Council on Aging</a> offers a list of tips on recruiting lay leaders.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right wlion-index">
+            <div class="small-9 columns doc-right search-index">
                 <p>Program developers are increasingly incorporating the use of lay leaders into their EBPs. Lay leaders are individuals who do not have formal healthcare credentials who are trained to lead EBPs. Through evaluation studies, many program developers have found that trained lay individuals can teach self-care and other health-related topics as well as healthcare professionals. In fact, lay leaders may be a better option than professional leaders when it comes to some health promotion programs. Because lay leaders live in the communities in which they work, they understand the unique needs of the communities, communicate in the language(s) spoken by community members, and can present EBPs in culturally competent manners. Additionally, lay leaders help make EBPs affordable because it costs less to compensate them for their work than it costs to compensate healthcare professionals.</p>
                 <p>The relevance of lay leaders varies by EBP. Some programs mandate that lay leaders lead program sessions. Some programs do not require the involvement of lay leaders, but leave room for their incorporation. Other programs do not allow for any incorporation of lay leaders. The role of lay leaders in the program your organization is implementing should be addressed in the program materials and during your training.</p>
                 <h2>Recruiting lay leaders</h2>

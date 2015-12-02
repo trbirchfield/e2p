@@ -7,7 +7,7 @@
 @section('content')
     <section class="document-view">
         @include('client::layouts.section_header')
-        <div class="row wlion-index">
+        <div class="row search-index">
             <div class="small-9 small-offset-3 columns doc-right">
                 <p>The sheer variety of available EBPs can be overwhelming. The existence of multiple programs that address similar topics can leave an organization wondering how the programs differ and if there is any benefit to implementing one instead of the others. There is no reason to feel overwhelmed or randomly select a program. A little organizational self-examination and planning can help you identify and select a suitable program. </p>
             </div>

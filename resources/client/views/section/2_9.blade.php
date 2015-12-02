@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right wlion-index">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
                 <p>EBPs require a financial commitment from implementing organizations. Some programs can be implemented for a few hundred dollars, while some programs require several thousand dollars for successful implementation. The costs of developing and evaluating an EBP can be significant, so program developers will often collect licensing fees or similar charges in order to recover research and development costs or cover the costs associated with ongoing administration of a program. Several potential funding sources for EBPs are discussed below.</p>
                 <ul class="document-list">
                     <li><em>Existing funds</em> &mdash; Some organizations can use financial resources they already have to fund a new EBP. For example, the funding used to support a program that is ending could be reallocated to fund the new program.</li>
