@@ -1,21 +1,14 @@
 @extends('client::layouts.default')
+@section('headline', 'Establishing Partnerships')
+@section('section', '2.8')
+@section('prev_section', '2/7')
+@section('next_section', '2/9')
 
 @section('content')
     <section class="document-view">
+        @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>2.8</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Establishing Partnerships</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/7">Previous Section</a>
-                    <a id="next" href="/section/2/9">Next Section</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 columns doc-left" id="mid-page7">
+            <div class="small-3 columns doc-left search-index" id="mid-page7">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="/pdfs/HA_CommunityPartnerships.pdf" target="_blank">Partnering to Promote Healthy Aging: Creative Best Practice Community Partnerships</a>, produced by the National Council on Aging, provides recommendations regarding partnerships and features vignettes of seven best practice programs.</p>
@@ -23,7 +16,7 @@
                     <p><a href="http://www.abundantcommunity.com/home/resources_tools.html" target="_blank">The Abundant Community website</a>, developed from books written by Peter Block and John McKnight, provides resources and tools for engaging families and neighborhoods.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right">
+            <div class="small-9 columns doc-right search-index">
                 <p>Partnerships consist of two or more organizations that collaborate to achieve a common goal through effective use of expertise, personnel, and other resources. Partnerships among the healthcare, government, community, and academic sectors are often formed to facilitate the implementation of EBPs.</p>
                 <p>There are numerous benefits associated with the creation and utilization of partnerships. Several of these are listed below.</p>
                 <ul class="document-list">
@@ -40,24 +33,24 @@
                 <h2>Succesful partnerships</h2>
                 <p>The specific characteristics of successful partnerships can vary in numerous ways. However, several characteristics that consistently produce superior results have been identified. Many of these are described below.</p>
                 <ul class="document-list">
-                    <li><em>Suitable partners</em> – The appropriate partners for a given partnership are those who can collectively carry out the purpose of the partnership. The partners often share similar missions and goals, while having expertise and resources that are complementary.</li>
-                    <li><em>Partnership agreement</em> – A formal partnership agreement, often in the form of a commitment letter or memorandum of understanding, should be generated to provide accountability in regards to roles and responsibilities.</li>
-                    <li><em>Trust</em> – Trust takes time to establish and is built when each partner is honest about its resources and expertise and follows through on its commitments.</li>
-                    <li><em>Clear, mutual purpose and goals</em> – The purpose for which the partnership was developed should be clearly articulated. Jointly determined goals, and strategies to achieve the goals, should be congruent with the missions of each partner and should foster the development of an action plan that describes the roles and responsibilities of each partner.</li>
-                    <li><em>Communication</em> – Partnerships benefit from designated communication methods in order to maintain communication and ensure each partner is kept updated on progress and challenges. Communication methods can include emails, meeting agendas and minutes, online discussion boards, social media, and annual reports.</li>
-                    <li><em>Appropriate accountability and accolade</em> – All partners share in the success or failure of a partnership. While each partner must own up to its designated tasks, finger-pointing or unfair blame for setbacks should be avoided. Likewise, it is good policy to acknowledge the contributions of each partner and celebrate collective accomplishments that are attributed to the partnership.</li>
+                    <li><em>Suitable partners</em> &mdash; The appropriate partners for a given partnership are those who can collectively carry out the purpose of the partnership. The partners often share similar missions and goals, while having expertise and resources that are complementary.</li>
+                    <li><em>Partnership agreement</em> &mdash; A formal partnership agreement, often in the form of a commitment letter or memorandum of understanding, should be generated to provide accountability in regards to roles and responsibilities.</li>
+                    <li><em>Trust</em> &mdash; Trust takes time to establish and is built when each partner is honest about its resources and expertise and follows through on its commitments.</li>
+                    <li><em>Clear, mutual purpose and goals</em> &mdash; The purpose for which the partnership was developed should be clearly articulated. Jointly determined goals, and strategies to achieve the goals, should be congruent with the missions of each partner and should foster the development of an action plan that describes the roles and responsibilities of each partner.</li>
+                    <li><em>Communication</em> &mdash; Partnerships benefit from designated communication methods in order to maintain communication and ensure each partner is kept updated on progress and challenges. Communication methods can include emails, meeting agendas and minutes, online discussion boards, social media, and annual reports.</li>
+                    <li><em>Appropriate accountability and accolade</em> &mdash; All partners share in the success or failure of a partnership. While each partner must own up to its designated tasks, finger-pointing or unfair blame for setbacks should be avoided. Likewise, it is good policy to acknowledge the contributions of each partner and celebrate collective accomplishments that are attributed to the partnership.</li>
                 </ul>
             </div>
         </div>
         <div class="row">
-            <div class="small-3 columns doc-left" id="mid-page6">
+            <div class="small-3 columns doc-left search-index" id="mid-page6">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://archive.ahrq.gov/research/cbprrole.htm" target="_blank">The Agency for Healthcare Research and Quality</a> provides an explanation of the role of community-based participatory research</p>
                     <p><a href="http://www.aapcho.org/" target="_blank">The website of the Association of Asian Pacific Community Health Organizations</a> features a toolkit on community-based participatory research.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right">
+            <div class="small-9 columns doc-right search-index">
                 <h2>Community-based participatory approaches</h2>
                 <p>Community-based participatory approaches involve many partners. In these approaches, each stakeholder (e.g., audience member, organization staff member, community official, volunteer) plays a role in needs assessment and program selection. Each stakeholder’s participation is welcomed and valued. There are a lot of benefits to participatory approaches, including those listed below.</p>
                 <ul class="document-list">

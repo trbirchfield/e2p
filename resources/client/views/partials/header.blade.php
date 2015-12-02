@@ -23,8 +23,8 @@
 					<li><a href="{{ route('faq') }}">FAQ</a></li>
 					<li><a href="{{ route('about') }}">About Us</a></li>
 					<li><a href="{{ route('contact') }}">Contact Us</a></li>
-					<li>
-						<form id="search-form" name="search_form" class="search-form" method="get" action="{{ route('search') }}">
+					<li class="search">
+						<form class="search-form" method="get" action="{{ route('search') }}">
 							<input type="search" name="search" class="search-input" placeholder="Search the Site" />
 							<button class="search-submit"><i class="fa fa-search"></i></button>
 						</form>

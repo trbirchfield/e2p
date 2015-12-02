@@ -43,6 +43,5 @@ class ContactController extends BaseController {
 
 		// Reload form with success message
 		return redirect()->back()->with('message', 'Thank you for sharing your feedback with us. We will review your message and provide a response promptly.');
-
 	}
 }
