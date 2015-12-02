@@ -1,5 +1,7 @@
 <?php namespace App\Http\Client\Controllers;
 
+use Symfony\Component\DomCrawler\Crawler;
+
 class HomeController extends BaseController {
 	/**
 	 * Home page.

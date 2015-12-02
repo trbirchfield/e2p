@@ -30,14 +30,17 @@ class SectionsSeeder extends Seeder {
 			// Grab each section's view file path
 			$view = view('client::section.' . str_replace('.', '_', $section), $data)->renderSections();
 
-			// Strip tags to retieve only the content
-			$content = strip_tags(str_replace(["\r", "\n"], '', $view['content']));
-			
+			// Grab Indexed Content
+			$crawler     = new Crawler($view['content']);
+			$node_values = $crawler->filter('.wlion-index')->each(function (Crawler $node, $i) {
+				return $node->text();
+			});
+
 			// save content var to DB
 			Section::create([
 				'section'       => $section,
 				'title'         => $title,
-				'body'          => $content
+				'body'          => implode('', $node_values)
 			]);
 			$this->command->info('Seeded Section: ' . $section);
 		}

@@ -8,14 +8,14 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left" id="mid-page9">
+            <div class="small-3 columns doc-left wlion-index" id="mid-page9">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://www.cdc.gov/healthcommunication/about.html" target="_blank">The Centers for Disease Control and Prevention’s Gateway to Health Communication and Social Marketing Practice</a> provides everything from social marketing tools and templates to example campaigns that highlight best practices.</p>
                     <p><a href="/pdfs/Lessons_from_field_-_social_marketing.pdf" target="_blank">Social Marketing and Public Health Lessons from the Field: A Guide to Social Marketing,</a> produced by the Social Marketing National Excellence Collaborative, provides an overview of social marketing and detailed case studies of several campaigns.</p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right">
+            <div class="small-9 columns doc-right wlion-index">
                 <p>Once you have marketed your program and recruited participants, it is beneficial to take steps to promote participant retention. It is unlikely that every participant who begins a program will complete it. In fact, it is common for lifestyle intervention programs to have attrition rates (the percentage of participants who do not finish the program) in the 20-30% range. In other words, two or three of every 10 participants may leave the program before it is completed. There are strategies you can use to increase the number of participants who complete the program. Several of these are described below.</p>
                 <ul class="document-list">
                     <li><em>Offer the program at convenient times and at locations throughout the community</em>. If participants find it inconvenient to attend sessions because of the times they are scheduled or where they are held, then they are less likely to put continued effort into attending the program.</li>

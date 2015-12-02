@@ -8,7 +8,7 @@
     <section class="document-view">
         @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right">
+            <div class="small-9 small-offset-3 columns doc-right wlion-index">
                 <p>Organizations are typically motivated to implement EBPs by a desire to promote the health and well-being of individuals in their communities. Program personnel often hold high expectations regarding the outcomes of their programs and grow discouraged when challenges are encountered. Three key concepts related to evidence-based programming are described below. Considering these concepts can help you and fellow personnel prepare to encounter challenges and form expectations that are realistic.</p>
                 <ul class="document-list">
                     <li><em>It is hard to change health-related behaviors</em>. Most EBPs help participants accomplish behavior change (e.g., smoking cessation, initiating exercise, eating nutritiously). Changing deep-seated behaviors is very hard to do! Participants often know behavior change is difficult because they have tried to change their behaviors before. If they were able to change these behaviors easily, they would do so on their own and have no need for the programs. The difficulty associated with behavior change is important to keep in mind because it is one reason why participants are hesitant to take part in programs and why they sometimes drop out of programs. Additionally, it may be one reason why program outcomes are often more modest than program personnel had hoped. Keep in mind that even small changes can be cause for celebration—they may be catalysts for increased change in the future!</li>

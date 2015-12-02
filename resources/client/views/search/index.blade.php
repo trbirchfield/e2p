@@ -9,8 +9,10 @@
                     @foreach ($list as $item)
                         <article class="content-box small search-result">
                             <span class="search-result-section-num">Section {{ $item['section'] }}</span>
-                            <h3 class="search-result-title"><a href="#">{{ $item['title'] }}</a></h3>
-                            <p class="search-result-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In enim metus, cursus eleifend <span class="search-highlight">test</span> magna eget, ultricies consectetur augue. Pellentesque interdum sem augue, at faucibus nibh accumsan ac. In hac habitasse <span class="search-highlight">test</span> platea dictumst. Ut sit amet arcu ac urna accumsan <span class="search-highlight">test</span> finibus. Cras ac vulputate lectus&hellip;</p>
+                            <h3 class="search-result-title"><a href="/section/{{ $item['section_slug'] }}">{{ $item['title'] }}</a></h3>
+                            @foreach ($item['excerpts'] as $excerpt)
+                                <p class="search-result-content">{!! $excerpt !!}</p>
+                            @endforeach
                         </article>
                     @endforeach
                 @else
