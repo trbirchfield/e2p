@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="{{ url() }}"><img class="ie-svg" src="/public/img/logo-primary.svg" alt="{{ config('site.client.company_name') }}"></a>
+			<a class="navbar-brand" href="{{ url() }}"><img class="ie-svg" src="/public/img/logo.png" alt="{{ config('site.client.company_name') }}"></a>
 		</div>
 		<div class="navbar-header navbar-right">
 			<ul class="nav navbar-nav">

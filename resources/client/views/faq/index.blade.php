@@ -18,7 +18,7 @@
                             <dd class="accordion-navigation" ng-repeat="question in category.questions">
                                 <a href="#question-<% $index %>"><h3><span ng-bind="question.question"></span> <i class="fa fa-plus"></i></h3></a>
                                 <div id="question-<% $index %>" class="content">
-                                    <span ng-bind="question.answer"></span>
+                                    <span ng-bind-html="question.answer"></span>
                                 </div>
                             </dd>
                         </div>

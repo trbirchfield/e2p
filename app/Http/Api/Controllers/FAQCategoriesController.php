@@ -26,4 +26,37 @@ class FAQCategoriesController extends BaseController {
 
 		return response()->json($list, (is_null($list)) ? 422 : 200);
 	}
+
+	/**
+	 * Return a list of FAQ Categories.
+	 *
+	 * @return Response
+	 */
+	public function getCategories() {
+		$list = $this->model->getListForClient();
+
+		return response()->json($list, (is_null($list)) ? 422 : 200);
+	}
+
+	/**
+	 * Return a list of FAQ Categories for Sorting.
+	 *
+	 * @return Response
+	 */
+	public function getCategoriesForSorting() {
+		$list = $this->model->getListForSorting();
+
+		return response()->json($list, (is_null($list)) ? 422 : 200);
+	}
+
+	/**
+	 * Save Sorting Order.
+	 *
+	 * @return Response
+	 */
+	public function postSaveOrder() {
+		$result = $this->model->saveSortingOrder($this->request->all());
+
+		return response()->json($result, ($result) ? 200 : 422);
+	}
 }

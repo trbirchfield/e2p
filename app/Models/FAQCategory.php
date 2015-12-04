@@ -30,6 +30,16 @@ class FAQCategory extends BaseModel {
 	public $timestamps = TRUE;
 
 	/**
+	 * FAQs
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\hasMany
+	 */
+    public function faqs()
+    {
+        return $this->hasMany('App\Models\FAQ', 'faq_category_id');
+    }
+
+	/**
 	 * Attributes that should be cast to native types.
 	 *
 	 * @var array
@@ -80,7 +90,7 @@ class FAQCategory extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -106,7 +116,7 @@ class FAQCategory extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -159,7 +169,7 @@ class FAQCategory extends BaseModel {
 				$list = array_slice($list, $input['offset'], $input['limit']);
 			}
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 		}
 
 		// Return
@@ -169,4 +179,124 @@ class FAQCategory extends BaseModel {
 			'data'     => array_values($list)
 		];
 	}
+
+	/**
+	 * Return a list of Categories with nested FAQs.
+	 *
+	 * @return array|NULL
+	 */
+	public function getListForClient() {
+		try {
+			return Cache::tags(['faq_categories'])->remember('faq_category.getListForClient', Config::get('cache.duration.hour'), function() {
+				$list = [];
+				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
+				foreach ($res as $faq_category) {
+					// Create FAQ List from Category
+					$faqs = [];
+					foreach ($faq_category->faqs()->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get() as $faq) {
+						$faqs[] = [
+							'id'            => $faq->id,
+							'question'      => $faq->question,
+							'answer'        => $faq->answer,
+							'display_order' => $faq->display_order
+						];
+					}
+
+					// Create Category List With Nested FAQs
+					$list[] = [
+						'id'            => $faq_category->id,
+						'title'         => $faq_category->title,
+						'display_order' => $faq_category->display_order,
+						'questions'     => $faqs
+					];
+				}
+
+				return $list;
+			});
+		} catch (Exception $e) {
+			Log::error($e);
+
+			return NULL;
+		}
+	}
+
+	/**
+	 * Return a list of Categories with nested FAQs.
+	 *
+	 * @return array|NULL
+	 */
+	public function getListForSorting() {
+		try {
+				$list = [];
+				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
+				foreach ($res as $faq_category) {
+					// Create FAQ List from Category
+					$faqs = [];
+					foreach ($faq_category->faqs()->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get() as $faq) {
+						$faqs[] = [
+							'id'       => $faq->id,
+							'name'     => $faq->question,
+							'sortable' => TRUE,
+							'level'    => 0
+						];
+					}
+
+					// Create Category List With Nested FAQs
+					$list[] = [
+						'id'            => $faq_category->id,
+						'name'          => $faq_category->title,
+						'sortable'      => TRUE,
+						'level'         => NULL,
+						'children'      => $faqs
+					];
+				}
+
+				return $list;
+		} catch (Exception $e) {
+			Log::error($e);
+
+			return NULL;
+		}
+	}
+
+	/**
+	 * Toggle status.
+	 *
+	 * @param array $input
+	 * @return bool
+	 */
+	public function saveSortingOrder($input = NULL) {
+		try {
+			// Start DB Transaction
+			DB::transaction(function() use($input) {
+				foreach ($input as $display_order => $faq_category) {
+					// Setup FAQ Sync Array EX: ->sync([1 => ['expires' => true], 2, 3])
+					$category_sync = [];
+					if (!empty($faq_category['children'])) {
+						foreach ($faq_category['children'] as $child_display_order => $child) {
+							$faq                  = FAQ::find($child['id']);
+							$faq->display_order   = $child_display_order;
+							$faq->faq_category_id = $faq_category['id'];
+							$faq->save();
+						}
+					}
+
+					// Find Category and update display order and related FAQ's
+					$category                = $this->findOrFail($faq_category['id']);
+					$category->display_order = $display_order;
+					$category->save();
+				}
+			});
+
+			// Clear cache
+			Cache::tags('faq_categories')->flush();
+
+			return TRUE;
+		} catch (Exception $e) {
+			Log::error($e);
+
+			return FALSE;
+		}
+	}
+
 }
