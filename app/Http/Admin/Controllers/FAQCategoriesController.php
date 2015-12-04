@@ -26,7 +26,7 @@ class FAQCategoriesController extends BaseController {
 			'orderDir' => 'asc'
 		]);
 		$controls = [
-			['action' => 'edit', 'label' => 'Add FAQ Category', 'icon' => 'plus-circle'],
+			['action' => 'edit',  'label' => 'Add FAQ Category',     'icon' => 'plus-circle'],
 			['action' => 'order', 'label' => 'Order FAQ Categories', 'icon' => 'reorder']
 		];
 		$edit   = TRUE;
@@ -106,7 +106,7 @@ class FAQCategoriesController extends BaseController {
 	 */
 	public function getOrder() {
 		$breadcrumbs = [
-			['url' => route('admin.faqcategories'),      'name' => 'FAQCategories'],
+			['url' => route('admin.faqcategories'),       'name' => 'FAQCategories'],
 			['url' => route('admin.faqcategories.order'), 'name' => 'Order']
 		];
 

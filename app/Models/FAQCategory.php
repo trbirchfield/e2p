@@ -34,10 +34,9 @@ class FAQCategory extends BaseModel {
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\hasMany
 	 */
-    public function faqs()
-    {
-        return $this->hasMany('App\Models\FAQ', 'faq_category_id');
-    }
+	public function faqs() {
+		return $this->hasMany('App\Models\FAQ', 'faq_category_id');
+	}
 
 	/**
 	 * Attributes that should be cast to native types.
