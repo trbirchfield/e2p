@@ -18,7 +18,7 @@
 						</div>
 						<div class="form-group">
 							<label class="required" for="question">Question</label>
-							<textarea class="form-control" name="question" id="question" ng-model="formData.question" ng-init="formData.question = '{{ e(old('question', $resource['question'])) }}'" validation="required" ckEditor="editorOptions"></textarea>
+							<textarea class="form-control" name="question" id="question" ng-model="formData.question" ng-init="formData.question = '{{ e(old('question', $resource['question'])) }}'" validation="required"></textarea>
 							<div class="form-messages help-block" ng-messages="form.question.$error" ng-if="form.question.$invalid && (form.$submitted || form.question.$touched)">
 								<span ng-message="required">Question is required.</span>
 							</div>

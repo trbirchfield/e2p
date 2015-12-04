@@ -8,7 +8,7 @@ angular.module('app').controller('FaqController', ['$scope', '$timeout', '$http'
 
     // Get FAQ
     // TODO: Replace with actual API route once back-end has been configured.
-    $http.get('/public/packages/faq.json')
+    $http.get('/api/faqcategories/categories')
         .success(function(data) {
             $scope.categories = data;
             $scope.activeCategory = $scope.categories[0].id;

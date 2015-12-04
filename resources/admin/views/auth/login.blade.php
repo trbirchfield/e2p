@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="panel panel-default panel-login">
 				<div class="panel-heading">
-					<h3 class="panel-title text-center"><img class="ie-svg logo-login" src="/public/img/logo-primary.svg" alt="{{ config('site.client.company_name') }}"></h3>
+					<h3 class="panel-title text-center"><img class="ie-svg logo-login" src="/public/img/logo.png" alt="{{ config('site.client.company_name') }}"></h3>
 				</div>
 				<div class="panel-body" ng-show="showLogin" ng-cloak>
 					<form name="loginForm" action="{{ route('admin.login.attempt') }}" method="POST" ng-submit="login($event, loginForm)" novalidate>

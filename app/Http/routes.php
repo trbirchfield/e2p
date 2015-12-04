@@ -44,7 +44,8 @@ Route::group(['middleware' => 'non_production'], function() {
 			]);
 			Route::controller('faqcategories', 'FAQCategoriesController', [
 				'getIndex' => 'admin.faqcategories',
-				'getEdit'  => 'admin.faqcategories.edit'
+				'getEdit'  => 'admin.faqcategories.edit',
+				'getOrder' => 'admin.faqcategories.order',
 			]);
 			Route::controller('faqs', 'FAQsController', [
 				'getIndex' => 'admin.faqs',
