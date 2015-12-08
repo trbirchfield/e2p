@@ -2,6 +2,7 @@
 
 use App\Models\FAQ;
 use Illuminate\Http\Request;
+use Mail;
 
 class FAQsController extends BaseController {
 	/**
@@ -28,13 +29,25 @@ class FAQsController extends BaseController {
 	}
 
 	/**
-	 * Return a list of user statuses.
+	 * Post question from FAQ form.
 	 *
 	 * @return Response
 	 */
 	public function postAskQuestion() {
-		// TODO: Complete method so that it sends an email to client
-		$res = 'success';
+		$input = $this->request->all();
+		try {
+			// Email client
+			Mail::send('client::emails.faq_client', compact('input'), function($m) use($input) {
+				$m->to(config('site.client.emails.info'));
+				$m->from('noreply@evidencetoprograms.com', config('site.client.company_name'));
+				$m->sender(config('site.client.emails.info'), config('site.client.company_name'));
+				$m->subject($input['name'] . ' posted a question for us.');
+			});
+
+			$res = 'success';
+		} catch (Exception $e) {
+			Log::error($e);
+		}
 
 		return response()->json($res, (is_null($res)) ? 422 : 200);
 	}

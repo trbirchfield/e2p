@@ -9,7 +9,7 @@ angular.module('app').controller('ProgramsController', ['$scope', '$location', '
     // Get programs
     $scope.getPrograms = function(id, event) {
         // TODO: Replace with actual API route once back-end has been configured.
-        $http.get('/public/packages/programs.json')
+        $http.get('/api/featuredprograms/programs')
             .success(function(data) {
                 $scope.programs = data;
                 if (id) {
@@ -43,6 +43,9 @@ angular.module('app').controller('ProgramsController', ['$scope', '$location', '
             // Trust the video URL
             $scope.program.video_url = '';
             $scope.program.video_url = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.program.video_id);
+
+            // Set program id for comment form
+            $scope.formData.program_id = $scope.program.id;
 
             // Update URL and open modal
             $timeout(function() {
@@ -83,10 +86,10 @@ angular.module('app').controller('ProgramsController', ['$scope', '$location', '
             form.$setSubmitted();
             return;
         }
-        if (form.program_id) {
+        if ($scope.formData.program_id) {
             $scope.formProcessing = true;
             // TODO: Replace with actual API route once back-end has been configured.
-            $http.post('/api/faqs/ask-question', withCSRF($scope.formData))
+            $http.post('/api/featuredprograms/comment', withCSRF($scope.formData))
                 .success(function(res) {
                     // Success message
                     var title   = 'Your comment has been submitted.';
@@ -95,8 +98,9 @@ angular.module('app').controller('ProgramsController', ['$scope', '$location', '
                     growl.add(title, message, type, 5000);
 
                     // Clear form
-                    $scope.formData       = {};
-                    $scope.formProcessing = false;
+                    $scope.formData            = {};
+                    $scope.formData.program_id = $scope.program.id;
+                    $scope.formProcessing      = false;
                     form.$setPristine();
                     form.$setUntouched();
                 })

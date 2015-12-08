@@ -7,13 +7,13 @@ use DB;
 use Exception;
 use Log;
 
-class FAQCategory extends BaseModel {
+class FeaturedProgram extends BaseModel {
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'faq_categories';
+	protected $table = 'featured_programs';
 
 	/**
 	 * Protect fields from mass assignment.
@@ -30,12 +30,12 @@ class FAQCategory extends BaseModel {
 	public $timestamps = TRUE;
 
 	/**
-	 * FAQs
+	 * Comments
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\hasMany
 	 */
-	public function faqs() {
-		return $this->hasMany('App\Models\FAQ', 'faq_category_id');
+	public function comments() {
+		return $this->hasMany('App\Models\FeaturedProgramComment', 'featured_program_id');
 	}
 
 	/**
@@ -57,12 +57,12 @@ class FAQCategory extends BaseModel {
 	public function toggleStatus($id) {
 		try {
 			// Update status
-			$faq_category         = $this->findOrFail($id);
-			$faq_category->status = ($faq_category->status == Status::ACTIVE) ? Status::INACTIVE : Status::ACTIVE;
-			$faq_category->save();
+			$featured_program         = $this->findOrFail($id);
+			$featured_program->status = ($featured_program->status == Status::ACTIVE) ? Status::INACTIVE : Status::ACTIVE;
+			$featured_program->save();
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::tags('featured_programs')->flush();
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -79,7 +79,7 @@ class FAQCategory extends BaseModel {
 	 */
 	public function getStatuses() {
 		try {
-			return Cache::remember('faq_categories.getStatuses', Config::get('cache.duration.year'), function() {
+			return Cache::remember('featured_programs.getStatuses', Config::get('cache.duration.year'), function() {
 				$list = [];
 				$res  = Status::orderBy('id')->get();
 				foreach ($res as $row) {
@@ -102,7 +102,7 @@ class FAQCategory extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['faq_categories'])->remember('faq_category.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::tags(['featured_programs'])->remember('featured_programs.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {
@@ -135,16 +135,16 @@ class FAQCategory extends BaseModel {
 
 			// Build query
 			$query = $this->select(
-				'faq_categories.id',
-				'faq_categories.title AS title',
+				'featured_programs.id',
+				'featured_programs.title AS title',
 				'statuses.id AS status'
-			)->leftJoin('statuses', 'statuses.id', '=', 'faq_categories.status');
+			)->leftJoin('statuses', 'statuses.id', '=', 'featured_programs.status');
 			if (isset($input['filter_status'])) {
-				$query->where('faq_categories.status', $input['filter_status']);
+				$query->where('featured_programs.status', $input['filter_status']);
 			}
 			if (isset($input['filter_keyword'])) {
 				$query->where(function($q) use($input) {
-					$q->orWhere('faq_categories.title', 'like', '%' . $input['filter_keyword'] . '%');
+					$q->orWhere('featured_programs.title', 'like', '%' . $input['filter_keyword'] . '%');
 				});
 			}
 			if (isset($input['order_by'])) {
@@ -162,7 +162,6 @@ class FAQCategory extends BaseModel {
 			foreach ($res as $row) {
 				// Add row to list
 				$list[] = $row->toArray();
-
 			}
 			if (isset($input['offset']) and isset($input['limit'])) {
 				$list = array_slice($list, $input['offset'], $input['limit']);
@@ -180,33 +179,35 @@ class FAQCategory extends BaseModel {
 	}
 
 	/**
-	 * Return a list of Categories with nested FAQs.
+	 * Return a list of Programs with nested comments.
 	 *
 	 * @return array|NULL
 	 */
 	public function getListForClient() {
 		try {
-			return Cache::tags(['faq_categories'])->remember('faq_category.getListForClient', Config::get('cache.duration.hour'), function() {
+			return Cache::tags(['featured_programs'])->remember('featured_programs.getListForClient', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
-				foreach ($res as $faq_category) {
+				foreach ($res as $featured_programs) {
 					// Create FAQ List from Category
-					$faqs = [];
-					foreach ($faq_category->faqs()->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get() as $faq) {
-						$faqs[] = [
-							'id'            => $faq->id,
-							'question'      => $faq->question,
-							'answer'        => $faq->answer,
-							'display_order' => $faq->display_order
+					$comments = [];
+					foreach ($featured_programs->comments()->where('status', Status::ACTIVE)->orderBy('created_at', 'asc')->get() as $comment) {
+						$comments[] = [
+							'id'        => $comment->id,
+							'date'      => $comment->created_at->toDayDateTimeString(),
+							'content'   => $comment->comment,
+							'posted_by' => $comment->fname
 						];
 					}
 
 					// Create Category List With Nested FAQs
 					$list[] = [
-						'id'            => $faq_category->id,
-						'title'         => $faq_category->title,
-						'display_order' => $faq_category->display_order,
-						'questions'     => $faqs
+						'id'          => $featured_programs->id,
+						'title'       => $featured_programs->title,
+						'image'       => '/' . Config::get('site.uploads.content') . '/' .$featured_programs->image,
+						'video_id'    => $featured_programs->youtube_id,
+						'description' => $featured_programs->summary,
+						'responses'   => $comments
 					];
 				}
 
@@ -220,37 +221,25 @@ class FAQCategory extends BaseModel {
 	}
 
 	/**
-	 * Return a list of Categories with nested FAQs.
+	 * Return a list of programs for sorting.
 	 *
 	 * @return array|NULL
 	 */
 	public function getListForSorting() {
 		try {
-				$list = [];
-				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
-				foreach ($res as $faq_category) {
-					// Create FAQ List from Category
-					$faqs = [];
-					foreach ($faq_category->faqs()->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get() as $faq) {
-						$faqs[] = [
-							'id'       => $faq->id,
-							'name'     => $faq->question,
-							'sortable' => TRUE,
-							'level'    => 0
-						];
-					}
+			$list = [];
+			$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
+			foreach ($res as $featured_program) {
+				// Create Program List
+				$list[] = [
+					'id'       => $featured_program->id,
+					'name'     => $featured_program->title,
+					'sortable' => TRUE,
+					'level'    => NULL
+				];
+			}
 
-					// Create Category List With Nested FAQs
-					$list[] = [
-						'id'            => $faq_category->id,
-						'name'          => $faq_category->title,
-						'sortable'      => TRUE,
-						'level'         => NULL,
-						'children'      => $faqs
-					];
-				}
-
-				return $list;
+			return $list;
 		} catch (Exception $e) {
 			Log::error($e);
 
@@ -259,7 +248,7 @@ class FAQCategory extends BaseModel {
 	}
 
 	/**
-	 * Save Sorting Order.
+	 * Save Display Order.
 	 *
 	 * @param array $input
 	 * @return bool
@@ -268,27 +257,43 @@ class FAQCategory extends BaseModel {
 		try {
 			// Start DB Transaction
 			DB::transaction(function() use($input) {
-				foreach ($input as $display_order => $faq_category) {
-					// Setup FAQ Sync Array EX: ->sync([1 => ['expires' => true], 2, 3])
-					$category_sync = [];
-					if (!empty($faq_category['children'])) {
-						foreach ($faq_category['children'] as $child_display_order => $child) {
-							$faq                  = FAQ::find($child['id']);
-							$faq->display_order   = $child_display_order;
-							$faq->faq_category_id = $faq_category['id'];
-							$faq->save();
-						}
-					}
-
-					// Find Category and update display order and related FAQ's
-					$category                = $this->findOrFail($faq_category['id']);
+				foreach ($input as $display_order => $program) {
+					// Find Program and update display order
+					$category                = $this->findOrFail($program['id']);
 					$category->display_order = $display_order;
 					$category->save();
 				}
 			});
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::tags('featured_programs')->flush();
+
+			return TRUE;
+		} catch (Exception $e) {
+			Log::error($e);
+
+			return FALSE;
+		}
+	}
+
+	/**
+	 * Create Posted Comment.
+	 *
+	 * @param array $input
+	 * @return bool
+	 */
+	public function createComment($input = NULL) {
+		try {
+			$comment = $this->comments()->create([
+				'fname'      => $input['name'],
+				'email'      => $input['email'],
+				'comment'    => $input['comment'],
+				'status'     => Status::INACTIVE,
+				'created_at' => Carbon::now()
+			]);
+
+			// Clear cache
+			Cache::tags('featured_program_comments')->flush();
 
 			return TRUE;
 		} catch (Exception $e) {

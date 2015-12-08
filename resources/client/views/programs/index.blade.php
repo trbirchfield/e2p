@@ -29,7 +29,7 @@
                     <div class="program-video">
                         <iframe width="640" height="420" ng-src="<% program.video_url %>" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <div class="program-description" ng-bind="program.description"></div>
+                    <div class="program-description" ng-bind-html="program.description"></div>
                     <div class="program-responses" ng-if="program.responses.length">
                         <h4><span ng-bind="program.responses.length"></span> Responses</h4>
                         <div class="response" ng-repeat="response in program.responses">
@@ -42,7 +42,7 @@
                     <div class="program-comment">
                         <h4>Add a new comment</h4>
                         <form name="commentForm" action="/" method="POST" id="commentForm" class="comment-form" ng-submit="postComment(commentForm, $event)" novalidate>
-                            <input type="hidden" name="program_id" value="<% program.id %>" ng-model="program.id" />
+                            <input type="hidden" name="program_id" value="<% program.id %>" ng-model="formData.program_id" />
                             <div class="row" style="min-width: auto; width: auto; margin: 0 -15px;">
                                 <div class="column medium-6">
                                     <div class="form-group field-wrap text form-label required" ng-init="formData.name = ''" ng-class="{ error: commentForm.name.$invalid && (commentForm.$submitted) }">
