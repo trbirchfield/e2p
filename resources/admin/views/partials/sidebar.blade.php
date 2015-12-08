@@ -10,6 +10,12 @@
 				<li class="{{ ((Request::segment(2) == 'faqcategories') && (Request::segment(3) == 'order')) ? 'active' : '' }}"><a href="{{ route('admin.faqcategories.order') }}">Order FAQs</a></li>
 			</ul>
 		</li>
-		<li class="{{ Request::is('admin/widgets') ? 'active' : '' }}"><a href="{{ route('admin.widgets') }}">Widgets</a></li>
+		<li class="treeview{{ ((Request::segment(2) == 'featuredprograms') or (Request::segment(2) == 'featuredprogramcomments')) ? ' active' : '' }}">
+			<a href="#">Featured Programs</a>
+			<ul>
+				<li class="{{ (Request::segment(2) == 'featuredprograms') ? 'active' : '' }}"><a href="{{ route('admin.featuredprograms') }}">Featured Programs</a></li>
+				<li class="{{ (Request::segment(2) == 'featuredprogramcomments') ? 'active' : '' }}"><a href="{{ route('admin.featuredprogramcomments') }}">Comments</a></li>
+			</ul>
+		</li>
 	</ul>
 </nav>
