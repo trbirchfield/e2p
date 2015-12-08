@@ -1,19 +1,12 @@
 @extends('client::layouts.default')
+@section('headline', 'What Does it Mean for a Program to be Evidence-based?')
+@section('section', '1.0')
+@section('next_section', '1/1')
 
 @section('content')
     <section class="document-view">
-        <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>1.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>What Does it Mean for a Program to be Evidence-based?</h1>
-                <p class="clearfix navigation">
-                    <a id="next" href="/section/1/1">Next Section</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
+        @include('client::layouts.section_header')
+        <div class="row search-index">
             <div class="small-3 columns doc-left" id="mid-page1">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
@@ -22,16 +15,16 @@
                 </div>
             </div>
             <div class="small-9 columns doc-right">
-                <p>Health promotion programs that have been found to produce positive outcomes based on the results of rigorous evaluations are often termed “evidence-based.” To be identified as an evidence-based program (EBP), an intervention or program must be thoroughly evaluated by researchers who are able to attribute positive outcomes to the intervention itself.</p>
+                <p>Health promotion programs that have been found to produce positive outcomes based on the results of rigorous evaluations are often termed &ldquo;evidence-based.&rdquo; To be identified as an evidence-based program (EBP), an intervention or program must be thoroughly evaluated by researchers who are able to attribute positive outcomes to the intervention itself.</p>
                 <p>When you look at various programs to see if they are evidence-based, you will come across many evaluation study designs <span class="reference">(see Table 1)</span>. You do not need to be an expert in research methods to understand these study designs, but it is useful to understand some basic terms. The following terms are used when describing participants in studies.</p>
                 <ul class="document-list">
-                    <li><em>Experimental group</em> – Individuals in the experimental group are taking part in the program that is being evaluated in the study.</li>
-                    <li><em>Comparison group</em> – Individuals in the comparison group are not taking part in the program that is being evaluated. They may not be enrolled in any program or they may be enrolled in some alternative program. Members of the comparison group may or may not be similar in characteristics to the members of the experimental group <span class="reference">(see Table 1 for an example)</span>.</li>
-                    <li><em>Control group</em> – Individuals in the control group are not taking part in the program that is being evaluated; however, they may be enrolled in some alternative program. Members of the control group are likely similar in characteristics to members of the experimental group <span class="reference">(see Table 1 for an example)</span>.</li>
+                    <li><em>Experimental group</em> &mdash; Individuals in the experimental group are taking part in the program that is being evaluated in the study.</li>
+                    <li><em>Comparison group</em> &mdash; Individuals in the comparison group are not taking part in the program that is being evaluated. They may not be enrolled in any program or they may be enrolled in some alternative program. Members of the comparison group may or may not be similar in characteristics to the members of the experimental group <span class="reference">(see Table 1 for an example)</span>.</li>
+                    <li><em>Control group</em> &mdash; Individuals in the control group are not taking part in the program that is being evaluated; however, they may be enrolled in some alternative program. Members of the control group are likely similar in characteristics to members of the experimental group <span class="reference">(see Table 1 for an example)</span>.</li>
                 </ul>
             </div>
         </div>
-        <div class="row">
+        <div class="row search-index">
             <div class="large-12 columns">
                 <h6 class="caption">Table 1 - Evaluation study designs</h6>
                 <table>
@@ -76,7 +69,7 @@
                 </table>
             </div>
         </div>
-        <div class="row">
+        <div class="row search-index">
             <div class="small-3 columns doc-left">
                 <h6 class="caption  no-print">
                     Figure 1. <br />Basic criteria for evidence-based programs

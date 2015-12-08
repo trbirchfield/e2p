@@ -1,21 +1,15 @@
 @extends('client::layouts.default')
+@section('headline', 'Implementing an Evidence Based Programs with Fidelity')
+@section('section', '4.0')
+@section('nav_id', 'navigation-bottom')
+@section('prev_section', '3/3')
+@section('next_section', '4/1')
 
 @section('content')
     <section class="document-view">
+        @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>4.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Implementing an Evidence Based Programs with Fidelity</h1>
-                <p class="clearfix navigation" id="navigation-bottom">
-                    <a id="previous" href="/section/3/3">Previous Section</a>
-                    <a id="next" href="/section/4/1">Next Section</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-9 small-offset-3 columns doc-right">
+            <div class="small-9 small-offset-3 columns doc-right search-index">
             <h2>What is Fidelity?</h2>
                 <p>Fidelity is a determination of the extent to which a program is being implemented as designed. EBPs, by definition, have been rigorously evaluated and found to produce positive outcomes <span class="reference">(see <a href="/section/1/0">What Does it Mean for a Program to be Evidence-Based?</a> for more information)</span>. In other words, it is the components of a given program, and the way in which these components are implemented, that generate the outcomes. If program implementers dilute or deviate from program components, the program outcomes may differ significantly from those seen in previous evaluations.</p>
                 <p>Several aspects of fidelity are listed below. Ideally, program implementers would carefully assess every aspect of fidelity in a systematic manner. Unfortunately, when implementing programs in community settings, the ideal may not be realistic due to resource limitations. When this is the case, it is important to turn to the materials provided with your EBP to determine which aspects of fidelity are emphasized by the program developers. There will likely be a fidelity monitoring tool (such as a checklist) provided with the program materials. The elements highlighted in the tool will indicate where you should direct your efforts. If a fidelity monitoring tool is not provided, then it is a good idea to contact the program developers to ask their suggestions for fidelity monitoring. (The contact information for program developers can be found in databases of EBPs, including those discussed under <a href="/section/2/3">Identifying Evidence-Based Interventions</a>.) The program developers may emphasize some or all of the following aspects of fidelity.</p>

@@ -1,21 +1,14 @@
 @extends('client::layouts.default')
+@section('headline', 'Evaluation Planning')
+@section('section', '3.0')
+@section('prev_section', '2/9')
+@section('next_section', '3/1')
 
 @section('content')
     <section class="document-view">
+        @include('client::layouts.section_header')
         <div class="row">
-            <div class="small-3 columns doc-left">
-                <h3>Section <span>3.0</span></h3>
-            </div>
-            <div class="small-9 columns doc-right">
-                <h1>Evaluation Planning</h1>
-                <p class="clearfix navigation">
-                    <a id="previous" href="/section/2/9">Previous Section</a>
-                    <a id="next" href="/section/3/1">Next Section</a>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 columns doc-left" id="mid-page8">
+            <div class="small-3 columns doc-left search-index" id="mid-page8">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://www.cdc.gov/obesity/downloads/CDC-Evaluation-Workbook-508.pdf" target="_blank">The Centers for Disease Control and Prevention’s Developing an Effective Evaluation Plan</a> is a comprehensive workbook to guide organizations through evaluation planning.</p>
@@ -23,7 +16,7 @@
                     <p>Online tutorials on program evaluation are available from the <a href="http://www.nrepp.samhsa.gov/Courses/ProgramEvaluation/NREPP_0401_0010.html" target="_blank">Substance Abuse and Mental Health Services Administration.</a></p>
                 </div>
             </div>
-            <div class="small-9 columns doc-right">
+            <div class="small-9 columns doc-right search-index">
                 <p>Evaluation is the search for evidence that confirms a program has been implemented and attributes outcomes to the intervention. In other words, evaluation reveals which program components were implemented, how they were implemented, and if impacts (such as changes in health status or disease rates) are due to the program itself or to some factor outside of the program. Listed below are several reasons to conduct evaluation.</p>
                 <ul class="document-list">
                     <li>To determine if program objectives were achieved</li>
