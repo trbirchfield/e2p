@@ -227,19 +227,19 @@ class FeaturedProgram extends BaseModel {
 	 */
 	public function getListForSorting() {
 		try {
-				$list = [];
-				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
-				foreach ($res as $featured_program) {
-					// Create Program List
-					$list[] = [
-						'id'       => $featured_program->id,
-						'name'     => $featured_program->title,
-						'sortable' => TRUE,
-						'level'    => NULL
-					];
-				}
+			$list = [];
+			$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
+			foreach ($res as $featured_program) {
+				// Create Program List
+				$list[] = [
+					'id'       => $featured_program->id,
+					'name'     => $featured_program->title,
+					'sortable' => TRUE,
+					'level'    => NULL
+				];
+			}
 
-				return $list;
+			return $list;
 		} catch (Exception $e) {
 			Log::error($e);
 

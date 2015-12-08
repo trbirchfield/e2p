@@ -20,7 +20,7 @@ class FeaturedProgramCommentsRequest extends Request {
 	 */
 	public function rules() {
 		$rules = [
-			'status' => []
+			'comment' => ['required']
 		];
 
 		return $rules;
@@ -32,6 +32,8 @@ class FeaturedProgramCommentsRequest extends Request {
 	 * @return array
 	 */
 	public function messages() {
-		return [];
+		return [
+			'comment.required' => 'Comment is required.'
+		];
 	}
 }

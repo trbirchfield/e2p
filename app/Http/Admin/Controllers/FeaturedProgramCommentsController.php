@@ -62,7 +62,7 @@ class FeaturedProgramCommentsController extends BaseController {
 	 * Handle form submission.
 	 *
 	 * @param  FeaturedProgramComment $model
-	 * @param  AnnouncementsRequest $request
+	 * @param  FeaturedProgramCommentsRequest $request
 	 * @return Response
 	 */
 	public function postEdit(FeaturedProgramComment $model, FeaturedProgramCommentsRequest $request) {
