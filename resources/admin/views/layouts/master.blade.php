@@ -66,7 +66,9 @@
 		{{-- Footer JS --}}
 		@section('footer-js')
 			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-			<script>window.jQuery || document.write('<script src="{{ asset_version('vendor/jquery.js') }}">\x3C/script>')</script>
+			@section('jquery-plugins')
+				<script src="http://charuru.github.io/lionbars/js/jquery.lionbars.0.3.js"></script>
+			@show
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 			<script>typeof $().modal === 'function' || document.write('<script src="{{ asset_version('vendor/bootstrap.js') }}">\x3C/script>')</script>
 			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -75,7 +77,6 @@
 			<script>window.moment || document.write('<script src="{{ asset_version('vendor/moment.js') }}">\x3C/script>')</script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
 			<script>window._ || document.write('<script src="{{ asset_version('vendor/lodash.js') }}">\x3C/script>')</script>
-			<script src="http://charuru.github.io/lionbars/js/jquery.lionbars.0.3.js"></script>
 			<script src="{{ asset_path('packages/ckeditor/ckeditor.js') }}"></script>
 			<script src="{{ asset_version('js/admin/global.js') }}"></script>
 			<script src="{{ asset_version('js/admin/app.js') }}"></script>

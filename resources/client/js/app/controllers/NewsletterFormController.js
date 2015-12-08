@@ -14,7 +14,7 @@ angular.module('app').controller('NewsletterFormController', ['$scope', '$timeou
         // Begin form processing
         $scope.formProcessing = true;
         // TODO: Replace with actual API route once back-end has been configured.
-        $http.post('/api/faqs/ask-question', withCSRF($scope.formData))
+        $http.post('/api/subscribe', withCSRF($scope.formData))
             .success(function(res) {
                 // Success message
                 var title   = 'Thank you!';
@@ -31,7 +31,7 @@ angular.module('app').controller('NewsletterFormController', ['$scope', '$timeou
             .error(function(res) {
                 // Error message
                 var title   = 'Newsletter sign up failed';
-                var message = 'Please try signing up again.';
+                var message = res.message;
                 var type    = 'error';
                 growl.add(title, message, type, 5000);
 

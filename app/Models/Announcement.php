@@ -80,7 +80,7 @@ class Announcement extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
@@ -106,10 +106,60 @@ class Announcement extends BaseModel {
 				return $list;
 			});
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 
 			return NULL;
 		}
+	}
+
+	/**
+	 * Return a list of records.
+	 *
+	 * @return array|NULL
+	 */
+	public function getHomepageAnnouncements() {
+		try {
+			return Cache::tags(['announcements'])->remember('announcement.getHomepageAnnouncements', Config::get('cache.duration.hour'), function() {
+				$list = [];
+				$res  = $this->where('status', Status::ACTIVE)->orderBy('created_at', 'desc')->get();
+				foreach ($res as $row) {
+					$list[] = [
+						'id'           => $row->id,
+						'title'        => $row->title,
+						'image'        => $row->image,
+						'announcement' => $row->announcement,
+					];
+				}
+
+				return $list;
+			});
+		} catch (Exception $e) {
+			Log::error($e);
+
+			return NULL;
+		}
+	}
+
+	/**
+	 * Is there a recent homepage announcement?
+	 *
+	 * @return BOOL
+	 */
+	public function newHomepageAnnouncements() {
+		// Setup Result
+		$result = FALSE;
+
+		try {
+			$list = [];
+			$count  = $this->where('status', Status::ACTIVE)->where('created_at', '>=', Carbon::now()->subDays(30))->count();
+			if ($count > 0) {
+				$result = TRUE;
+			}
+		} catch (Exception $e) {
+			Log::error($e);
+		}
+
+		return $result;
 	}
 
 	/**
@@ -167,7 +217,7 @@ class Announcement extends BaseModel {
 				$list = array_slice($list, $input['offset'], $input['limit']);
 			}
 		} catch (Exception $e) {
-			log::error($e);
+			Log::error($e);
 		}
 
 		// Return

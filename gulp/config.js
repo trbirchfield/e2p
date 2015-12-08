@@ -24,6 +24,10 @@ module.exports = {
 			'bower_components/angular-messages/angular-messages.min.js',
 			'bower_components/angular-loading-bar/build/loading-bar.min.js',
 			'bower_components/angular-bootstrap/ui-bootstrap.min.js',
+			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+			'bower_components/angular-ui-sortable/sortable.min.js',
+			'bower_components/ng-ckeditor/ng-ckeditor.js',
+			'bower_components/danialfarid-angular-file-upload/dist/ng-file-upload-all.js',
 			'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
 		]
 	}, {
@@ -56,6 +60,7 @@ module.exports = {
 		'bower_components/modernizr/modernizr.js',
 		'bower_components/bootstrap/dist/js/bootstrap.js',
 		'bower_components/jquery/dist/jquery.js',
+		'bower_components/jquery-ui/jquery-ui.min.js',
 		'bower_components/foundation/js/foundation.js',
 		'bower_components/angular/angular.js',
 		'bower_components/lodash/lodash.js',

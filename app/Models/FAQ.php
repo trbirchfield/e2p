@@ -30,6 +30,15 @@ class FAQ extends BaseModel {
 	public $timestamps = TRUE;
 
 	/**
+	 * Category
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\hasMany
+	 */
+	public function category() {
+		return $this->belongsTo('App\Models\FAQCategory');
+	}
+
+	/**
 	 * Attributes that should be cast to native types.
 	 *
 	 * @var array

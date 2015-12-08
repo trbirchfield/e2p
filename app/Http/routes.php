@@ -44,11 +44,21 @@ Route::group(['middleware' => 'non_production'], function() {
 			]);
 			Route::controller('faqcategories', 'FAQCategoriesController', [
 				'getIndex' => 'admin.faqcategories',
-				'getEdit'  => 'admin.faqcategories.edit'
+				'getEdit'  => 'admin.faqcategories.edit',
+				'getOrder' => 'admin.faqcategories.order'
 			]);
 			Route::controller('faqs', 'FAQsController', [
 				'getIndex' => 'admin.faqs',
 				'getEdit'  => 'admin.faqs.edit'
+			]);
+			Route::controller('featuredprograms', 'FeaturedProgramsController', [
+				'getIndex' => 'admin.featuredprograms',
+				'getEdit'  => 'admin.featuredprograms.edit',
+				'getOrder' => 'admin.featuredprograms.order'
+			]);
+			Route::controller('featuredprogramcomments', 'FeaturedProgramCommentsController', [
+				'getIndex' => 'admin.featuredprogramcomments',
+				'getEdit'  => 'admin.featuredprogramcomments.edit'
 			]);
 			Route::controller('widgets', 'WidgetsController', [
 				'getIndex' => 'admin.widgets',
@@ -60,11 +70,14 @@ Route::group(['middleware' => 'non_production'], function() {
 
 	// API
 	Route::group(['prefix' => 'api', 'namespace' => 'App\Http\Api\Controllers', 'middleware' => ['csrf', 'cors']], function() {
-		Route::controller('announcements', 'AnnouncementsController');
-		Route::controller('faqcategories', 'FAQCategoriesController');
-		Route::controller('faqs',          'FAQsController');
-		Route::controller('widgets',       'WidgetsController');
-		Route::controller('upload',        'UploadController');
+		Route::controller('announcements',           'AnnouncementsController');
+		Route::controller('faqcategories',           'FAQCategoriesController');
+		Route::controller('faqs',                    'FAQsController');
+		Route::controller('widgets',                 'WidgetsController');
+		Route::controller('upload',                  'UploadController');
+		Route::controller('subscribe',               'SubscribeController');
+		Route::controller('featuredprograms',        'FeaturedProgramsController');
+		Route::controller('featuredprogramcomments', 'FeaturedProgramCommentsController');
 	});
 
 	// Client

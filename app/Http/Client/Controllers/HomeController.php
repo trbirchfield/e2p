@@ -1,6 +1,6 @@
 <?php namespace App\Http\Client\Controllers;
 
-use Symfony\Component\DomCrawler\Crawler;
+use App\Models\Announcement;
 
 class HomeController extends BaseController {
 	/**
@@ -9,8 +9,11 @@ class HomeController extends BaseController {
 	 * @return Response
 	 */
 	public function getIndex() {
-		$page_title = 'Home';
+		// Setup
+		$page_title        = 'Home';
+		$announcements     = Announcement::getModel()->getHomepageAnnouncements();
+		$new_announcements = Announcement::getModel()->newHomepageAnnouncements();
 
-		return view('client::home.index', compact('page_title'));
+		return view('client::home.index', compact('page_title', 'announcements', 'new_announcements'));
 	}
 }

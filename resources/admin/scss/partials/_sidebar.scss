@@ -28,7 +28,7 @@
     > li {
         &.active {
             > a {
-                color: $brand-danger;
+                color: $color-green;
             }
         }
         a {
@@ -71,7 +71,7 @@
                     }
                     &.active {
                         a {
-                            color: $brand-danger;
+                            color: $color-green;
                         }
                     }
                 }

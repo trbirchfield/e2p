@@ -147,7 +147,9 @@ return [
 		'App\Providers\HelperServiceProvider',
 		'App\Providers\RepositoriesServiceProvider',
 		'App\Providers\RouteServiceProvider',
-		'Bican\Roles\RolesServiceProvider'
+		'Bican\Roles\RolesServiceProvider',
+		'Skovmand\Mailchimp\MailchimpServiceProvider'
+
 	],
 
 	/*
