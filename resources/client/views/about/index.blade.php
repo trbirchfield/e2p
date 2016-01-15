@@ -1,7 +1,7 @@
 @extends('client::layouts.default')
 
 @section('content')
-    <section class="document-view">
+    <section class="document-view" ng-controller="AboutController">
         <div class="row">
             <div class="small-12 columns">
                 <div class="row">
@@ -26,10 +26,21 @@
                 <p>All of the content displayed on this site is owned by the CRC-Senior Health and is protected by copyright laws. You may use, download, reproduce, and publicly display content from this site for personal or noncommercial purposes provided that you attribute the content to the CRC-Senior Health. Suggested citation: <a href="/index.php">Community Research Center for Senior Health. Toolkit on Evidence-Based Programming for Seniors.</a></p>
             </div>
             <div class="small-9 columns doc-right">
-                <p>The Community Research Center for Senior Health (CRC-Senior Health), is a multi-institutional, multi-disciplinary research center created to develop, implement, evaluate, and disseminate evidence-based interventions that address multiple social and behavioral determinants of senior health. The CRC-Senior Health is a partnership among Scott &#38; White Healthcare, the Texas A&#38;M Health Science Center School of Rural Public Health, and the Central Texas Area Agency on Aging/Aging and Disability Resource Center. It is built on the partners’ capacity to conduct state-of-the-art applied health research to improve senior health. The following statements summarize the purpose of the CRC-Senior Health.</p>
-                <p>Initial funding for the CRC-Senior Health was provided by the National Institute on Aging (RC4AG038183-01) with the aims of: (1) establishing a sustainable infrastructure that will foster strong academic-community partnerships for enhancing translational research; (2) advancing science and improving public health by engaging community leaders and soliciting community input to prioritize research endeavors; and (3) providing technical expertise in research concepts and methods related to translational and dissemination research (e.g., supporting broader community diffusion of best practices and evidence-based treatments via training centers).</p>
-                <p>The CRC-Senior Health develops and makes available training materials, evaluation tools, and data management systems that facilitate the implementation of evidence-based health interventions. Specific activities of the CRC-Senior Health to date include the initiation of pilot research programs to promote senior health research, the formation of partnerships that provide evidence-based health interventions in local communities, and the provision of mentoring to researchers interested in health promotion interventions.</p>
-                <p>The CRC-Senior Health’s leadership team is comprised of a representative from each partner. Dr. Alan Stevens of Scott &#38; White Healthcare is the director, Dr. Marcia Ory of the School of Rural Public Health is the associate director for academic research, and Mr. Richard McGhee of the Central Texas Area Agency on Aging is the associate director for community research. For more information, please visit the <a href="http://seniorhealth.sw.org" target="_blank">CRC-Senior Health website</a>.</p>
+                <p>The Community Research Center for Senior Health (CRC-SH,The Center) is a partnership among Baylor Scott & White Health, Central Texas Area Agencies on Aging and Aging and Disability Research Center (AAA/ADRC), and the Texas A&amp;M Health Science Center School of Public Health. It is built on the partner's’ capacity to conduct state-of-the-art applied health science research and education to improve Senior health.</p>
+                <p>The Center has established a sustainable infrastructure that promotes an interdisciplinary approach to senior health intervention research, develops community-academic health center relationships which foster community participation, and provides guidance and support to investigators and community leaders in research design, evaluation, and data analytic techniques.</p>
+                <p>The CRC-Senior Health’s leadership team is comprised of a representative from each partner. <a href="#" ng-click="showDetail('alan-stevens', $event)">Dr. Alan Stevens</a> of Baylor Scott &amp; White Health is the director, <a href="#" ng-click="showDetail('marcia-ory', $event)">Dr. Marcia Ory</a> of the School of Public Health is the associate director for academic research, and <a href="#" ng-click="showDetail('richard-mcghee', $event)">Mr. Richard McGhee</a> of the Central Texas Area Agency on Aging is the associate director for community research.</p>
+                <p>Acknowledgement: Initial funding for the CRC-Senior Health was provided by the National Institute on Aging (RC4AG038183-01).</p>
+            </div>
+        </div>
+        <div class="modal-container" ng-class="{ 'is-visible': modalVisible }">
+            <div class="modal-overlay" ng-click="dismissDetail()"></div>
+            <div class="modal program-detail">
+                <div class="content-box">
+                    <a href="#" class="modal-close" ng-click="dismissDetail($event)"><i class="fa fa-times"></i></a>
+                    <img class="program-image" ng-src="<% leader.image %>" class="program-img" />
+                    <h2 class="program-title" ng-bind-html="leader.header"></h2>
+                    <div class="program-description" ng-bind-html="leader.bio"></div>
+                </div>
             </div>
         </div>
     </section>
