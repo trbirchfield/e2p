@@ -3,6 +3,7 @@ angular.module('app').controller('AboutController', ['$scope', '$location', '$ti
     $scope.leader       = {};
     $scope.leaders      = [];
     $scope.modalVisible = false;
+
     // Get leaders
     $scope.getLeaders = function(id, event) {
         $http.get('/public/packages/leadership.json')
@@ -54,6 +55,7 @@ angular.module('app').controller('AboutController', ['$scope', '$location', '$ti
         if (typeof event !== 'undefined') {
             event.preventDefault();
         }
+
         // Hide modal
         $scope.modalVisible = false;
         $('.modal-container').scrollTop(0);
