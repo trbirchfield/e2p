@@ -36,11 +36,19 @@
                 <li><img src="{{ asset_path('img/footer/logo-2.gif') }}" alt="Texas A&#38;M Health Science Center"></li>
                 <li><img src="{{ asset_path('img/footer/logo-1.jpg') }}" alt="Central Texas Aging and Disability Resource Center"></li>
             </ul>
-            <p class="disclaimer">By providing links to other sites, the Community Research Center for Senior Health does not guarantee, approve, or endorse the information or products available on these sites.</p>
+            <p class="disclaimer">
+                By providing links to other sites, the Community Research Center for Senior Health does not guarantee, approve, or endorse the information or products available on these sites.
+                @if (Request::is('programs*'))
+                    The views and opinions expressed in the featured programs do not necessarily reflects those of CRC-Senior Health.
+                @endif
+            </p>
         </div>
         <div class="small-12 text-center">
             <p class="privacy-link"><a href="{{ route('privacy') }}">Privacy Policy</a></p>
         </div>
     </div>
     <div class="footer-img"></div>
+    @if (App::environment() == 'production')
+        @include('client::partials.analytics')
+    @endif
 </footer>
