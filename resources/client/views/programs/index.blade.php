@@ -4,7 +4,7 @@
     <section class="page-content" ng-controller="ProgramsController" ng-init="getPrograms()" ng-cloak>
         <div class="row">
             <div class="column medium-10 medium-centered">
-                <p class="programs-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mi turpis, vestibulum volutpat ipsum et, ultrices accumsan tortor. Mauris fermentum eros libero, quis feugiat est bibendum vitae. Curabitur id viverra risus. Morbi semper, sapien vel vehicula lacinia, dui lectus vehicula libero, eget malesuada quam purus in risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p class="programs-intro">Featured Programs is a collection of video presentations from the experts in the area of evidence-based programming. Each video is focused on a particular section or subsection of the website, as evident by the title of the video. The experts share their knowledge and experience about the programs they have been involved with. After watching the videos you should have fairly good idea of each section of website is and what the experts have to say.</p>
            </div>
         </div>
         <div class="row">
