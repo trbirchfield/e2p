@@ -22,10 +22,9 @@
 							<a href="#" class="button secondary tiny expand no-margin" ng-click="removePhoto($event)" ng-show="formData.image"><i class="fa fa-trash-o"></i> Remove</a>
 						</div>
 						<div class="form-group">
-							<label class="required" for="youtube_id">Youtube ID</label>
-							<input class="form-control" type="text" name="youtube_id" id="youtube_id" ng-model="formData.youtube_id" ng-init="formData.youtube_id = '{{ e(old('youtube_id', $resource['youtube_id'])) }}'" validation="required">
+							<label for="youtube_id">Youtube ID</label>
+							<input class="form-control" type="text" name="youtube_id" id="youtube_id" ng-model="formData.youtube_id" ng-init="formData.youtube_id = '{{ e(old('youtube_id', $resource['youtube_id'])) }}'">
 							<div class="form-messages help-block" ng-messages="form.youtube_id.$error" ng-if="form.youtube_id.$invalid && (form.$submitted || form.youtube_id.$touched)">
-								<span ng-message="required">Youtube ID is required.</span>
 							</div>
 						</div>
 						<div class="form-group">

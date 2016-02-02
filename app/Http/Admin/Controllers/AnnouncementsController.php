@@ -2,6 +2,7 @@
 
 use App\Http\Admin\Requests\AnnouncementsRequest;
 use App\Models\Announcement;
+use Cache;
 use Exception;
 use Illuminate\Http\Request;
 use Log;
@@ -74,6 +75,8 @@ class AnnouncementsController extends BaseController {
 				throw new Exception('Unable to save Announcement, please try again.');
 			}
 
+			// Clear cache
+			Cache::tags('announcements')->flush();
 
 			return redirect()->route('admin.announcements')->with('message', 'Announcement has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
@@ -92,6 +95,9 @@ class AnnouncementsController extends BaseController {
 		try {
 			$model->where('id', $request->input('id'))->delete();
 			$res = [];
+
+			// Clear cache
+			Cache::tags('announcements')->flush();
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

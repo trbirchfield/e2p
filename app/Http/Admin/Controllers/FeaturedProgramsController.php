@@ -2,6 +2,7 @@
 
 use App\Http\Admin\Requests\FeaturedProgramsRequest;
 use App\Models\FeaturedProgram;
+use Cache;
 use Exception;
 use Illuminate\Http\Request;
 use Log;
@@ -74,6 +75,9 @@ class FeaturedProgramsController extends BaseController {
 				throw new Exception('Unable to save Featured Program, please try again.');
 			}
 
+			// Clear cache
+			Cache::tags('featured_programs')->flush();
+
 			return redirect()->route('admin.featuredprograms')->with('message', 'Featured Program has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
 			return redirect()->back()->withInput()->with('error', $e->getMessage());
@@ -91,6 +95,9 @@ class FeaturedProgramsController extends BaseController {
 		try {
 			$model->where('id', $request->input('id'))->delete();
 			$res = [];
+
+			// Clear cache
+			Cache::tags('featured_programs')->flush();
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

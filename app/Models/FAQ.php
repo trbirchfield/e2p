@@ -64,6 +64,7 @@ class FAQ extends BaseModel {
 
 			// Clear cache
 			Cache::tags('faqs')->flush();
+			Cache::tags('faq_categories')->flush();
 
 			return TRUE;
 		} catch (Exception $e) {

@@ -23,7 +23,7 @@
 						</div>
 						<div class="form-group">
 							<label class="required" for="announcement">Content</label>
-							<textarea class="form-control" name="announcement" id="announcement" ng-model="formData.announcement" ng-init="formData.announcement = '{{ e(old('announcement', $resource['announcement'])) }}'" validation="required" ckEditor="editorOptions"></textarea>
+							<textarea class="form-control" name="announcement" id="announcement" ng-model="formData.announcement" ng-init="formData.announcement = '{{ str_replace("#39","apos", e(old('announcement', $resource['announcement']))) }}'" validation="required" ckEditor="editorOptions"></textarea>
 							<div class="form-messages help-block" ng-messages="form.announcement.$error" ng-if="form.announcement.$invalid && (form.$submitted || form.announcement.$touched)">
 								<span ng-message="required">Announcement Content is required.</span>
 							</div>
