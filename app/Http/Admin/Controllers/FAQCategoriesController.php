@@ -2,6 +2,7 @@
 
 use App\Http\Admin\Requests\FAQCategoriesRequest;
 use App\Models\FAQCategory;
+use Cache;
 use Exception;
 use Illuminate\Http\Request;
 use Log;
@@ -74,6 +75,9 @@ class FAQCategoriesController extends BaseController {
 				throw new Exception('Unable to save FAQ Category, please try again.');
 			}
 
+			// Clear cache
+			Cache::tags('faq_categories')->flush();
+
 			return redirect()->route('admin.faqcategories')->with('message', 'FAQ Category has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
 			return redirect()->back()->withInput()->with('error', $e->getMessage());
@@ -91,6 +95,9 @@ class FAQCategoriesController extends BaseController {
 		try {
 			$model->where('id', $request->input('id'))->delete();
 			$res = [];
+
+			// Clear cache
+			Cache::tags('faq_categories')->flush();
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

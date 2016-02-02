@@ -119,6 +119,15 @@
     }
 }
 
+div.content {
+    span {
+        li {
+            font-size: 18px;
+            line-height: 35px;
+        }
+    }
+}
+
 .faq-form {
     textarea {
         min-height: 200px;

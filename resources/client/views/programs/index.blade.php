@@ -26,7 +26,7 @@
                 <div class="content-box">
                     <a href="#" class="modal-close" ng-click="dismissDetail($event)"><i class="fa fa-times"></i></a>
                     <h2 class="program-title" ng-bind="program.title"></h2>
-                    <div class="program-video">
+                    <div class="program-video" ng-show="program.video_id">
                         <iframe width="640" height="420" ng-src="<% program.video_url %>" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="program-description" ng-bind-html="program.description"></div>

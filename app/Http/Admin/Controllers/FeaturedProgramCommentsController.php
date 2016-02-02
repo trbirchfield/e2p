@@ -3,6 +3,7 @@
 use App\Http\Admin\Requests\FeaturedProgramCommentsRequest;
 use App\Models\FeaturedProgramComment;
 use App\Models\Status;
+use Cache;
 use Exception;
 use Illuminate\Http\Request;
 use Log;
@@ -80,6 +81,9 @@ class FeaturedProgramCommentsController extends BaseController {
 				throw new Exception('Unable to approve comment, please try again.');
 			}
 
+			// Clear cache
+			Cache::tags('featured_program_comments')->flush();
+
 			return redirect()->route('admin.featuredprogramcomments')->with('message', 'Comment has been approved.');
 		} catch (Exception $e) {
 			return redirect()->back()->withInput()->with('error', $e->getMessage());
@@ -97,6 +101,9 @@ class FeaturedProgramCommentsController extends BaseController {
 		try {
 			$model->where('id', $request->input('id'))->delete();
 			$res = [];
+
+			// Clear cache
+			Cache::tags('featured_program_comments')->flush();
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];
