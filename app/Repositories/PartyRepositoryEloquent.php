@@ -35,7 +35,7 @@ class PartyRepositoryEloquent implements PartyRepository {
 	public function selectList($key, $val, $order_by = NULL) {
 		try {
 			$order_by = (is_null($order_by)) ? $val : $order_by;
-			$res = Cache::tags(['parties'])->remember('parties.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($order_by) {
+			$res = Cache::remember('parties.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($order_by) {
 				return $this->model->orderBy($order_by)->get();
 			});
 			$list = [];

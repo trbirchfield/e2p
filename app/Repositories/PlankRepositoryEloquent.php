@@ -32,7 +32,7 @@ class PlankRepositoryEloquent implements PlankRepository {
 	 */
 	public function myPlanks($id) {
 		try {
-			$res = Cache::tags(['planks'])->remember('planks.myPlanks.' . $id, Config::get('cache.duration.hour'), function() use($id) {
+			$res = Cache::remember('planks.myPlanks.' . $id, Config::get('cache.duration.hour'), function() use($id) {
 				return $this->model->where('user_id', $id)->orderBy('display_order')->get();
 			});
 			$list = [];
@@ -56,7 +56,7 @@ class PlankRepositoryEloquent implements PlankRepository {
 	 */
 	public function topPlanks($id) {
 		try {
-			$res = Cache::tags(['planks'])->remember('planks.topPlanks.' . $id, Config::get('cache.duration.hour'), function() use($id) {
+			$res = Cache::remember('planks.topPlanks.' . $id, Config::get('cache.duration.hour'), function() use($id) {
 
 				// TODO: what determines "top"?
 
@@ -91,7 +91,7 @@ class PlankRepositoryEloquent implements PlankRepository {
 			$row->save();
 		}
 
-		Cache::tags('planks')->flush();
+		Cache::forget('planks');
 	}
 
 	/**
@@ -106,7 +106,7 @@ class PlankRepositoryEloquent implements PlankRepository {
 			throw new Exception('Unable to save Plank, please try again.');
 		}
 
-		Cache::tags('planks')->flush();
+		Cache::forget('planks');
 	}
 
 	/**
@@ -123,6 +123,6 @@ class PlankRepositoryEloquent implements PlankRepository {
 			throw new Exception('Unable to delete Plank, please try again.');
 		}
 
-		Cache::tags('planks')->flush();
+		Cache::forget('planks');
 	}
 }

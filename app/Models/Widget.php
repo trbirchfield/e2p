@@ -45,7 +45,7 @@ class Widget extends BaseModel {
 			$widget->save();
 
 			// Clear cache
-			Cache::tags('widgets')->flush();
+			Cache::forget('widgets');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -62,7 +62,7 @@ class Widget extends BaseModel {
 	 */
 	public function getStatuses() {
 		try {
-			return Cache::remember('widget.getStatuses', Config::get('cache.duration.year'), function() {
+			return Cache::remember('widgets.getStatuses', Config::get('cache.duration.year'), function() {
 				$list = [];
 				$res  = Status::orderBy('id')->get();
 				foreach ($res as $row) {
@@ -85,7 +85,7 @@ class Widget extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['widgets'])->remember('widget.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('widgets.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {

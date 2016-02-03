@@ -42,7 +42,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 	 */
 	public function all($columns = ['*']) {
 		try {
-			$res = Cache::tags(['faqcategories'])->remember('faqcategories.all', Config::get('cache.duration.hour'), function() use($columns) {
+			$res = Cache::remember('faqcategories.all', Config::get('cache.duration.hour'), function() use($columns) {
 				return $this->model->get($columns);
 			});
 			$list = [];
@@ -67,7 +67,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 	 */
 	public function find($id, $columns = ['*']) {
 		try {
-			return Cache::tags(['faqcategories'])->remember('faqcategories.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
+			return Cache::remember('faqcategories.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
 				return $this->model->findOrFail($id, $columns)->toArray();
 			});
 		} catch (ModelNotFoundException $e) {
@@ -89,7 +89,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 	 */
 	public function findBy($key, $val, $columns = ['*']) {
 		try {
-			return Cache::tags(['faqcategories'])->remember('faqcategories.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
+			return Cache::remember('faqcategories.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
 				return $this->model->where($key, $val)->firstOrFail($columns)->toArray();
 			});
 		} catch (ModelNotFoundException $e) {
@@ -121,7 +121,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 			}
 
 			// Clear cache
-			Cache::tags('faqcategories')->flush();
+			Cache::forget('faqcategories');
 
 			// Success
 			$response['success'] = TRUE;
@@ -154,7 +154,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 			}
 
 			// Clear cache
-			Cache::tags('faqcategories')->flush();
+			Cache::forget('faqcategories');
 
 			// Response
 			return TRUE;
@@ -176,7 +176,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 	 */
 	public function selectList($key, $val) {
 		try {
-			$res = Cache::tags(['faqcategories'])->remember('faqcategories.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
+			$res = Cache::remember('faqcategories.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
 				return $this->model->orderBy($val)->get();
 			});
 			$list = [];
@@ -263,7 +263,7 @@ class FAQCategoryRepositoryEloquent implements FAQCategoryRepository {
 			}
 
 			// Clear cache
-			Cache::tags('faqcategories')->flush();
+			Cache::forget('faqcategories');
 
 			// Success
 			$response['success'] = TRUE;

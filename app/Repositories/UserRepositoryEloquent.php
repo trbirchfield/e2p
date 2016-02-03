@@ -54,7 +54,7 @@ class UserRepositoryEloquent implements UserRepository {
 	 */
 	public function all($columns = ['*']) {
 		try {
-			$res = Cache::tags(['users'])->remember('users.all', Config::get('cache.duration.hour'), function() use($columns) {
+			$res = Cache::remember('users.all', Config::get('cache.duration.hour'), function() use($columns) {
 				return $this->model->get($columns);
 			});
 			$list = [];
@@ -79,7 +79,7 @@ class UserRepositoryEloquent implements UserRepository {
 	 */
 	public function find($id, $columns = ['*']) {
 		try {
-			return Cache::tags(['users'])->remember('users.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
+			return Cache::remember('users.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
 				$record = $this->model->with('data')->findOrFail($id, $columns)->toArray();
 				if (isset($record['data'])) {
 					$data = $this->data;
@@ -133,7 +133,7 @@ class UserRepositoryEloquent implements UserRepository {
 	 */
 	public function findBy($key, $val, $columns = ['*']) {
 		try {
-			return Cache::tags(['users'])->remember('users.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
+			return Cache::remember('users.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
 				return $this->model->where($key, $val)->firstOrFail($columns)->toArray();
 			});
 		} catch (ModelNotFoundException $e) {
@@ -210,7 +210,7 @@ class UserRepositoryEloquent implements UserRepository {
 			}
 
 			// Clear cache
-			Cache::tags('users')->flush();
+			Cache::forget('users');
 
 			// Success
 			$response['success'] = TRUE;
@@ -244,7 +244,7 @@ class UserRepositoryEloquent implements UserRepository {
 			}
 
 			// Clear cache
-			Cache::tags('users')->flush();
+			Cache::forget('users');
 
 			// Response
 			return TRUE;
@@ -269,7 +269,7 @@ class UserRepositoryEloquent implements UserRepository {
 	 */
 	public function selectList($key, $val) {
 		try {
-			$res = Cache::tags(['users'])->remember('users.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
+			$res = Cache::remember('users.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
 				return $this->model->orderBy($val)->get();
 			});
 			$list = [];
@@ -365,7 +365,7 @@ class UserRepositoryEloquent implements UserRepository {
 			}
 
 			// Clear cache
-			Cache::tags('users')->flush();
+			Cache::forget('users');
 
 			// Success
 			$response['success'] = TRUE;

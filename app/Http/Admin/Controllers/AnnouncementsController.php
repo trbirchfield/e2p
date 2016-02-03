@@ -76,7 +76,7 @@ class AnnouncementsController extends BaseController {
 			}
 
 			// Clear cache
-			Cache::tags('announcements')->flush();
+			Cache::forget('announcements.getHomepageAnnouncements');
 
 			return redirect()->route('admin.announcements')->with('message', 'Announcement has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
@@ -97,7 +97,7 @@ class AnnouncementsController extends BaseController {
 			$res = [];
 
 			// Clear cache
-			Cache::tags('announcements')->flush();
+			Cache::forget('announcements.getHomepageAnnouncements');
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

@@ -76,8 +76,7 @@ class FAQsController extends BaseController {
 			}
 
 			// Clear cache
-			Cache::tags('faqs')->flush();
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 
 			return redirect()->route('admin.faqs')->with('message', 'FAQ has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
@@ -98,8 +97,7 @@ class FAQsController extends BaseController {
 			$res = [];
 
 			// Clear cache
-			Cache::tags('faqs')->flush();
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

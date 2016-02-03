@@ -63,7 +63,7 @@ class FeaturedProgramComment extends BaseModel {
 			$faq_category->save();
 
 			// Clear cache
-			Cache::tags('featured_program_comments')->flush();
+			Cache::forget('featured_programs.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -103,7 +103,7 @@ class FeaturedProgramComment extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['featured_program_comments'])->remember('faq_category.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('featured_program_comments.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {

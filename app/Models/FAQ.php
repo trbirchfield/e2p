@@ -63,8 +63,7 @@ class FAQ extends BaseModel {
 			$faq->save();
 
 			// Clear cache
-			Cache::tags('faqs')->flush();
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -104,7 +103,7 @@ class FAQ extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['faqs'])->remember('faq.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('faqs.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('question', 'asc')->get();
 				foreach ($res as $row) {

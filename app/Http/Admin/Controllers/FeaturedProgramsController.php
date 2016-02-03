@@ -76,7 +76,7 @@ class FeaturedProgramsController extends BaseController {
 			}
 
 			// Clear cache
-			Cache::tags('featured_programs')->flush();
+			Cache::forget('featured_programs.getListForClient');
 
 			return redirect()->route('admin.featuredprograms')->with('message', 'Featured Program has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
@@ -97,7 +97,7 @@ class FeaturedProgramsController extends BaseController {
 			$res = [];
 
 			// Clear cache
-			Cache::tags('featured_programs')->flush();
+			Cache::forget('featured_programs.getListForClient');
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

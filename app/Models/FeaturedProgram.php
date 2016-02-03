@@ -62,7 +62,7 @@ class FeaturedProgram extends BaseModel {
 			$featured_program->save();
 
 			// Clear cache
-			Cache::tags('featured_programs')->flush();
+			Cache::forget('featured_programs.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -102,7 +102,7 @@ class FeaturedProgram extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['featured_programs'])->remember('featured_programs.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('featured_programs.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {
@@ -185,7 +185,7 @@ class FeaturedProgram extends BaseModel {
 	 */
 	public function getListForClient() {
 		try {
-			return Cache::tags(['featured_programs'])->remember('featured_programs.getListForClient', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('featured_programs.getListForClient', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
 				foreach ($res as $featured_programs) {
@@ -266,7 +266,7 @@ class FeaturedProgram extends BaseModel {
 			});
 
 			// Clear cache
-			Cache::tags('featured_programs')->flush();
+			Cache::forget('featured_programs.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -293,7 +293,7 @@ class FeaturedProgram extends BaseModel {
 			]);
 
 			// Clear cache
-			Cache::tags('featured_program_comments')->flush();
+			Cache::forget('featured_program_comments');
 
 			return TRUE;
 		} catch (Exception $e) {

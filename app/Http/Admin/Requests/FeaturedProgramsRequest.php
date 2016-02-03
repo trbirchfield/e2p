@@ -22,7 +22,6 @@ class FeaturedProgramsRequest extends Request {
 		$rules = [
 			'title'      => ['required'],
 			'image'      => ['required'],
-			'youtube_id' => ['required'],
 			'summary'    => ['required'],
 			'status'     => ['required']
 		];
@@ -39,7 +38,6 @@ class FeaturedProgramsRequest extends Request {
 		return [
 			'title.required'      => 'Title is required.',
 			'image.required'      => 'Image is required.',
-			'youtube_id.required' => 'Youtube ID is required.',
 			'summary.required'    => 'Summary is required.',
 			'status.required'     => 'Status is required.'
 		];

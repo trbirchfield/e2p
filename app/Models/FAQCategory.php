@@ -62,7 +62,7 @@ class FAQCategory extends BaseModel {
 			$faq_category->save();
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -102,7 +102,7 @@ class FAQCategory extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['faq_categories'])->remember('faq_category.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('faq_categories.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {
@@ -186,7 +186,7 @@ class FAQCategory extends BaseModel {
 	 */
 	public function getListForClient() {
 		try {
-			return Cache::tags(['faq_categories'])->remember('faq_category.getListForClient', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('faq_categories.getListForClient', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->where('status', Status::ACTIVE)->orderBy('display_order', 'asc')->get();
 				foreach ($res as $faq_category) {
@@ -288,7 +288,7 @@ class FAQCategory extends BaseModel {
 			});
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 
 			return TRUE;
 		} catch (Exception $e) {

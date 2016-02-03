@@ -35,7 +35,7 @@ class StateRepositoryEloquent implements StateRepository {
 	public function selectList($key, $val, $order_by = NULL) {
 		try {
 			$order_by = (is_null($order_by)) ? $val : $order_by;
-			$res = Cache::tags(['states'])->remember('states.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($order_by) {
+			$res = Cache::remember('states.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($order_by) {
 				return $this->model->orderBy($order_by)->get();
 			});
 			$list = [];

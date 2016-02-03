@@ -53,7 +53,7 @@ class Announcement extends BaseModel {
 			$announcement->save();
 
 			// Clear cache
-			Cache::tags('announcements')->flush();
+			Cache::forget('announcements.getHomepageAnnouncements');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -70,7 +70,7 @@ class Announcement extends BaseModel {
 	 */
 	public function getStatuses() {
 		try {
-			return Cache::remember('announcement.getStatuses', Config::get('cache.duration.year'), function() {
+			return Cache::remember('announcements.getStatuses', Config::get('cache.duration.year'), function() {
 				$list = [];
 				$res  = Status::orderBy('id')->get();
 				foreach ($res as $row) {
@@ -93,7 +93,7 @@ class Announcement extends BaseModel {
 	 */
 	public function getList() {
 		try {
-			return Cache::tags(['announcements'])->remember('announcement.getList', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('announcements.getList', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->orderBy('title', 'asc')->get();
 				foreach ($res as $row) {
@@ -119,7 +119,7 @@ class Announcement extends BaseModel {
 	 */
 	public function getHomepageAnnouncements() {
 		try {
-			return Cache::tags(['announcements'])->remember('announcement.getHomepageAnnouncements', Config::get('cache.duration.hour'), function() {
+			return Cache::remember('announcements.getHomepageAnnouncements', Config::get('cache.duration.hour'), function() {
 				$list = [];
 				$res  = $this->where('status', Status::ACTIVE)->orderBy('created_at', 'desc')->get();
 				foreach ($res as $row) {

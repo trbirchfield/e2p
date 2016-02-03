@@ -76,7 +76,7 @@ class FAQCategoriesController extends BaseController {
 			}
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 
 			return redirect()->route('admin.faqcategories')->with('message', 'FAQ Category has been ' . (($request->has('id')) ? 'saved' : 'added') . '.');
 		} catch (Exception $e) {
@@ -97,7 +97,7 @@ class FAQCategoriesController extends BaseController {
 			$res = [];
 
 			// Clear cache
-			Cache::tags('faq_categories')->flush();
+			Cache::forget('faq_categories.getListForClient');
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];

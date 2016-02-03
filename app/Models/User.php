@@ -71,7 +71,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			$user->save();
 
 			// Clear cache
-			Cache::tags('users')->flush();
+			Cache::forget('users');
 
 			return TRUE;
 		} catch (Exception $e) {
@@ -89,7 +89,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	public function getAdminView($id) {
 		try {
-			return Cache::tags(['users'])->remember('user.getAdminView.' . $id, Config::get('cache.duration.hour'), function() use($id) {
+			return Cache::remember('users.getAdminView.' . $id, Config::get('cache.duration.hour'), function() use($id) {
 				$user   = $this->findOrFail($id);
 				$record = [
 					'id'                => $user->id,
@@ -121,7 +121,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	public function getUserDataForKey($id, $key = NULL) {
 		try {
-			return Cache::tags(['users'])->remember('user.getUserDataForKey.' . $id . $key , Config::get('cache.duration.hour'), function() use($id, $key) {
+			return Cache::remember('users.getUserDataForKey.' . $id . $key , Config::get('cache.duration.hour'), function() use($id, $key) {
 				return UserData::where(['user_id' => $id, 'key' => $key])->pluck('value');
 			});
 		} catch (Exception $e) {
@@ -138,7 +138,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	public function getMembershipTypes() {
 		try {
-			return Cache::remember('user.getMembershipTypes', Config::get('cache.duration.year'), function() {
+			return Cache::remember('users.getMembershipTypes', Config::get('cache.duration.year'), function() {
 				$list = [];
 				$res  = Role::whereIn('slug', ['voter', 'candidate'])->orderBy('id')->get();
 				foreach ($res as $row) {
@@ -161,7 +161,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	public function getStatuses() {
 		try {
-			return Cache::remember('user.getStatuses', Config::get('cache.duration.year'), function() {
+			return Cache::remember('users.getStatuses', Config::get('cache.duration.year'), function() {
 				$list = [];
 				$res  = Status::orderBy('id')->get();
 				foreach ($res as $row) {

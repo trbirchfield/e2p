@@ -42,7 +42,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 	 */
 	public function all($columns = ['*']) {
 		try {
-			$res = Cache::tags(['gizmos'])->remember('gizmos.all', Config::get('cache.duration.hour'), function() use($columns) {
+			$res = Cache::remember('gizmos.all', Config::get('cache.duration.hour'), function() use($columns) {
 				return $this->model->get($columns);
 			});
 			$list = [];
@@ -67,7 +67,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 	 */
 	public function find($id, $columns = ['*']) {
 		try {
-			return Cache::tags(['gizmos'])->remember('gizmos.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
+			return Cache::remember('gizmos.find.' . $id, Config::get('cache.duration.hour'), function() use($id, $columns) {
 				return $this->model->findOrFail($id, $columns)->toArray();
 			});
 		} catch (ModelNotFoundException $e) {
@@ -89,7 +89,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 	 */
 	public function findBy($key, $val, $columns = ['*']) {
 		try {
-			return Cache::tags(['gizmos'])->remember('gizmos.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
+			return Cache::remember('gizmos.findBy.' . $key . '.' . str_slug($val), Config::get('cache.duration.hour'), function() use($key, $val, $columns) {
 				return $this->model->where($key, $val)->firstOrFail($columns)->toArray();
 			});
 		} catch (ModelNotFoundException $e) {
@@ -121,7 +121,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 			}
 
 			// Clear cache
-			Cache::tags('gizmos')->flush();
+			Cache::forget('gizmos');
 
 			// Success
 			$response['success'] = TRUE;
@@ -154,7 +154,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 			}
 
 			// Clear cache
-			Cache::tags('gizmos')->flush();
+			Cache::forget('gizmos');
 
 			// Response
 			return TRUE;
@@ -176,7 +176,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 	 */
 	public function selectList($key, $val) {
 		try {
-			$res = Cache::tags(['gizmos'])->remember('gizmos.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
+			$res = Cache::remember('gizmos.selectList.' . $key . '.' . $val, Config::get('cache.duration.hour'), function() use($val) {
 				return $this->model->orderBy($val)->get();
 			});
 			$list = [];
@@ -272,7 +272,7 @@ class GizmoRepositoryEloquent implements GizmoRepository {
 			}
 
 			// Clear cache
-			Cache::tags('gizmos')->flush();
+			Cache::forget('gizmos');
 
 			// Success
 			$response['success'] = TRUE;

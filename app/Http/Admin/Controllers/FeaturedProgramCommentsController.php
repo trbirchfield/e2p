@@ -82,7 +82,7 @@ class FeaturedProgramCommentsController extends BaseController {
 			}
 
 			// Clear cache
-			Cache::tags('featured_program_comments')->flush();
+			Cache::forget('featured_programs.getListForClient');
 
 			return redirect()->route('admin.featuredprogramcomments')->with('message', 'Comment has been approved.');
 		} catch (Exception $e) {
@@ -103,7 +103,7 @@ class FeaturedProgramCommentsController extends BaseController {
 			$res = [];
 
 			// Clear cache
-			Cache::tags('featured_program_comments')->flush();
+			Cache::forget('featured_programs.getListForClient');
 		} catch (Exception $e) {
 			Log::error($e);
 			$res = ['error' => $e->getMessage()];
