@@ -14,7 +14,7 @@
 					<tr>
 						<td>
 							<div style="display: block; border-bottom:5px solid #BDBDBD; padding: 15px 0;">
-								<a href="#" title="" style="line-height:0;"><img style="border:0;" src="{{ url('public/img', $parameters = ['logo-primary.png']) }}" width="" height="" alt="" /></a>
+								<a href="#" title="" style="line-height:0;"><img style="border:0;" src="{{ url('public/img', $parameters = ['logo_small.png']) }}" width="" height="" alt="" /></a>
 							</div>
 						</td>
 					</tr>
@@ -30,19 +30,6 @@
 							<div style="display: block; border-top:5px solid #BDBDBD; padding: 15px 0; text-align:left; font-size: 10px;">
 								<p>Please do not reply to this system generated email, as we are not able to respond.</p>
 								<p>Copyright © 2015. Company Name, LLC. All rights Reserved.</p>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div style="display: block;">
-								<p style="text-align:right;">
-									<strong>{{ config('site.client.company_name') }}</strong><br />
-									{{ config('site.client.address.address1') }} {{ config('site.client.address.address2') }}<br />
-									{{ config('site.client.address.city') }}, {{ config('site.client.address.state') }} {{ config('site.client.address.zip') }}<br />
-									{{ config('site.client.phone') }}<br />
-									<a href="{{ url() }}" >{{ config('site.client.website') }}</a>
-								</p>
 							</div>
 						</td>
 					</tr>
