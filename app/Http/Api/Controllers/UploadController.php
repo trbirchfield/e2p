@@ -25,6 +25,8 @@ class UploadController extends Controller {
 
 			// Save file
 			if (Storage::put($file_name, File::get($file))) {
+				// Update File Permissions
+				chmod('./public/content/' . $file_name, 0755);
 				$output['status']   = 200;
 				$output['response'] = [
 					'url'     => config('app.url') . '/public/content/' . $file_name,
