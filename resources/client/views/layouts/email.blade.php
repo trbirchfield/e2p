@@ -25,14 +25,6 @@
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<div style="display: block; border-top:5px solid #BDBDBD; padding: 15px 0; text-align:left; font-size: 10px;">
-								<p>Please do not reply to this system generated email, as we are not able to respond.</p>
-								<p>Copyright © 2015. Company Name, LLC. All rights Reserved.</p>
-							</div>
-						</td>
-					</tr>
 				</table>
 			</center>
 		</div>
