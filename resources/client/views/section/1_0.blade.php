@@ -91,7 +91,7 @@
             </div>
             <div class="small-9 columns doc-right">
                 <p>When evaluation researchers have identified evidence supporting a particular program, they will often publish their findings in peer-reviewed scientific journals. Publishing their findings allows experts in the field who are not associated with the evaluation to examine the evaluation and determine if they agree with the methods used and with the conclusions drawn about the effects of the program. Evaluation researchers may also submit evidence to research organizations and federal agencies that will examine the evidence and approve or endorse the programs they find to have solid bases of evidence <span class="reference">(see
-                Figure 1)</span>. This approval or endorsement communicates to others in the field that these programs have met various standards of effectiveness <span class="reference">(see <a href="section2.3.php">Identifying Evidence-Based Interventions</a> for more information)</span>.</p>
+                Figure 1)</span>. This approval or endorsement communicates to others in the field that these programs have met various standards of effectiveness <span class="reference">(see <a href="/section/2/3">Identifying Evidence-Based Interventions</a> for more information)</span>.</p>
             </div>
         </div>
         <div class="row">
