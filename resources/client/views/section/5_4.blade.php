@@ -11,7 +11,7 @@
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="/public/content/AoA_Quality_Assurance_Expectations-9-16-w-text-boxes.pdf" target="_blank">The National Council on Aging</a> provides a brief on the Administration on Aging recommendations for quality assurance.</p>
-                    <p>The Center for Healthy Aging of the National Council on Aging offers <a href="http://www.prc-han.org/docs/RE-AIM_issue_brief.pdf" target="_blank">RE-AIM for Program Planning: Overview and Applications, a guide to applying the RE-AIM framework</a>.</p>
+                    <p>National Council on Aging offers <a href="https://www.ncoa.org/wp-content/uploads/IssueBrief_ReAim_Final-2.pdf" target="_blank">RE-AIM for Program Planning: Overview and Applications</a>.</p>
                 </div>
             </div>
             <div class="small-9 columns doc-right search-index">
@@ -27,7 +27,7 @@
                 </ul>
                 <p>The concept of QA can initially seem abstract and difficult to apply, but frameworks such as RE-AIM (described in the subsequent section) can help organizations implement QA in logical, manageable pieces.</p>
                 <h2>RE-AIM framework</h2>
-                <p>The RE-AIM framework was developed as a model for the planning, evaluation, reporting, and review of translational research and practice. (Translation is the process of taking a program originally implemented in a controlled &ldquo;laboratory-like&rdquo; setting and making it suitable for implementation in the community.) The framework has five components from which the framework name is drawn: Reach, Effectiveness, Adoption, Implementation, and Maintenance. Each component and its significance are described in Table 5. Information about the development and application of RE-AIM can be found at the <a href="http://www.re-aim.hnfe.vt.edu/" target="_blank">Virginia Tech College of Agriculture and Life Sciences website</a>.</p>
+                <p>The RE-AIM framework was developed as a model for the planning, evaluation, reporting, and review of translational research and practice. (Translation is the process of taking a program originally implemented in a controlled &ldquo;laboratory-like&rdquo; setting and making it suitable for implementation in the community.) The framework has five components from which the framework name is drawn: Reach, Effectiveness, Adoption, Implementation, and Maintenance. Each component and its significance are described in Table 5. Information about the development and application of RE-AIM can be found at <a href="www.re-aim.org" target="_blank">www.re-aim.org</a>.</p>
             </div>
         </div>
         <div class="row search-index">
