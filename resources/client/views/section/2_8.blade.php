@@ -11,7 +11,7 @@
             <div class="small-3 columns doc-left search-index" id="mid-page7">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
-                    <p><a href="/pdfs/HA_CommunityPartnerships.pdf" target="_blank">Partnering to Promote Healthy Aging: Creative Best Practice Community Partnerships</a>, produced by the National Council on Aging, provides recommendations regarding partnerships and features vignettes of seven best practice programs.</p>
+                    <p><a href="/public/content/HA_CommunityPartnerships.pdf" target="_blank">Partnering to Promote Healthy Aging: Creative Best Practice Community Partnerships</a>, produced by the National Council on Aging, provides recommendations regarding partnerships and features vignettes of seven best practice programs.</p>
                     <p><a href="http://www.cdc.gov/healthycommunitiesprogram/pdf/sustainability_guide.pdf" target="_blank">A Sustainability Planning Guide for Healthy Communities</a>, provided by the Centers for Disease Control and Prevention, features a module on coalition and partnership development.</p>
                     <p><a href="http://www.abundantcommunity.com/home/resources_tools.html" target="_blank">The Abundant Community website</a>, developed from books written by Peter Block and John McKnight, provides resources and tools for engaging families and neighborhoods.</p>
                 </div>

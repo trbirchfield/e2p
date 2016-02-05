@@ -12,7 +12,7 @@
                 <div class="print-border">
                     <h5>Additional Resource</h5>
                     <p><a href="http://www.cdc.gov/healthcommunication/about.html" target="_blank">The Centers for Disease Control and Prevention’s Gateway to Health Communication and Social Marketing Practice</a> provides everything from social marketing tools and templates to example campaigns that highlight best practices.</p>
-                    <p><a href="/pdfs/Lessons_from_field_-_social_marketing.pdf" target="_blank">Social Marketing and Public Health Lessons from the Field: A Guide to Social Marketing,</a> produced by the Social Marketing National Excellence Collaborative, provides an overview of social marketing and detailed case studies of several campaigns.</p>
+                    <p><a href="/public/content/Lessons_from_field_-_social_marketing.pdf" target="_blank">Social Marketing and Public Health Lessons from the Field: A Guide to Social Marketing,</a> produced by the Social Marketing National Excellence Collaborative, provides an overview of social marketing and detailed case studies of several campaigns.</p>
                 </div>
             </div>
             <div class="small-9 columns doc-right search-index">

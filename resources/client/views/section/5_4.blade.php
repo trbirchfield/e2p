@@ -10,7 +10,7 @@
             <div class="small-3 columns doc-left search-index" id="mid-page12">
                 <div class="print-border">
                     <h5>Additional Resource</h5>
-                    <p><a href="/pdfs/AoA_Quality_Assurance_Expectations-9-16-w-text-boxes.pdf" target="_blank">The National Council on Aging</a> provides a brief on the Administration on Aging recommendations for quality assurance.</p>
+                    <p><a href="/public/content/AoA_Quality_Assurance_Expectations-9-16-w-text-boxes.pdf" target="_blank">The National Council on Aging</a> provides a brief on the Administration on Aging recommendations for quality assurance.</p>
                     <p>The Center for Healthy Aging of the National Council on Aging offers <a href="http://www.prc-han.org/docs/RE-AIM_issue_brief.pdf" target="_blank">RE-AIM for Program Planning: Overview and Applications, a guide to applying the RE-AIM framework</a>.</p>
                 </div>
             </div>
