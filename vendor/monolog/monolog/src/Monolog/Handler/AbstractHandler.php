@@ -118,7 +118,7 @@ abstract class AbstractHandler implements HandlerInterface
     /**
      * Sets minimum logging level at which this handler will be triggered.
      *
-     * @param  int  $level
+     * @param  int|string $level Level or level name
      * @return self
      */
     public function setLevel($level)
@@ -168,6 +168,8 @@ abstract class AbstractHandler implements HandlerInterface
         try {
             $this->close();
         } catch (\Exception $e) {
+            // do nothing
+        } catch (\Throwable $e) {
             // do nothing
         }
     }

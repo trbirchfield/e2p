@@ -37,7 +37,46 @@ Here, is where we reference the Laravel extension, and tell Behat to use it as o
 This file should, like the standard `.env` file in your project root, contain any special environment variables
 for your tests (such as a special acceptance test-specific database).
 
-# 3. Write Some Features
+# 3. Setting up FeatureContext
+
+Run, from the root of your app
+
+~~~
+vendor/bin/behat --init 
+~~~
+
+It should set 
+
+~~~
+features/bootstrap/FeatureContext.php
+~~~ 
+
+At this point you should set it to extend MinkContext. 
+
+~~~
+
+<?php
+
+use Behat\Behat\Hook\Scope\AfterStepScope;
+use Behat\Behat\Tester\Exception\PendingException;
+use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
+#This will be needed if you require "behat/mink-selenium2-driver"
+#use Behat\Mink\Driver\Selenium2Driver;
+use Behat\MinkExtension\Context\MinkContext;
+
+/**
+ * Defines application features from the specific context.
+ */
+class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
+{
+
+~~~ 
+
+
+# 4. Write Some Features
 
 ![example](https://dl.dropboxusercontent.com/u/774859/Work/BehatLaravelExtension/example.png)
 
@@ -135,7 +174,14 @@ $lastEmail = $this->fetchInbox()[0];
 
 If working along, you can dump that variable to see all of the various fields that you may write assertions against. In the example above, we're ensuring that the subject was set correctly, and the body of the email matches a stub that we've created.
 
-Even better, after each scenario completes, we'll go ahead and empty out your MailTrap inbox for convenience.
+Even better, after each scenario completes, we'll go ahead and empty out your MailTrap inbox for convenience by adding the `@mail` tag to the scenario or right above the Feature
+
+```
+  @mail
+  Scenario: User will get notified
+    Given there are jobs that have been started by this user
+    Then when the report is done the user will get an email to let them know it is done
+```
 
 ## FAQ
 

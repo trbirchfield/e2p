@@ -11,6 +11,8 @@
 
 namespace Symfony\Component\ClassLoader;
 
+@trigger_error('The '.__NAMESPACE__.'\ApcClassLoader class is deprecated since version 3.3 and will be removed in 4.0. Use `composer install --apcu-autoloader` instead.', E_USER_DEPRECATED);
+
 /**
  * ApcClassLoader implements a wrapping autoloader cached in APC for PHP 5.3.
  *
@@ -44,6 +46,8 @@ namespace Symfony\Component\ClassLoader;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Kris Wallsmith <kris@symfony.com>
+ *
+ * @deprecated since version 3.3, to be removed in 4.0. Use `composer install --apcu-autoloader` instead.
  */
 class ApcClassLoader
 {
@@ -59,16 +63,16 @@ class ApcClassLoader
     /**
      * Constructor.
      *
-     * @param string $prefix    The APC namespace prefix to use.
-     * @param object $decorated A class loader object that implements the findFile() method.
+     * @param string $prefix    The APC namespace prefix to use
+     * @param object $decorated A class loader object that implements the findFile() method
      *
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
     public function __construct($prefix, $decorated)
     {
-        if (!extension_loaded('apc')) {
-            throw new \RuntimeException('Unable to use ApcClassLoader as APC is not enabled.');
+        if (!function_exists('apcu_fetch')) {
+            throw new \RuntimeException('Unable to use ApcClassLoader as APC is not installed.');
         }
 
         if (!method_exists($decorated, 'findFile')) {
@@ -122,8 +126,10 @@ class ApcClassLoader
      */
     public function findFile($class)
     {
-        if (false === $file = apc_fetch($this->prefix.$class)) {
-            apc_store($this->prefix.$class, $file = $this->decorated->findFile($class));
+        $file = apcu_fetch($this->prefix.$class, $success);
+
+        if (!$success) {
+            apcu_store($this->prefix.$class, $file = $this->decorated->findFile($class) ?: null);
         }
 
         return $file;

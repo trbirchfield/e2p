@@ -1,3 +1,29 @@
+4.4.5 / 2016-10-30
+==================
+
+  * Fix partial paths matching in `PathsFilter`
+
+4.4.4 / 2016-09-18
+==================
+
+  * Provide clearer exception for non-writeable cache directories
+
+4.4.3 / 2016-09-18
+==================
+
+  * Ensure we reset tags between features
+
+4.4.2 / 2016-09-03
+==================
+
+  * Sync 18n with gherkin 3
+
+4.4.1 / 2015-12-30
+==================
+
+  * Ensure keywords are trimmed when syncing translations
+  * Sync 18n with cucumber
+
 4.4.0 / 2015-09-19
 ==================
 

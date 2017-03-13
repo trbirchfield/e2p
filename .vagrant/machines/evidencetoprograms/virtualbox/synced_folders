@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/www":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/www","hostpath":"/Users/wesdulaney/Code/evidencetoprograms-com","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/wesdulaney/Code/evidencetoprograms-com","disabled":false,"__vagrantfile":true}}}

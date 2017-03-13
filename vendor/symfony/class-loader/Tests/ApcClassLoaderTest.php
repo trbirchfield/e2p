@@ -11,27 +11,28 @@
 
 namespace Symfony\Component\ClassLoader\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\ClassLoader\ClassLoader;
 
 /**
- * @requires extension apc
+ * @group legacy
  */
-class ApcClassLoaderTest extends \PHPUnit_Framework_TestCase
+class ApcClassLoaderTest extends TestCase
 {
     protected function setUp()
     {
-        if (ini_get('apc.enabled') && ini_get('apc.enable_cli')) {
-            apc_clear_cache('user');
+        if (!(ini_get('apc.enabled') && ini_get('apc.enable_cli'))) {
+            $this->markTestSkipped('The apc extension is not enabled.');
         } else {
-            $this->markTestSkipped('APC is not enabled.');
+            apcu_clear_cache();
         }
     }
 
     protected function tearDown()
     {
         if (ini_get('apc.enabled') && ini_get('apc.enable_cli')) {
-            apc_clear_cache('user');
+            apcu_clear_cache();
         }
     }
 
@@ -42,7 +43,7 @@ class ApcClassLoaderTest extends \PHPUnit_Framework_TestCase
 
         $loader = new ApcClassLoader('test.prefix.', $loader);
 
-        $this->assertEquals($loader->findFile('\Apc\Namespaced\FooBar'), apc_fetch('test.prefix.\Apc\Namespaced\FooBar'), '__construct() takes a prefix as its first argument');
+        $this->assertEquals($loader->findFile('\Apc\Namespaced\FooBar'), apcu_fetch('test.prefix.\Apc\Namespaced\FooBar'), '__construct() takes a prefix as its first argument');
     }
 
     /**

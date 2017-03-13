@@ -1107,9 +1107,9 @@ class QueryBuilder
      */
     private function getSQLForSelect()
     {
-        $query = 'SELECT ' . implode(', ', $this->sqlParts['select']) . ' FROM ';
+        $query = 'SELECT ' . implode(', ', $this->sqlParts['select']);
 
-        $query .= implode(', ', $this->getFromClauses())
+        $query .= ($this->sqlParts['from'] ? ' FROM ' . implode(', ', $this->getFromClauses()) : '')
             . ($this->sqlParts['where'] !== null ? ' WHERE ' . ((string) $this->sqlParts['where']) : '')
             . ($this->sqlParts['groupBy'] ? ' GROUP BY ' . implode(', ', $this->sqlParts['groupBy']) : '')
             . ($this->sqlParts['having'] !== null ? ' HAVING ' . ((string) $this->sqlParts['having']) : '')
@@ -1302,8 +1302,6 @@ class QueryBuilder
      * @param array  $knownAliases
      *
      * @return string
-     *
-     * @throws QueryException
      */
     private function getSQLForJoins($fromAlias, array &$knownAliases)
     {

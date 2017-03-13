@@ -349,9 +349,7 @@ class Connection implements DriverConnection
      */
     public function connect()
     {
-        if ($this->_isConnected) {
-            return false;
-        }
+        if ($this->_isConnected) return false;
 
         $driverOptions = isset($this->_params['driverOptions']) ?
             $this->_params['driverOptions'] : array();
@@ -582,16 +580,20 @@ class Connection implements DriverConnection
             throw InvalidArgumentException::fromEmptyCriteria();
         }
 
+        $columnList = array();
         $criteria = array();
+        $paramValues = array();
 
-        foreach (array_keys($identifier) as $columnName) {
+        foreach ($identifier as $columnName => $value) {
+            $columnList[] = $columnName;
             $criteria[] = $columnName . ' = ?';
+            $paramValues[] = $value;
         }
 
         return $this->executeUpdate(
             'DELETE FROM ' . $tableExpression . ' WHERE ' . implode(' AND ', $criteria),
-            array_values($identifier),
-            is_string(key($types)) ? $this->extractTypeValues($identifier, $types) : $types
+            $paramValues,
+            is_string(key($types)) ? $this->extractTypeValues($columnList, $types) : $types
         );
     }
 
@@ -649,23 +651,31 @@ class Connection implements DriverConnection
      */
     public function update($tableExpression, array $data, array $identifier, array $types = array())
     {
+        $columnList = array();
         $set = array();
+        $criteria = array();
+        $paramValues = array();
 
         foreach ($data as $columnName => $value) {
+            $columnList[] = $columnName;
             $set[] = $columnName . ' = ?';
+            $paramValues[] = $value;
+        }
+
+        foreach ($identifier as $columnName => $value) {
+            $columnList[] = $columnName;
+            $criteria[] = $columnName . ' = ?';
+            $paramValues[] = $value;
         }
 
         if (is_string(key($types))) {
-            $types = $this->extractTypeValues(array_merge($data, $identifier), $types);
+            $types = $this->extractTypeValues($columnList, $types);
         }
 
-        $params = array_merge(array_values($data), array_values($identifier));
-
         $sql  = 'UPDATE ' . $tableExpression . ' SET ' . implode(', ', $set)
-                . ' WHERE ' . implode(' = ? AND ', array_keys($identifier))
-                . ' = ?';
+                . ' WHERE ' . implode(' AND ', $criteria);
 
-        return $this->executeUpdate($sql, $params, $types);
+        return $this->executeUpdate($sql, $paramValues, $types);
     }
 
     /**
@@ -681,33 +691,45 @@ class Connection implements DriverConnection
      */
     public function insert($tableExpression, array $data, array $types = array())
     {
+        $this->connect();
+
         if (empty($data)) {
             return $this->executeUpdate('INSERT INTO ' . $tableExpression . ' ()' . ' VALUES ()');
         }
 
+        $columnList = array();
+        $paramPlaceholders = array();
+        $paramValues = array();
+
+        foreach ($data as $columnName => $value) {
+            $columnList[] = $columnName;
+            $paramPlaceholders[] = '?';
+            $paramValues[] = $value;
+        }
+
         return $this->executeUpdate(
-            'INSERT INTO ' . $tableExpression . ' (' . implode(', ', array_keys($data)) . ')' .
-            ' VALUES (' . implode(', ', array_fill(0, count($data), '?')) . ')',
-            array_values($data),
-            is_string(key($types)) ? $this->extractTypeValues($data, $types) : $types
+            'INSERT INTO ' . $tableExpression . ' (' . implode(', ', $columnList) . ')' .
+            ' VALUES (' . implode(', ', $paramPlaceholders) . ')',
+            $paramValues,
+            is_string(key($types)) ? $this->extractTypeValues($columnList, $types) : $types
         );
     }
 
     /**
-     * Extract ordered type list from two associate key lists of data and types.
+     * Extract ordered type list from an ordered column list and type map.
      *
-     * @param array $data
+     * @param array $columnList
      * @param array $types
      *
      * @return array
      */
-    private function extractTypeValues(array $data, array $types)
+    private function extractTypeValues(array $columnList, array $types)
     {
         $typeValues = array();
 
-        foreach ($data as $k => $_) {
-            $typeValues[] = isset($types[$k])
-                ? $types[$k]
+        foreach ($columnList as $columnIndex => $columnName) {
+            $typeValues[] = isset($types[$columnName])
+                ? $types[$columnName]
                 : \PDO::PARAM_STR;
         }
 
@@ -746,7 +768,6 @@ class Connection implements DriverConnection
         $this->connect();
 
         list($value, $bindingType) = $this->getBindingInfo($input, $type);
-
         return $this->_conn->quote($value, $bindingType);
     }
 
@@ -769,12 +790,14 @@ class Connection implements DriverConnection
      *
      * @param string $statement The SQL statement to prepare.
      *
-     * @return \Doctrine\DBAL\Statement The prepared statement.
+     * @return \Doctrine\DBAL\Driver\Statement The prepared statement.
      *
      * @throws \Doctrine\DBAL\DBALException
      */
     public function prepare($statement)
     {
+        $this->connect();
+
         try {
             $stmt = new Statement($statement, $this);
         } catch (\Exception $ex) {
@@ -1093,7 +1116,7 @@ class Connection implements DriverConnection
      *
      * @param \Closure $func The function to execute transactionally.
      *
-     * @return mixed The value returned by $func
+     * @return void
      *
      * @throws \Exception
      */
@@ -1101,11 +1124,10 @@ class Connection implements DriverConnection
     {
         $this->beginTransaction();
         try {
-            $res = $func($this);
+            $func($this);
             $this->commit();
-            return $res;
         } catch (Exception $e) {
-            $this->rollBack();
+            $this->rollback();
             throw $e;
         }
     }
@@ -1252,6 +1274,9 @@ class Connection implements DriverConnection
     /**
      * Cancels any database changes done during the current transaction.
      *
+     * This method can be listened with onPreTransactionRollback and onTransactionRollback
+     * eventlistener methods.
+     *
      * @throws \Doctrine\DBAL\ConnectionException If the rollback operation failed.
      */
     public function rollBack()
@@ -1269,7 +1294,7 @@ class Connection implements DriverConnection
                 $logger->startQuery('"ROLLBACK"');
             }
             $this->_transactionNestingLevel = 0;
-            $this->_conn->rollBack();
+            $this->_conn->rollback();
             $this->_isRollbackOnly = false;
             if ($logger) {
                 $logger->stopQuery();
