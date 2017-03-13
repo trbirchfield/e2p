@@ -16,7 +16,7 @@ class NonProductionAccess {
 	public function handle(Request $request, Closure $next) {
 		if (!in_array(App::environment(), ['production', 'testing'])) {
 			$authenticated = FALSE;
-			$trusted_ips   = ['10.1.80', '10.2.80', '192.168.1', '97.77.8.162'];
+			$trusted_ips   = ['10.1.80', '10.2.80', '192.168.1', '192.168.10', '97.77.8.162'];
 			$logins        = [
 				['u' => 'wlion', 'p' => 'm3Y3_dev.21'],
 				['u' => 'swep',  'p' => 'review']

@@ -42,8 +42,6 @@ class Definition
     protected $arguments;
 
     /**
-     * Constructor.
-     *
      * @param string|null $class     The service class
      * @param array       $arguments An array of arguments to pass to the service constructor
      */
@@ -58,7 +56,7 @@ class Definition
      *
      * @param string|array $factory A PHP function or an array containing a class/Reference and a method to call
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setFactory($factory)
     {
@@ -88,14 +86,14 @@ class Definition
      * @param null|string $renamedId The new decorated service id
      * @param int         $priority  The priority of decoration
      *
-     * @return Definition The current instance
+     * @return $this
      *
      * @throws InvalidArgumentException In case the decorated service id and the new decorated service id are equals.
      */
     public function setDecoratedService($id, $renamedId = null, $priority = 0)
     {
         if ($renamedId && $id == $renamedId) {
-            throw new \InvalidArgumentException(sprintf('The decorated service inner name for "%s" must be different than the service name itself.', $id));
+            throw new InvalidArgumentException(sprintf('The decorated service inner name for "%s" must be different than the service name itself.', $id));
         }
 
         if (null === $id) {
@@ -108,7 +106,7 @@ class Definition
     }
 
     /**
-     * Gets the service that decorates this service.
+     * Gets the service that this service is decorating.
      *
      * @return null|array An array composed of the decorated service id, the new id for it and the priority of decoration, null if no service is decorated
      */
@@ -122,7 +120,7 @@ class Definition
      *
      * @param string $class The service class
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setClass($class)
     {
@@ -146,7 +144,7 @@ class Definition
      *
      * @param array $arguments An array of arguments
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setArguments(array $arguments)
     {
@@ -179,7 +177,7 @@ class Definition
      *
      * @param mixed $argument An argument
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function addArgument($argument)
     {
@@ -194,12 +192,16 @@ class Definition
      * @param int   $index
      * @param mixed $argument
      *
-     * @return Definition The current instance
+     * @return $this
      *
      * @throws OutOfBoundsException When the replaced argument does not exist
      */
     public function replaceArgument($index, $argument)
     {
+        if (0 === count($this->arguments)) {
+            throw new OutOfBoundsException('Cannot replace arguments if none have been configured yet.');
+        }
+
         if ($index < 0 || $index > count($this->arguments) - 1) {
             throw new OutOfBoundsException(sprintf('The index "%d" is not in the range [0, %d].', $index, count($this->arguments) - 1));
         }
@@ -242,7 +244,7 @@ class Definition
      *
      * @param array $calls An array of method calls
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setMethodCalls(array $calls = array())
     {
@@ -260,7 +262,7 @@ class Definition
      * @param string $method    The method name to call
      * @param array  $arguments An array of arguments to pass to the method call
      *
-     * @return Definition The current instance
+     * @return $this
      *
      * @throws InvalidArgumentException on empty $method param
      */
@@ -279,7 +281,7 @@ class Definition
      *
      * @param string $method The method name to remove
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function removeMethodCall($method)
     {
@@ -326,7 +328,7 @@ class Definition
      *
      * @param array $tags
      *
-     * @return Definition the current instance
+     * @return $this
      */
     public function setTags(array $tags)
     {
@@ -363,7 +365,7 @@ class Definition
      * @param string $name       The tag name
      * @param array  $attributes An array of attributes
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function addTag($name, array $attributes = array())
     {
@@ -389,7 +391,7 @@ class Definition
      *
      * @param string $name The tag name
      *
-     * @return Definition
+     * @return $this
      */
     public function clearTag($name)
     {
@@ -401,7 +403,7 @@ class Definition
     /**
      * Clears the tags for this definition.
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function clearTags()
     {
@@ -415,7 +417,7 @@ class Definition
      *
      * @param string $file A full pathname to include
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setFile($file)
     {
@@ -439,7 +441,7 @@ class Definition
      *
      * @param bool $shared Whether the service must be shared or not
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setShared($shared)
     {
@@ -463,7 +465,7 @@ class Definition
      *
      * @param bool $boolean
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setPublic($boolean)
     {
@@ -487,7 +489,7 @@ class Definition
      *
      * @param bool $lazy
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setLazy($lazy)
     {
@@ -512,7 +514,7 @@ class Definition
      *
      * @param bool $boolean
      *
-     * @return Definition the current instance
+     * @return $this
      */
     public function setSynthetic($boolean)
     {
@@ -538,7 +540,7 @@ class Definition
      *
      * @param bool $boolean
      *
-     * @return Definition the current instance
+     * @return $this
      */
     public function setAbstract($boolean)
     {
@@ -565,7 +567,7 @@ class Definition
      * @param bool   $status
      * @param string $template Template message to use if the definition is deprecated
      *
-     * @return Definition the current instance
+     * @return $this
      *
      * @throws InvalidArgumentException When the message template is invalid.
      */
@@ -614,13 +616,17 @@ class Definition
     /**
      * Sets a configurator to call after the service is fully initialized.
      *
-     * @param callable $callable A PHP callable
+     * @param string|array $configurator A PHP callable
      *
-     * @return Definition The current instance
+     * @return $this
      */
-    public function setConfigurator($callable)
+    public function setConfigurator($configurator)
     {
-        $this->configurator = $callable;
+        if (is_string($configurator) && strpos($configurator, '::') !== false) {
+            $configurator = explode('::', $configurator, 2);
+        }
+
+        $this->configurator = $configurator;
 
         return $this;
     }
@@ -640,7 +646,7 @@ class Definition
      *
      * @param string[] $types
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setAutowiringTypes(array $types)
     {
@@ -666,9 +672,9 @@ class Definition
     /**
      * Sets autowired.
      *
-     * @param $autowired
+     * @param bool $autowired
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function setAutowired($autowired)
     {
@@ -692,7 +698,7 @@ class Definition
      *
      * @param string $type
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function addAutowiringType($type)
     {
@@ -706,7 +712,7 @@ class Definition
      *
      * @param string $type
      *
-     * @return Definition The current instance
+     * @return $this
      */
     public function removeAutowiringType($type)
     {

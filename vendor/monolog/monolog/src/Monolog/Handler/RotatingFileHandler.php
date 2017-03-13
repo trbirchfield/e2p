@@ -24,6 +24,10 @@ use Monolog\Logger;
  */
 class RotatingFileHandler extends StreamHandler
 {
+    const FILE_PER_DAY = 'Y-m-d';
+    const FILE_PER_MONTH = 'Y-m';
+    const FILE_PER_YEAR = 'Y';
+
     protected $filename;
     protected $maxFiles;
     protected $mustRotate;
@@ -64,6 +68,21 @@ class RotatingFileHandler extends StreamHandler
 
     public function setFilenameFormat($filenameFormat, $dateFormat)
     {
+        if (!preg_match('{^Y(([/_.-]?m)([/_.-]?d)?)?$}', $dateFormat)) {
+            trigger_error(
+                'Invalid date format - format must be one of '.
+                'RotatingFileHandler::FILE_PER_DAY ("Y-m-d"), RotatingFileHandler::FILE_PER_MONTH ("Y-m") '.
+                'or RotatingFileHandler::FILE_PER_YEAR ("Y"), or you can set one of the '.
+                'date formats using slashes, underscores and/or dots instead of dashes.',
+                E_USER_DEPRECATED
+            );
+        }
+        if (substr_count($filenameFormat, '{date}') === 0) {
+            trigger_error(
+                'Invalid filename format - format should contain at least `{date}`, because otherwise rotating is impossible.',
+                E_USER_DEPRECATED
+            );
+        }
         $this->filenameFormat = $filenameFormat;
         $this->dateFormat = $dateFormat;
         $this->url = $this->getTimedFilename();
@@ -115,7 +134,11 @@ class RotatingFileHandler extends StreamHandler
 
         foreach (array_slice($logFiles, $this->maxFiles) as $file) {
             if (is_writable($file)) {
+                // suppress errors here as unlink() might fail if two processes
+                // are cleaning up/rotating at the same time
+                set_error_handler(function ($errno, $errstr, $errfile, $errline) {});
                 unlink($file);
+                restore_error_handler();
             }
         }
 

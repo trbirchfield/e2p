@@ -92,14 +92,14 @@ class Logger implements LoggerInterface
      * @var array $levels Logging levels
      */
     protected static $levels = array(
-        100 => 'DEBUG',
-        200 => 'INFO',
-        250 => 'NOTICE',
-        300 => 'WARNING',
-        400 => 'ERROR',
-        500 => 'CRITICAL',
-        550 => 'ALERT',
-        600 => 'EMERGENCY',
+        self::DEBUG     => 'DEBUG',
+        self::INFO      => 'INFO',
+        self::NOTICE    => 'NOTICE',
+        self::WARNING   => 'WARNING',
+        self::ERROR     => 'ERROR',
+        self::CRITICAL  => 'CRITICAL',
+        self::ALERT     => 'ALERT',
+        self::EMERGENCY => 'EMERGENCY',
     );
 
     /**
@@ -151,6 +151,19 @@ class Logger implements LoggerInterface
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Return a new cloned instance with the name changed
+     *
+     * @return static
+     */
+    public function withName($name)
+    {
+        $new = clone $this;
+        $new->name = $name;
+
+        return $new;
     }
 
     /**
@@ -298,7 +311,8 @@ class Logger implements LoggerInterface
             static::$timezone = new \DateTimeZone(date_default_timezone_get() ?: 'UTC');
         }
 
-        if ($this->microsecondTimestamps) {
+        // php7.1+ always has microseconds enabled, so we do not need this hack
+        if ($this->microsecondTimestamps && PHP_VERSION_ID < 70100) {
             $ts = \DateTime::createFromFormat('U.u', sprintf('%.6F', microtime(true)), static::$timezone);
         } else {
             $ts = new \DateTime(null, static::$timezone);

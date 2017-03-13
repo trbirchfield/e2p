@@ -5,6 +5,7 @@ namespace Faker\Provider;
 use Faker\Generator;
 use Faker\DefaultGenerator;
 use Faker\UniqueGenerator;
+use Faker\ValidGenerator;
 
 class Base
 {
@@ -109,6 +110,9 @@ class Base
 
         if (null === $max) {
             $max = static::randomNumber();
+            if ($min > $max) {
+                $max = $min;
+            }
         }
 
         if ($min > $max) {
@@ -155,20 +159,21 @@ class Base
     }
 
     /**
-     * Returns random elements from a provided array
+     * Returns randomly ordered subsequence of $count elements from a provided array
      *
-     * @param  array            $array Array to take elements from. Defaults to a-f
-     * @param  integer          $count Number of elements to take.
+     * @param  array            $array           Array to take elements from. Defaults to a-f
+     * @param  integer          $count           Number of elements to take.
+     * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
      *
      * @return array New array with $count elements from $array
      */
-    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1)
+    public static function randomElements(array $array = array('a', 'b', 'c'), $count = 1, $allowDuplicates = false)
     {
         $allKeys = array_keys($array);
         $numKeys = count($allKeys);
 
-        if ($numKeys < $count) {
+        if (!$allowDuplicates && $numKeys < $count) {
             throw new \LengthException(sprintf('Cannot get %d elements, only %d in array', $count, $numKeys));
         }
 
@@ -178,11 +183,14 @@ class Base
 
         while ($numElements < $count) {
             $num = mt_rand(0, $highKey);
-            if (isset($keys[$num])) {
-                continue;
+
+            if (!$allowDuplicates) {
+                if (isset($keys[$num])) {
+                    continue;
+                }
+                $keys[$num] = true;
             }
 
-            $keys[$num] = true;
             $elements[] = $array[$allKeys[$num]];
             $numElements++;
         }
@@ -519,7 +527,7 @@ class Base
         if ($weight > 0 && $weight < 1 && mt_rand() / mt_getrandmax() <= $weight) {
             return $this->generator;
         }
-        
+
         // new system with percentage
         if (is_int($weight) && mt_rand(1, 100) <= $weight) {
             return $this->generator;
@@ -550,5 +558,33 @@ class Base
         }
 
         return $this->unique;
+    }
+
+    /**
+     * Chainable method for forcing any formatter to return only valid values.
+     *
+     * The value validity is determined by a function passed as first argument.
+     *
+     * <code>
+     * $values = array();
+     * $evenValidator = function ($digit) {
+     * 	 return $digit % 2 === 0;
+     * };
+     * for ($i=0; $i < 10; $i++) {
+     * 	 $values []= $faker->valid($evenValidator)->randomDigit;
+     * }
+     * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
+     * </code>
+     *
+     * @param Closure $validator  A function returning true for valid values
+     * @param integer $maxRetries Maximum number of retries to find a unique value,
+     *                            After which an OverflowException is thrown.
+     * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
+     *
+     * @return ValidGenerator A proxy class returning only valid values
+     */
+    public function valid($validator = null, $maxRetries = 10000)
+    {
+        return new ValidGenerator($this->generator, $validator, $maxRetries);
     }
 }
