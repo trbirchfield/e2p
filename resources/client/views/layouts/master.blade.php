@@ -10,8 +10,8 @@
 
         {{-- Metadata --}}
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
+        <meta name="description" content="{{ $meta_description }}">
+        <meta name="keywords" content="{{ $meta_keywords }}">
         <meta name="author" content="White Lion Interactive">
         <link rel="author" href="http://wlion.com">
         @yield('metadata')

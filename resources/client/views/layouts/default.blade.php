@@ -2,7 +2,7 @@
 
 @section('template')
 	@include('client::partials.header')
-	@if (Request::segment(1) != NULL and Request::segment(1) != 'home')
+	@if (!empty(Request::segment(1)) and (Request::segment(1) != 'home') and !empty($page_title))
 		<section class="section-title {{ (!empty($section) and $section > 3) ? 'green' : 'blue' }}">
 			<div class="row">
 				<div class="small-12 columns">

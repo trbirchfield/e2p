@@ -4,21 +4,11 @@
 
 Clone the repo down to your local machine:
 
-```git clone git@github.com:wlion/scottwhite.git .```
-
-### Running make
-
-Run the following make commands in this order:
-
-1. ```make env```         // creates the environment file
-2. ```make vendor```      // installs the project's required composer, node and bower packages
-3. ```make permissions``` // sets the proper permissions on site directories
-
-### Setting up the dev environment
-
-To set up the dev environment, open the new .env file that you created when you ran ```make env```.
-
-Now change lines 4, 12 and 15 to the proper paths for your local environment.
+```cd ~/Code```
+```git clone git@github.com:wlion/scottwhite.git evidencetoprograms-com```
+```cd evidencetoprograms-com```
+```vagrant up```
+```Add "192.168.20.10 evidencetoprograms.dev" to /etc/hosts file```
 
 Now you should be good to go!
 

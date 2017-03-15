@@ -43,7 +43,9 @@ class LayoutsComposer {
 					growl()->add(session('status'), '', 'success');
 				}
 				return json_encode(growl()->all());
-			}
+			},
+			'meta_description' => ($view->offsetExists('meta_description')) ? $view->offsetGet('meta_description') : NULL,
+			'meta_keywords'    => ($view->offsetExists('meta_keywords')) ? $view->offsetGet('meta_keywords') : NULL
 		]);
 	}
 }

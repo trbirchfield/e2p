@@ -16,6 +16,15 @@
 	RewriteRule ^robots.txt$ robots_dev.txt [L]
 	RewriteRule ^robots.txt$ robots.txt [L]
 
+	# evidencetoprograms.com should be the canonical domain
+	RewriteCond %{HTTP_HOST} ^evidence2programs.com [NC,OR]
+	RewriteCond %{HTTP_HOST} ^www.evidence2programs.com [NC]
+	RewriteRule ^(.*)$ http://evidencetoprograms.com/$1 [L,R=301,NC]
+
+	# no www
+	RewriteCond %{HTTP_HOST} ^www.evidencetoprograms.com [NC]
+	RewriteRule ^(.*)$ http://evidencetoprograms.com/$1 [L,R=301,NC]
+
 	# everything goes to the front
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
