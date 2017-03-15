@@ -124,8 +124,8 @@
 
 # tweak upload max
 # NOTE: if running suPHP, remove and use local php.ini
-php_value post_max_size 30M
-php_value upload_max_filesize 10M
+# php_value post_max_size 30M
+# php_value upload_max_filesize 10M
 
 # Increase cookie security
 <IfModule php5_module>
